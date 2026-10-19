@@ -45,7 +45,9 @@ Windows. The Control tab is shown below.
    automatically.
 
 The firmware prints each validated USB command through UART0 TX on PB.13.
-Example output is shown in [log.jpg](log.jpg).
+Example UART output is shown below.
+
+![UART0 USB command log](log.jpg)
 
 ### Strip configuration
 
@@ -161,18 +163,51 @@ XOR. All current payload fields are unsigned bytes.
 | `0x05` | `SET_EFFECT` | `[effect, red, green, blue, speed, brightness, direction]` | Implemented |
 | `0x06` | `STOP` | none | Implemented; LEDs off |
 
-`SET_CONFIG`: count is `1..10`, order is `0=GRB/WS2812` or
-`1=RGB/LTST-E563CEGBW`, and brightness is `0..255`. `SET_PIXELS` always carries
-logical RGB triples; firmware converts them to the configured wire order.
-Changing strip configuration preserves the active effect or direct-pixel
-source. If the direct-pixel LED count increases, newly added pixels start black.
-If LED count decreases, firmware transmits one frame at the previous length
-with every removed trailing pixel set to black, then continues at the new
-shorter length. This prevents removed downstream LEDs from retaining their
-last latched color.
-`SET_EFFECT` uses effect values `0=Static`, `1=Breathing`, `2=Blink`,
-`3=Gradient`, and `4=Flow`. Speed is `1..255` (zero is treated as 1), direction
-is `0=Forward` or nonzero=`Reverse`, and unknown effects fall back to Static.
+### Command field details
+
+`SET_CONFIG` payload:
+
+| Field | Range/value | Meaning |
+|---|---|---|
+| `count` | `1..10` | Number of cascaded LEDs to control |
+| `order` | `0` | GRB byte order for WS2812-compatible LEDs |
+| `order` | `1` | RGB byte order for LTST-E563CEGBW |
+| `brightness` | `0..255` | Global output scaling; `0` is off and `255` is full scale |
+
+Changing `SET_CONFIG` preserves the active effect or direct-pixel source:
+
+| LED count change | Firmware behavior |
+|---|---|
+| Count unchanged | Re-renders the current source with the new order/brightness |
+| Count increased | Newly added direct pixels start black; generated effects render across the new count |
+| Count decreased | Sends one frame at the previous length with removed trailing LEDs black, then continues at the shorter length |
+
+The extra clear frame on a count decrease prevents downstream LEDs from
+retaining their previously latched color.
+
+`SET_PIXELS` payload:
+
+| Field | Range/value | Meaning |
+|---|---|---|
+| `count` | `1..10` | Number of logical RGB triples in the payload |
+| `R0,G0,B0, ...` | Each component `0..255` | Logical RGB values; firmware converts them to the configured RGB/GRB wire order |
+
+`SET_EFFECT` payload:
+
+| Field | Range/value | Meaning |
+|---|---|---|
+| `effect` | `0` | Static |
+| `effect` | `1` | Breathing |
+| `effect` | `2` | Blink |
+| `effect` | `3` | Gradient |
+| `effect` | `4` | Flow/rainbow |
+| `red`, `green`, `blue` | `0..255` | Selected effect color; ignored by Flow |
+| `speed` | `1..255` | Animation speed; zero is treated as `1` |
+| `brightness` | `0..255` | Updates global brightness |
+| `direction` | `0` | Forward |
+| `direction` | Nonzero | Reverse |
+
+Unknown effect values fall back to Static.
 
 UART0 logs accepted commands and invalid frames on PB.13 at 115200 8-N-1.
 Parsing/logging runs in `HID_Process()` in the main loop rather than the USB
