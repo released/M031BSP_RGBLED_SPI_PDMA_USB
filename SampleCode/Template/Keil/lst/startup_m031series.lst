@@ -1,0 +1,1118 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000         ;/******************************************************
+                       ********************//**
+    2 00000000         ; * @file     startup_m031series.s
+    3 00000000         ; * @version  V2.00
+    4 00000000         ; * $Revision: 4 $
+    5 00000000         ; * $Date: 18/04/02 4:02p $
+    6 00000000         ; * @brief    M031 Series Startup Source File
+    7 00000000         ; *
+    8 00000000         ; * @note
+    9 00000000         ; * SPDX-License-Identifier: Apache-2.0  
+   10 00000000         ; * Copyright (C) 2018 Nuvoton Technology Corp. All righ
+                       ts reserved.
+   11 00000000         ; ******************************************************
+                       ************************/
+   12 00000000                 IF               :LNOT: :DEF: Stack_Size
+   14                          ENDIF
+   15 00000000         
+   16 00000000                 AREA             STACK, NOINIT, READWRITE, ALIGN
+=3
+   17 00000000         Stack_Mem
+                               SPACE            Stack_Size
+   18 00000400         __initial_sp
+   19 00000400         
+   20 00000400         
+   21 00000400         ; <h> Heap Configuration
+   22 00000400         ;   <o>  Heap Size (in Bytes) <0x0-0xFFFFFFFF:8>
+   23 00000400         ; </h>
+   24 00000400                 IF               :LNOT: :DEF: Heap_Size
+   26                          ENDIF
+   27 00000400                 AREA             HEAP, NOINIT, READWRITE, ALIGN=
+3
+   28 00000000         __heap_base
+   29 00000000         Heap_Mem
+                               SPACE            Heap_Size
+   30 00000100         __heap_limit
+   31 00000100         
+   32 00000100         
+   33 00000100                 PRESERVE8
+   34 00000100                 THUMB
+   35 00000100         
+   36 00000100         
+   37 00000100         ; Vector Table Mapped to Address 0 at Reset
+   38 00000100                 AREA             RESET, DATA, READONLY
+   39 00000000                 EXPORT           __Vectors
+   40 00000000         
+   41 00000000 00000000 
+                       __Vectors
+                               DCD              __initial_sp ; Top of Stack
+   42 00000004 00000000        DCD              Reset_Handler ; Reset Handler
+   43 00000008 00000000        DCD              NMI_Handler ; NMI Handler
+   44 0000000C 00000000        DCD              HardFault_Handler ; Hard Fault 
+                                                            Handler
+   45 00000010 00000000        DCD              0           ; Reserved
+   46 00000014 00000000        DCD              0           ; Reserved
+   47 00000018 00000000        DCD              0           ; Reserved
+   48 0000001C 00000000        DCD              0           ; Reserved
+   49 00000020 00000000        DCD              0           ; Reserved
+   50 00000024 00000000        DCD              0           ; Reserved
+   51 00000028 00000000        DCD              0           ; Reserved
+
+
+
+ARM Macro Assembler    Page 2 
+
+
+   52 0000002C 00000000        DCD              SVC_Handler ; SVCall Handler
+   53 00000030 00000000        DCD              0           ; Reserved
+   54 00000034 00000000        DCD              0           ; Reserved
+   55 00000038 00000000        DCD              PendSV_Handler ; PendSV Handler
+                                                            
+   56 0000003C 00000000        DCD              SysTick_Handler 
+                                                            ; SysTick Handler
+   57 00000040         
+   58 00000040         ; External Interrupts
+   59 00000040         ; maximum of 32 External Interrupts are possible
+   60 00000040 00000000        DCD              BOD_IRQHandler
+   61 00000044 00000000        DCD              WDT_IRQHandler
+   62 00000048 00000000        DCD              EINT024_IRQHandler
+   63 0000004C 00000000        DCD              EINT135_IRQHandler
+   64 00000050 00000000        DCD              GPABGH_IRQHandler
+   65 00000054 00000000        DCD              GPCDEF_IRQHandler
+   66 00000058 00000000        DCD              PWM0_IRQHandler
+   67 0000005C 00000000        DCD              PWM1_IRQHandler
+   68 00000060 00000000        DCD              TMR0_IRQHandler
+   69 00000064 00000000        DCD              TMR1_IRQHandler
+   70 00000068 00000000        DCD              TMR2_IRQHandler
+   71 0000006C 00000000        DCD              TMR3_IRQHandler
+   72 00000070 00000000        DCD              UART02_IRQHandler
+   73 00000074 00000000        DCD              UART13_IRQHandler
+   74 00000078 00000000        DCD              SPI0_IRQHandler
+   75 0000007C 00000000        DCD              QSPI0_IRQHandler
+   76 00000080 00000000        DCD              ISP_IRQHandler
+   77 00000084 00000000        DCD              UART57_IRQHandler
+   78 00000088 00000000        DCD              I2C0_IRQHandler
+   79 0000008C 00000000        DCD              I2C1_IRQHandler
+   80 00000090 00000000        DCD              BPWM0_IRQHandler
+   81 00000094 00000000        DCD              BPWM1_IRQHandler
+   82 00000098 00000000        DCD              USCI01_IRQHandler
+   83 0000009C 00000000        DCD              USBD_IRQHandler
+   84 000000A0 00000000        DCD              Default_Handler
+   85 000000A4 00000000        DCD              ACMP01_IRQHandler
+   86 000000A8 00000000        DCD              PDMA_IRQHandler
+   87 000000AC 00000000        DCD              UART46_IRQHandler
+   88 000000B0 00000000        DCD              PWRWU_IRQHandler
+   89 000000B4 00000000        DCD              ADC_IRQHandler
+   90 000000B8 00000000        DCD              CKFAIL_IRQHandler
+   91 000000BC 00000000        DCD              RTC_IRQHandler
+   92 000000C0         
+   93 000000C0         
+   94 000000C0         
+   95 000000C0                 AREA             |.text|, CODE, READONLY
+   96 00000000         
+   97 00000000         
+   98 00000000         
+   99 00000000         ; Reset Handler
+  100 00000000         
+  101 00000000                 ENTRY
+  102 00000000         
+  103 00000000         Reset_Handler
+                               PROC
+  104 00000000                 EXPORT           Reset_Handler             [WEAK
+]
+  105 00000000                 IMPORT           SystemInit
+  106 00000000                 IMPORT           __main
+
+
+
+ARM Macro Assembler    Page 3 
+
+
+  107 00000000         
+  108 00000000         
+  109 00000000 4813            LDR              R0, =0x40000100
+  110 00000002         ; Unlock Register
+  111 00000002         
+  112 00000002 4914            LDR              R1, =0x59
+  113 00000004 6001            STR              R1, [R0]
+  114 00000006 4914            LDR              R1, =0x16
+  115 00000008 6001            STR              R1, [R0]
+  116 0000000A 4914            LDR              R1, =0x88
+  117 0000000C 6001            STR              R1, [R0]
+  118 0000000E         
+  119 0000000E         ; Init POR
+  120 0000000E 4A14            LDR              R2, =0x40000024
+  121 00000010 4914            LDR              R1, =0x00005AA5
+  122 00000012 6011            STR              R1, [R2]
+  123 00000014         
+  124 00000014         ; Init LDO_RDY
+  125 00000014 4A14            LDR              R2, =0x40000280
+  126 00000016 4915            LDR              R1, =0x00000001
+  127 00000018 6011            STR              R1, [R2]
+  128 0000001A         
+  129 0000001A         ; Lock register
+  130 0000001A 2100            MOVS             R1, #0
+  131 0000001C 6001            STR              R1, [R0]
+  132 0000001E         
+  133 0000001E 4814            LDR              R0, =SystemInit
+  134 00000020 4780            BLX              R0
+  135 00000022 4814            LDR              R0, =__main
+  136 00000024 4700            BX               R0
+  137 00000026                 ENDP
+  138 00000026         
+  139 00000026         
+  140 00000026         
+  141 00000026         ; Dummy Exception Handlers (infinite loops which can be 
+                       modified)
+  142 00000026         
+  143 00000026         NMI_Handler
+                               PROC
+  144 00000026                 EXPORT           NMI_Handler               [WEAK
+]
+  145 00000026 E7FE            B                .
+  146 00000028                 ENDP
+  148 00000028         HardFault_Handler
+                               PROC
+  149 00000028                 IMPORT           ProcessHardFault
+  150 00000028                 EXPORT           HardFault_Handler         [WEAK
+]
+  151 00000028 4670            MOV              R0, LR
+  152 0000002A F3EF 8108       MRS              R1, MSP
+  153 0000002E F3EF 8209       MRS              R2, PSP
+  154 00000032 4B11            LDR              R3, =ProcessHardFault
+  155 00000034 4798            BLX              R3
+  156 00000036 4700            BX               R0
+  157 00000038                 ENDP
+  158 00000038         SVC_Handler
+                               PROC
+  159 00000038                 EXPORT           SVC_Handler               [WEAK
+]
+
+
+
+ARM Macro Assembler    Page 4 
+
+
+  160 00000038 E7FE            B                .
+  161 0000003A                 ENDP
+  162 0000003A         PendSV_Handler
+                               PROC
+  163 0000003A                 EXPORT           PendSV_Handler            [WEAK
+]
+  164 0000003A E7FE            B                .
+  165 0000003C                 ENDP
+  166 0000003C         SysTick_Handler
+                               PROC
+  167 0000003C                 EXPORT           SysTick_Handler           [WEAK
+]
+  168 0000003C E7FE            B                .
+  169 0000003E                 ENDP
+  170 0000003E         
+  171 0000003E         Default_Handler
+                               PROC
+  172 0000003E         
+  173 0000003E                 EXPORT           BOD_IRQHandler            [WEAK
+]
+  174 0000003E                 EXPORT           WDT_IRQHandler            [WEAK
+]
+  175 0000003E                 EXPORT           EINT024_IRQHandler        [WEAK
+]
+  176 0000003E                 EXPORT           EINT135_IRQHandler        [WEAK
+]
+  177 0000003E                 EXPORT           GPABGH_IRQHandler         [WEAK
+]
+  178 0000003E                 EXPORT           GPCDEF_IRQHandler         [WEAK
+]
+  179 0000003E                 EXPORT           PWM0_IRQHandler           [WEAK
+]
+  180 0000003E                 EXPORT           PWM1_IRQHandler           [WEAK
+]
+  181 0000003E                 EXPORT           TMR0_IRQHandler           [WEAK
+]
+  182 0000003E                 EXPORT           TMR1_IRQHandler           [WEAK
+]
+  183 0000003E                 EXPORT           TMR2_IRQHandler           [WEAK
+]
+  184 0000003E                 EXPORT           TMR3_IRQHandler           [WEAK
+]
+  185 0000003E                 EXPORT           UART02_IRQHandler         [WEAK
+]
+  186 0000003E                 EXPORT           UART13_IRQHandler         [WEAK
+]
+  187 0000003E                 EXPORT           SPI0_IRQHandler           [WEAK
+]
+  188 0000003E                 EXPORT           QSPI0_IRQHandler          [WEAK
+]
+  189 0000003E                 EXPORT           ISP_IRQHandler            [WEAK
+]
+  190 0000003E                 EXPORT           UART57_IRQHandler         [WEAK
+]
+  191 0000003E                 EXPORT           I2C0_IRQHandler           [WEAK
+]
+  192 0000003E                 EXPORT           I2C1_IRQHandler           [WEAK
+]
+  193 0000003E                 EXPORT           BPWM0_IRQHandler          [WEAK
+
+
+
+ARM Macro Assembler    Page 5 
+
+
+]
+  194 0000003E                 EXPORT           BPWM1_IRQHandler          [WEAK
+]
+  195 0000003E                 EXPORT           USCI01_IRQHandler         [WEAK
+]
+  196 0000003E                 EXPORT           USBD_IRQHandler           [WEAK
+]
+  197 0000003E                 EXPORT           ACMP01_IRQHandler         [WEAK
+]
+  198 0000003E                 EXPORT           PDMA_IRQHandler           [WEAK
+]
+  199 0000003E                 EXPORT           UART46_IRQHandler         [WEAK
+]
+  200 0000003E                 EXPORT           PWRWU_IRQHandler          [WEAK
+]
+  201 0000003E                 EXPORT           ADC_IRQHandler            [WEAK
+]
+  202 0000003E                 EXPORT           CKFAIL_IRQHandler         [WEAK
+]
+  203 0000003E                 EXPORT           RTC_IRQHandler            [WEAK
+]
+  204 0000003E         
+  205 0000003E         BOD_IRQHandler
+  206 0000003E         WDT_IRQHandler
+  207 0000003E         EINT024_IRQHandler
+  208 0000003E         EINT135_IRQHandler
+  209 0000003E         GPABGH_IRQHandler
+  210 0000003E         GPCDEF_IRQHandler
+  211 0000003E         PWM0_IRQHandler
+  212 0000003E         PWM1_IRQHandler
+  213 0000003E         TMR0_IRQHandler
+  214 0000003E         TMR1_IRQHandler
+  215 0000003E         TMR2_IRQHandler
+  216 0000003E         TMR3_IRQHandler
+  217 0000003E         UART02_IRQHandler
+  218 0000003E         UART13_IRQHandler
+  219 0000003E         SPI0_IRQHandler
+  220 0000003E         QSPI0_IRQHandler
+  221 0000003E         ISP_IRQHandler
+  222 0000003E         UART57_IRQHandler
+  223 0000003E         I2C0_IRQHandler
+  224 0000003E         I2C1_IRQHandler
+  225 0000003E         BPWM0_IRQHandler
+  226 0000003E         BPWM1_IRQHandler
+  227 0000003E         USCI01_IRQHandler
+  228 0000003E         USBD_IRQHandler
+  229 0000003E         ACMP01_IRQHandler
+  230 0000003E         PDMA_IRQHandler
+  231 0000003E         UART46_IRQHandler
+  232 0000003E         PWRWU_IRQHandler
+  233 0000003E         ADC_IRQHandler
+  234 0000003E         CKFAIL_IRQHandler
+  235 0000003E         RTC_IRQHandler
+  236 0000003E E7FE            B                .
+  237 00000040                 ENDP
+  238 00000040         
+  239 00000040         
+  240 00000040                 ALIGN
+  241 00000040         
+
+
+
+ARM Macro Assembler    Page 6 
+
+
+  242 00000040         
+  243 00000040         ; User Initial Stack & Heap
+  244 00000040         
+  245 00000040                 IF               :DEF:__MICROLIB
+  246 00000040         
+  247 00000040                 EXPORT           __initial_sp
+  248 00000040                 EXPORT           __heap_base
+  249 00000040                 EXPORT           __heap_limit
+  250 00000040         
+  251 00000040                 ELSE
+  265                          ENDIF
+  266 00000040         
+  267 00000040         ;int32_t SH_DoCommand(int32_t n32In_R0, int32_t n32In_R1
+                       , int32_t *pn32Out_R0)
+  268 00000040         SH_DoCommand
+                               PROC
+  269 00000040         
+  270 00000040                 EXPORT           SH_DoCommand
+  271 00000040                 IMPORT           SH_Return
+  272 00000040         
+  273 00000040 BEAB            BKPT             0xAB        ; Wait ICE or HardF
+                                                            ault
+  274 00000042 4B0E            LDR              R3, =SH_Return
+  275 00000044 B508            PUSH             {R3 ,lr}
+  276 00000046 4798            BLX              R3          ; Call SH_Return. T
+                                                            he return value is 
+                                                            in R0
+  277 00000048 BD08            POP              {R3 ,PC}    ; Return value = R0
+                                                            
+  278 0000004A         
+  279 0000004A                 ENDP
+  280 0000004A         
+  281 0000004A         __PC    PROC
+  282 0000004A                 EXPORT           __PC
+  283 0000004A         
+  284 0000004A 4670            MOV              r0, lr
+  285 0000004C 47F0            BLX              lr
+  286 0000004E 00 00           ALIGN
+  287 00000050         
+  288 00000050                 ENDP
+  289 00000050         
+  290 00000050                 END
+              40000100 
+              00000059 
+              00000016 
+              00000088 
+              40000024 
+              00005AA5 
+              40000280 
+              00000001 
+              00000000 
+              00000000 
+              00000000 
+              00000000 
+Command Line: --debug --xref --diag_suppress=9931,A1950W --cpu=Cortex-M0 --depe
+nd=.\obj\startup_m031series.d -o.\obj\startup_m031series.o -IC:\Users\averyc\Ap
+pData\Local\Arm\Packs\Nuvoton\NuMicroM0_DFP\1.0.2\Device\M031\Include -IC:\Keil
+_v5\ARM\CMSIS\Include --predefine="__MICROLIB SETA 1" --predefine="__UVISION_VE
+RSION SETA 541" --list=.\lst\startup_m031series.lst ..\..\..\Library\Device\Nuv
+
+
+
+ARM Macro Assembler    Page 7 
+
+
+oton\M031\Source\ARM\startup_M031Series.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+STACK 00000000
+
+Symbol: STACK
+   Definitions
+      At line 16 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\startu
+p_M031Series.s
+   Uses
+      None
+Comment: STACK unused
+Stack_Mem 00000000
+
+Symbol: Stack_Mem
+   Definitions
+      At line 17 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\startu
+p_M031Series.s
+   Uses
+      None
+Comment: Stack_Mem unused
+__initial_sp 00000400
+
+Symbol: __initial_sp
+   Definitions
+      At line 18 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\startu
+p_M031Series.s
+   Uses
+      At line 41 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\startu
+p_M031Series.s
+      At line 247 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\start
+up_M031Series.s
+
+3 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+HEAP 00000000
+
+Symbol: HEAP
+   Definitions
+      At line 27 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\startu
+p_M031Series.s
+   Uses
+      None
+Comment: HEAP unused
+Heap_Mem 00000000
+
+Symbol: Heap_Mem
+   Definitions
+      At line 29 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\startu
+p_M031Series.s
+   Uses
+      None
+Comment: Heap_Mem unused
+__heap_base 00000000
+
+Symbol: __heap_base
+   Definitions
+      At line 28 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\startu
+p_M031Series.s
+   Uses
+      At line 248 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\start
+up_M031Series.s
+Comment: __heap_base used once
+__heap_limit 00000100
+
+Symbol: __heap_limit
+   Definitions
+      At line 30 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\startu
+p_M031Series.s
+   Uses
+      At line 249 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\start
+up_M031Series.s
+Comment: __heap_limit used once
+4 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+RESET 00000000
+
+Symbol: RESET
+   Definitions
+      At line 38 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\startu
+p_M031Series.s
+   Uses
+      None
+Comment: RESET unused
+__Vectors 00000000
+
+Symbol: __Vectors
+   Definitions
+      At line 41 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\startu
+p_M031Series.s
+   Uses
+      At line 39 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\startu
+p_M031Series.s
+Comment: __Vectors used once
+2 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+.text 00000000
+
+Symbol: .text
+   Definitions
+      At line 95 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\startu
+p_M031Series.s
+   Uses
+      None
+Comment: .text unused
+ACMP01_IRQHandler 0000003E
+
+Symbol: ACMP01_IRQHandler
+   Definitions
+      At line 229 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\start
+up_M031Series.s
+   Uses
+      At line 85 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\startu
+p_M031Series.s
+      At line 197 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\start
+up_M031Series.s
+
+ADC_IRQHandler 0000003E
+
+Symbol: ADC_IRQHandler
+   Definitions
+      At line 233 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\start
+up_M031Series.s
+   Uses
+      At line 89 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\startu
+p_M031Series.s
+      At line 201 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\start
+up_M031Series.s
+
+BOD_IRQHandler 0000003E
+
+Symbol: BOD_IRQHandler
+   Definitions
+      At line 205 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\start
+up_M031Series.s
+   Uses
+      At line 60 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\startu
+p_M031Series.s
+      At line 173 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\start
+up_M031Series.s
+
+BPWM0_IRQHandler 0000003E
+
+Symbol: BPWM0_IRQHandler
+   Definitions
+      At line 225 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\start
+up_M031Series.s
+   Uses
+      At line 80 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\startu
+p_M031Series.s
+      At line 193 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\start
+up_M031Series.s
+
+BPWM1_IRQHandler 0000003E
+
+
+
+
+ARM Macro Assembler    Page 2 Alphabetic symbol ordering
+Relocatable symbols
+
+Symbol: BPWM1_IRQHandler
+   Definitions
+      At line 226 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\start
+up_M031Series.s
+   Uses
+      At line 81 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\startu
+p_M031Series.s
+      At line 194 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\start
+up_M031Series.s
+
+CKFAIL_IRQHandler 0000003E
+
+Symbol: CKFAIL_IRQHandler
+   Definitions
+      At line 234 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\start
+up_M031Series.s
+   Uses
+      At line 90 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\startu
+p_M031Series.s
+      At line 202 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\start
+up_M031Series.s
+
+Default_Handler 0000003E
+
+Symbol: Default_Handler
+   Definitions
+      At line 171 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\start
+up_M031Series.s
+   Uses
+      At line 84 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\startu
+p_M031Series.s
+Comment: Default_Handler used once
+EINT024_IRQHandler 0000003E
+
+Symbol: EINT024_IRQHandler
+   Definitions
+      At line 207 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\start
+up_M031Series.s
+   Uses
+      At line 62 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\startu
+p_M031Series.s
+      At line 175 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\start
+up_M031Series.s
+
+EINT135_IRQHandler 0000003E
+
+Symbol: EINT135_IRQHandler
+   Definitions
+      At line 208 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\start
+up_M031Series.s
+   Uses
+      At line 63 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\startu
+p_M031Series.s
+      At line 176 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\start
+up_M031Series.s
+
+GPABGH_IRQHandler 0000003E
+
+Symbol: GPABGH_IRQHandler
+
+
+
+ARM Macro Assembler    Page 3 Alphabetic symbol ordering
+Relocatable symbols
+
+   Definitions
+      At line 209 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\start
+up_M031Series.s
+   Uses
+      At line 64 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\startu
+p_M031Series.s
+      At line 177 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\start
+up_M031Series.s
+
+GPCDEF_IRQHandler 0000003E
+
+Symbol: GPCDEF_IRQHandler
+   Definitions
+      At line 210 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\start
+up_M031Series.s
+   Uses
+      At line 65 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\startu
+p_M031Series.s
+      At line 178 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\start
+up_M031Series.s
+
+HardFault_Handler 00000028
+
+Symbol: HardFault_Handler
+   Definitions
+      At line 148 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\start
+up_M031Series.s
+   Uses
+      At line 44 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\startu
+p_M031Series.s
+      At line 150 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\start
+up_M031Series.s
+
+I2C0_IRQHandler 0000003E
+
+Symbol: I2C0_IRQHandler
+   Definitions
+      At line 223 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\start
+up_M031Series.s
+   Uses
+      At line 78 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\startu
+p_M031Series.s
+      At line 191 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\start
+up_M031Series.s
+
+I2C1_IRQHandler 0000003E
+
+Symbol: I2C1_IRQHandler
+   Definitions
+      At line 224 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\start
+up_M031Series.s
+   Uses
+      At line 79 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\startu
+p_M031Series.s
+      At line 192 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\start
+up_M031Series.s
+
+ISP_IRQHandler 0000003E
+
+
+
+
+ARM Macro Assembler    Page 4 Alphabetic symbol ordering
+Relocatable symbols
+
+Symbol: ISP_IRQHandler
+   Definitions
+      At line 221 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\start
+up_M031Series.s
+   Uses
+      At line 76 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\startu
+p_M031Series.s
+      At line 189 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\start
+up_M031Series.s
+
+NMI_Handler 00000026
+
+Symbol: NMI_Handler
+   Definitions
+      At line 143 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\start
+up_M031Series.s
+   Uses
+      At line 43 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\startu
+p_M031Series.s
+      At line 144 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\start
+up_M031Series.s
+
+PDMA_IRQHandler 0000003E
+
+Symbol: PDMA_IRQHandler
+   Definitions
+      At line 230 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\start
+up_M031Series.s
+   Uses
+      At line 86 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\startu
+p_M031Series.s
+      At line 198 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\start
+up_M031Series.s
+
+PWM0_IRQHandler 0000003E
+
+Symbol: PWM0_IRQHandler
+   Definitions
+      At line 211 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\start
+up_M031Series.s
+   Uses
+      At line 66 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\startu
+p_M031Series.s
+      At line 179 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\start
+up_M031Series.s
+
+PWM1_IRQHandler 0000003E
+
+Symbol: PWM1_IRQHandler
+   Definitions
+      At line 212 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\start
+up_M031Series.s
+   Uses
+      At line 67 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\startu
+p_M031Series.s
+      At line 180 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\start
+up_M031Series.s
+
+PWRWU_IRQHandler 0000003E
+
+
+
+ARM Macro Assembler    Page 5 Alphabetic symbol ordering
+Relocatable symbols
+
+
+Symbol: PWRWU_IRQHandler
+   Definitions
+      At line 232 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\start
+up_M031Series.s
+   Uses
+      At line 88 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\startu
+p_M031Series.s
+      At line 200 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\start
+up_M031Series.s
+
+PendSV_Handler 0000003A
+
+Symbol: PendSV_Handler
+   Definitions
+      At line 162 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\start
+up_M031Series.s
+   Uses
+      At line 55 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\startu
+p_M031Series.s
+      At line 163 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\start
+up_M031Series.s
+
+QSPI0_IRQHandler 0000003E
+
+Symbol: QSPI0_IRQHandler
+   Definitions
+      At line 220 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\start
+up_M031Series.s
+   Uses
+      At line 75 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\startu
+p_M031Series.s
+      At line 188 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\start
+up_M031Series.s
+
+RTC_IRQHandler 0000003E
+
+Symbol: RTC_IRQHandler
+   Definitions
+      At line 235 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\start
+up_M031Series.s
+   Uses
+      At line 91 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\startu
+p_M031Series.s
+      At line 203 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\start
+up_M031Series.s
+
+Reset_Handler 00000000
+
+Symbol: Reset_Handler
+   Definitions
+      At line 103 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\start
+up_M031Series.s
+   Uses
+      At line 42 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\startu
+p_M031Series.s
+      At line 104 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\start
+up_M031Series.s
+
+
+
+
+ARM Macro Assembler    Page 6 Alphabetic symbol ordering
+Relocatable symbols
+
+SH_DoCommand 00000040
+
+Symbol: SH_DoCommand
+   Definitions
+      At line 268 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\start
+up_M031Series.s
+   Uses
+      At line 270 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\start
+up_M031Series.s
+Comment: SH_DoCommand used once
+SPI0_IRQHandler 0000003E
+
+Symbol: SPI0_IRQHandler
+   Definitions
+      At line 219 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\start
+up_M031Series.s
+   Uses
+      At line 74 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\startu
+p_M031Series.s
+      At line 187 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\start
+up_M031Series.s
+
+SVC_Handler 00000038
+
+Symbol: SVC_Handler
+   Definitions
+      At line 158 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\start
+up_M031Series.s
+   Uses
+      At line 52 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\startu
+p_M031Series.s
+      At line 159 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\start
+up_M031Series.s
+
+SysTick_Handler 0000003C
+
+Symbol: SysTick_Handler
+   Definitions
+      At line 166 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\start
+up_M031Series.s
+   Uses
+      At line 56 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\startu
+p_M031Series.s
+      At line 167 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\start
+up_M031Series.s
+
+TMR0_IRQHandler 0000003E
+
+Symbol: TMR0_IRQHandler
+   Definitions
+      At line 213 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\start
+up_M031Series.s
+   Uses
+      At line 68 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\startu
+p_M031Series.s
+      At line 181 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\start
+up_M031Series.s
+
+TMR1_IRQHandler 0000003E
+
+
+
+ARM Macro Assembler    Page 7 Alphabetic symbol ordering
+Relocatable symbols
+
+
+Symbol: TMR1_IRQHandler
+   Definitions
+      At line 214 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\start
+up_M031Series.s
+   Uses
+      At line 69 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\startu
+p_M031Series.s
+      At line 182 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\start
+up_M031Series.s
+
+TMR2_IRQHandler 0000003E
+
+Symbol: TMR2_IRQHandler
+   Definitions
+      At line 215 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\start
+up_M031Series.s
+   Uses
+      At line 70 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\startu
+p_M031Series.s
+      At line 183 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\start
+up_M031Series.s
+
+TMR3_IRQHandler 0000003E
+
+Symbol: TMR3_IRQHandler
+   Definitions
+      At line 216 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\start
+up_M031Series.s
+   Uses
+      At line 71 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\startu
+p_M031Series.s
+      At line 184 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\start
+up_M031Series.s
+
+UART02_IRQHandler 0000003E
+
+Symbol: UART02_IRQHandler
+   Definitions
+      At line 217 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\start
+up_M031Series.s
+   Uses
+      At line 72 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\startu
+p_M031Series.s
+      At line 185 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\start
+up_M031Series.s
+
+UART13_IRQHandler 0000003E
+
+Symbol: UART13_IRQHandler
+   Definitions
+      At line 218 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\start
+up_M031Series.s
+   Uses
+      At line 73 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\startu
+p_M031Series.s
+      At line 186 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\start
+up_M031Series.s
+
+
+
+
+ARM Macro Assembler    Page 8 Alphabetic symbol ordering
+Relocatable symbols
+
+UART46_IRQHandler 0000003E
+
+Symbol: UART46_IRQHandler
+   Definitions
+      At line 231 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\start
+up_M031Series.s
+   Uses
+      At line 87 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\startu
+p_M031Series.s
+      At line 199 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\start
+up_M031Series.s
+
+UART57_IRQHandler 0000003E
+
+Symbol: UART57_IRQHandler
+   Definitions
+      At line 222 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\start
+up_M031Series.s
+   Uses
+      At line 77 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\startu
+p_M031Series.s
+      At line 190 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\start
+up_M031Series.s
+
+USBD_IRQHandler 0000003E
+
+Symbol: USBD_IRQHandler
+   Definitions
+      At line 228 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\start
+up_M031Series.s
+   Uses
+      At line 83 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\startu
+p_M031Series.s
+      At line 196 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\start
+up_M031Series.s
+
+USCI01_IRQHandler 0000003E
+
+Symbol: USCI01_IRQHandler
+   Definitions
+      At line 227 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\start
+up_M031Series.s
+   Uses
+      At line 82 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\startu
+p_M031Series.s
+      At line 195 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\start
+up_M031Series.s
+
+WDT_IRQHandler 0000003E
+
+Symbol: WDT_IRQHandler
+   Definitions
+      At line 206 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\start
+up_M031Series.s
+   Uses
+      At line 61 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\startu
+p_M031Series.s
+      At line 174 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\start
+up_M031Series.s
+
+
+
+ARM Macro Assembler    Page 9 Alphabetic symbol ordering
+Relocatable symbols
+
+
+__PC 0000004A
+
+Symbol: __PC
+   Definitions
+      At line 281 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\start
+up_M031Series.s
+   Uses
+      At line 282 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\start
+up_M031Series.s
+Comment: __PC used once
+41 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Absolute symbols
+
+Heap_Size 00000100
+
+Symbol: Heap_Size
+   Definitions
+      At line 25 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\startu
+p_M031Series.s
+   Uses
+      At line 29 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\startu
+p_M031Series.s
+Comment: Heap_Size used once
+Stack_Size 00000400
+
+Symbol: Stack_Size
+   Definitions
+      At line 13 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\startu
+p_M031Series.s
+   Uses
+      At line 17 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\startu
+p_M031Series.s
+Comment: Stack_Size used once
+2 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+External symbols
+
+ProcessHardFault 00000000
+
+Symbol: ProcessHardFault
+   Definitions
+      At line 149 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\start
+up_M031Series.s
+   Uses
+      At line 154 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\start
+up_M031Series.s
+Comment: ProcessHardFault used once
+SH_Return 00000000
+
+Symbol: SH_Return
+   Definitions
+      At line 271 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\start
+up_M031Series.s
+   Uses
+      At line 274 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\start
+up_M031Series.s
+Comment: SH_Return used once
+SystemInit 00000000
+
+Symbol: SystemInit
+   Definitions
+      At line 105 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\start
+up_M031Series.s
+   Uses
+      At line 133 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\start
+up_M031Series.s
+Comment: SystemInit used once
+__main 00000000
+
+Symbol: __main
+   Definitions
+      At line 106 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\start
+up_M031Series.s
+   Uses
+      At line 135 in file ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\start
+up_M031Series.s
+Comment: __main used once
+4 symbols
+392 symbols in table

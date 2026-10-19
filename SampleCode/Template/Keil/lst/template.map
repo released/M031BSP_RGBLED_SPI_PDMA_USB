@@ -1,0 +1,980 @@
+Component: Arm Compiler for Embedded 6.22 Tool: armlink [5ee90200]
+
+==============================================================================
+
+Small function inlining results
+
+Inlined function __aeabi_idiv0 from idiv0.o at offset 0x160 in aeabi_sdiv.o(.text).
+Inlined Instruction: BX       lr
+Inlined function __aeabi_idiv0 from idiv0.o at offset 0xc in aeabi_sdiv_div0.o(.text).
+Inlined Instruction: BX       lr
+Inlined function __aeabi_idiv0 from idiv0.o at offset 0x176 in aeabi_sdiv_div0.o(.text).
+Inlined Instruction: BX       lr
+Inlined function __aeabi_idiv0 from idiv0.o at offset 0x18 in uidiv_div0.o(.text).
+Inlined Instruction: BX       lr
+Inlined function __aeabi_idiv0 from idiv0.o at offset 0x42 in idiv_div0.o(.text).
+Inlined Instruction: BX       lr
+Inlined total of 5 calls.
+
+==============================================================================
+
+Image Symbol Table
+
+    Local Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    ../clib/division.s                       0x00000000   Number         0  aeabi_sdiv.o ABSOLUTE
+    ../clib/division.s                       0x00000000   Number         0  aeabi_sdiv_div0.o ABSOLUTE
+    ../clib/microlib/division.c              0x00000000   Number         0  uidiv.o ABSOLUTE
+    ../clib/microlib/division.c              0x00000000   Number         0  uidiv_div0.o ABSOLUTE
+    ../clib/microlib/division.c              0x00000000   Number         0  idiv_div0.o ABSOLUTE
+    ../clib/microlib/division.c              0x00000000   Number         0  idiv0.o ABSOLUTE
+    ../clib/microlib/division.c              0x00000000   Number         0  uldiv.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry2.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry5.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11b.o ABSOLUTE
+    ../clib/microlib/longlong.c              0x00000000   Number         0  llshl.o ABSOLUTE
+    ../clib/microlib/longlong.c              0x00000000   Number         0  llushr.o ABSOLUTE
+    ../clib/microlib/longlong.c              0x00000000   Number         0  llsshr.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printfa.o ABSOLUTE
+    ../clib/microlib/string/memcpy.c         0x00000000   Number         0  memcpya.o ABSOLUTE
+    ../clib/microlib/string/memcpy.c         0x00000000   Number         0  memcpyb.o ABSOLUTE
+    ../clib/microlib/string/memset.c         0x00000000   Number         0  memseta.o ABSOLUTE
+    ../clib/microlib/stubs.s                 0x00000000   Number         0  iusefp.o ABSOLUTE
+    ../fplib/microlib/fpadd.c                0x00000000   Number         0  dadd.o ABSOLUTE
+    ../fplib/microlib/fpdiv.c                0x00000000   Number         0  ddiv.o ABSOLUTE
+    ../fplib/microlib/fpepilogue.c           0x00000000   Number         0  depilogue.o ABSOLUTE
+    ../fplib/microlib/fpfix.c                0x00000000   Number         0  dfixul.o ABSOLUTE
+    ../fplib/microlib/fpmul.c                0x00000000   Number         0  dmul.o ABSOLUTE
+    ..\..\..\Library\Device\Nuvoton\M031\Source\ARM\startup_M031Series.s 0x00000000   Number         0  startup_m031series.o ABSOLUTE
+    cdrcmple.s                               0x00000000   Number         0  cdrcmple.o ABSOLUTE
+    clk.c                                    0x00000000   Number         0  clk.o ABSOLUTE
+    descriptors.c                            0x00000000   Number         0  descriptors.o ABSOLUTE
+    gpio.c                                   0x00000000   Number         0  gpio.o ABSOLUTE
+    handlers.s                               0x00000000   Number         0  handlers.o ABSOLUTE
+    hid_transfer.c                           0x00000000   Number         0  hid_transfer.o ABSOLUTE
+    init.s                                   0x00000000   Number         0  init.o ABSOLUTE
+    main.c                                   0x00000000   Number         0  main.o ABSOLUTE
+    pdma.c                                   0x00000000   Number         0  pdma.o ABSOLUTE
+    retarget.c                               0x00000000   Number         0  retarget.o ABSOLUTE
+    rgb_effect.c                             0x00000000   Number         0  rgb_effect.o ABSOLUTE
+    rgb_led.c                                0x00000000   Number         0  rgb_led.o ABSOLUTE
+    rgb_protocol.c                           0x00000000   Number         0  rgb_protocol.o ABSOLUTE
+    spi.c                                    0x00000000   Number         0  spi.o ABSOLUTE
+    sys.c                                    0x00000000   Number         0  sys.o ABSOLUTE
+    system_M031Series.c                      0x00000000   Number         0  system_m031series.o ABSOLUTE
+    timer.c                                  0x00000000   Number         0  timer.o ABSOLUTE
+    uart.c                                   0x00000000   Number         0  uart.o ABSOLUTE
+    usbd.c                                   0x00000000   Number         0  usbd.o ABSOLUTE
+    RESET                                    0x00000000   Section      192  startup_m031series.o(RESET)
+    .ARM.Collect$$$$00000000                 0x000000c0   Section        0  entry.o(.ARM.Collect$$$$00000000)
+    .ARM.Collect$$$$00000001                 0x000000c0   Section        4  entry2.o(.ARM.Collect$$$$00000001)
+    .ARM.Collect$$$$00000004                 0x000000c4   Section        4  entry5.o(.ARM.Collect$$$$00000004)
+    .ARM.Collect$$$$00000008                 0x000000c8   Section        0  entry7b.o(.ARM.Collect$$$$00000008)
+    .ARM.Collect$$$$0000000A                 0x000000c8   Section        0  entry8b.o(.ARM.Collect$$$$0000000A)
+    .ARM.Collect$$$$0000000B                 0x000000c8   Section        8  entry9a.o(.ARM.Collect$$$$0000000B)
+    __lit__00000000                          0x000000d0   Data           4  entry2.o(.ARM.Collect$$$$00002712)
+    .ARM.Collect$$$$0000000D                 0x000000d0   Section        0  entry10a.o(.ARM.Collect$$$$0000000D)
+    .ARM.Collect$$$$0000000F                 0x000000d0   Section        0  entry11a.o(.ARM.Collect$$$$0000000F)
+    .ARM.Collect$$$$00002712                 0x000000d0   Section        4  entry2.o(.ARM.Collect$$$$00002712)
+    .text                                    0x000000d4   Section      128  startup_m031series.o(.text)
+    Default_Handler                          0x00000113   Thumb Code     2  startup_m031series.o(.text)
+    .text                                    0x00000154   Section        0  memcpya.o(.text)
+    .text                                    0x00000178   Section        0  memseta.o(.text)
+    .text                                    0x0000019c   Section        0  uidiv_div0.o(.text)
+    .text                                    0x000001da   Section        0  uldiv.o(.text)
+    .text                                    0x0000023a   Section        0  iusefp.o(.text)
+    .text                                    0x0000023c   Section        0  dadd.o(.text)
+    .text                                    0x000003a0   Section        0  dmul.o(.text)
+    .text                                    0x00000470   Section        0  ddiv.o(.text)
+    .text                                    0x00000560   Section        0  dfixul.o(.text)
+    .text                                    0x000005a0   Section       40  cdrcmple.o(.text)
+    .text                                    0x000005c8   Section       48  init.o(.text)
+    .text                                    0x000005f8   Section        0  llshl.o(.text)
+    .text                                    0x00000618   Section        0  llushr.o(.text)
+    .text                                    0x0000063a   Section        0  llsshr.o(.text)
+    .text                                    0x00000660   Section        0  depilogue.o(.text)
+    [Anonymous Symbol]                       0x00000720   Section        0  clk.o(.text.CLK_EnableModuleClock)
+    __arm_cp.18_0                            0x00000750   Number         4  clk.o(.text.CLK_EnableModuleClock)
+    [Anonymous Symbol]                       0x00000754   Section        0  clk.o(.text.CLK_EnableXtalRC)
+    [Anonymous Symbol]                       0x00000768   Section        0  clk.o(.text.CLK_GetHCLKFreq)
+    [Anonymous Symbol]                       0x00000774   Section        0  clk.o(.text.CLK_GetPCLK0Freq)
+    [Anonymous Symbol]                       0x00000794   Section        0  clk.o(.text.CLK_GetPCLK1Freq)
+    __arm_cp.7_0                             0x000007b4   Number         4  clk.o(.text.CLK_GetPCLK1Freq)
+    CLK_GetPLLClockFreq                      0x000007b9   Thumb Code   144  system_m031series.o(.text.CLK_GetPLLClockFreq)
+    [Anonymous Symbol]                       0x000007b8   Section        0  system_m031series.o(.text.CLK_GetPLLClockFreq)
+    CLK_GetPLLClockFreq                      0x00000849   Thumb Code   144  spi.o(.text.CLK_GetPLLClockFreq)
+    [Anonymous Symbol]                       0x00000848   Section        0  spi.o(.text.CLK_GetPLLClockFreq)
+    CLK_GetPLLClockFreq                      0x000008d9   Thumb Code   144  uart.o(.text.CLK_GetPLLClockFreq)
+    [Anonymous Symbol]                       0x000008d8   Section        0  uart.o(.text.CLK_GetPLLClockFreq)
+    __arm_cp.7_0                             0x00000968   Number         4  uart.o(.text.CLK_GetPLLClockFreq)
+    __arm_cp.7_1                             0x0000096c   Number         4  uart.o(.text.CLK_GetPLLClockFreq)
+    __arm_cp.7_2                             0x00000970   Number         4  uart.o(.text.CLK_GetPLLClockFreq)
+    __arm_cp.7_3                             0x00000974   Number         4  uart.o(.text.CLK_GetPLLClockFreq)
+    __arm_cp.7_4                             0x00000978   Number         4  uart.o(.text.CLK_GetPLLClockFreq)
+    [Anonymous Symbol]                       0x0000097c   Section        0  clk.o(.text.CLK_SetHCLK)
+    __arm_cp.13_1                            0x000009dc   Number         4  clk.o(.text.CLK_SetHCLK)
+    [Anonymous Symbol]                       0x000009e0   Section        0  clk.o(.text.CLK_SetModuleClock)
+    __arm_cp.14_0                            0x00000a80   Number         4  clk.o(.text.CLK_SetModuleClock)
+    __arm_cp.14_1                            0x00000a84   Number         4  clk.o(.text.CLK_SetModuleClock)
+    [Anonymous Symbol]                       0x00000a88   Section        0  clk.o(.text.CLK_WaitClockReady)
+    __arm_cp.11_0                            0x00000adc   Number         4  clk.o(.text.CLK_WaitClockReady)
+    __arm_cp.11_1                            0x00000ae0   Number         4  clk.o(.text.CLK_WaitClockReady)
+    __arm_cp.11_2                            0x00000ae4   Number         4  clk.o(.text.CLK_WaitClockReady)
+    DumpStack                                0x00000ae9   Thumb Code     8  retarget.o(.text.DumpStack)
+    [Anonymous Symbol]                       0x00000ae8   Section        0  retarget.o(.text.DumpStack)
+    [Anonymous Symbol]                       0x00000af0   Section        0  hid_transfer.o(.text.EP2_Handler)
+    [Anonymous Symbol]                       0x00000af4   Section        0  hid_transfer.o(.text.EP3_Handler)
+    __arm_cp.2_3                             0x00000b34   Number         4  hid_transfer.o(.text.EP3_Handler)
+    [Anonymous Symbol]                       0x00000b38   Section        0  hid_transfer.o(.text.HID_ClassRequest)
+    __arm_cp.5_2                             0x00000bb0   Number         4  hid_transfer.o(.text.HID_ClassRequest)
+    HID_EffectName                           0x00000bb5   Thumb Code    92  hid_transfer.o(.text.HID_EffectName)
+    [Anonymous Symbol]                       0x00000bb4   Section        0  hid_transfer.o(.text.HID_EffectName)
+    __arm_cp.8_0                             0x00000c10   Number         4  hid_transfer.o(.text.HID_EffectName)
+    __arm_cp.8_1                             0x00000c14   Number         4  hid_transfer.o(.text.HID_EffectName)
+    __arm_cp.8_2                             0x00000c18   Number         4  hid_transfer.o(.text.HID_EffectName)
+    __arm_cp.8_3                             0x00000c1c   Number         4  hid_transfer.o(.text.HID_EffectName)
+    __arm_cp.8_4                             0x00000c20   Number         4  hid_transfer.o(.text.HID_EffectName)
+    __arm_cp.8_5                             0x00000c24   Number         4  hid_transfer.o(.text.HID_EffectName)
+    [Anonymous Symbol]                       0x00000c28   Section        0  hid_transfer.o(.text.HID_Init)
+    __arm_cp.4_0                             0x00000c68   Number         4  hid_transfer.o(.text.HID_Init)
+    __arm_cp.4_1                             0x00000c6c   Number         4  hid_transfer.o(.text.HID_Init)
+    __arm_cp.4_2                             0x00000c70   Number         4  hid_transfer.o(.text.HID_Init)
+    __arm_cp.4_3                             0x00000c74   Number         4  hid_transfer.o(.text.HID_Init)
+    __arm_cp.4_4                             0x00000c78   Number         4  hid_transfer.o(.text.HID_Init)
+    __arm_cp.4_5                             0x00000c7c   Number         4  hid_transfer.o(.text.HID_Init)
+    __arm_cp.4_6                             0x00000c80   Number         4  hid_transfer.o(.text.HID_Init)
+    __arm_cp.4_7                             0x00000c84   Number         4  hid_transfer.o(.text.HID_Init)
+    __arm_cp.4_8                             0x00000c88   Number         4  hid_transfer.o(.text.HID_Init)
+    __arm_cp.4_9                             0x00000c8c   Number         4  hid_transfer.o(.text.HID_Init)
+    [Anonymous Symbol]                       0x00000c90   Section        0  hid_transfer.o(.text.HID_Process)
+    __arm_cp.7_0                             0x00000eb0   Number         4  hid_transfer.o(.text.HID_Process)
+    __arm_cp.7_1                             0x00000eb4   Number         4  hid_transfer.o(.text.HID_Process)
+    __arm_cp.7_2                             0x00000eb8   Number         4  hid_transfer.o(.text.HID_Process)
+    __arm_cp.7_3                             0x00000ebc   Number         4  hid_transfer.o(.text.HID_Process)
+    __arm_cp.7_4                             0x00000ec0   Number         4  hid_transfer.o(.text.HID_Process)
+    __arm_cp.7_5                             0x00000ec4   Number         4  hid_transfer.o(.text.HID_Process)
+    __arm_cp.7_6                             0x00000ec8   Number         4  hid_transfer.o(.text.HID_Process)
+    __arm_cp.7_7                             0x00000ecc   Number         4  hid_transfer.o(.text.HID_Process)
+    __arm_cp.7_8                             0x00000ed0   Number         4  hid_transfer.o(.text.HID_Process)
+    __arm_cp.7_9                             0x00000ed4   Number         4  hid_transfer.o(.text.HID_Process)
+    __arm_cp.7_10                            0x00000ed8   Number         4  hid_transfer.o(.text.HID_Process)
+    __arm_cp.7_11                            0x00000edc   Number         4  hid_transfer.o(.text.HID_Process)
+    __arm_cp.7_12                            0x00000ee0   Number         4  hid_transfer.o(.text.HID_Process)
+    __arm_cp.7_13                            0x00000ee4   Number         4  hid_transfer.o(.text.HID_Process)
+    [Anonymous Symbol]                       0x00000ee8   Section        0  pdma.o(.text.PDMA_EnableInt)
+    [Anonymous Symbol]                       0x00000f50   Section        0  main.o(.text.PDMA_IRQHandler)
+    [Anonymous Symbol]                       0x00000f58   Section        0  pdma.o(.text.PDMA_Open)
+    [Anonymous Symbol]                       0x00000fa8   Section        0  pdma.o(.text.PDMA_SetBurstType)
+    [Anonymous Symbol]                       0x00000fd6   Section        0  pdma.o(.text.PDMA_SetTransferAddr)
+    [Anonymous Symbol]                       0x00001024   Section        0  pdma.o(.text.PDMA_SetTransferCnt)
+    __arm_cp.2_0                             0x00001058   Number         4  pdma.o(.text.PDMA_SetTransferCnt)
+    __arm_cp.2_1                             0x0000105c   Number         4  pdma.o(.text.PDMA_SetTransferCnt)
+    [Anonymous Symbol]                       0x00001060   Section        0  pdma.o(.text.PDMA_SetTransferMode)
+    __arm_cp.4_0                             0x000011dc   Number         4  pdma.o(.text.PDMA_SetTransferMode)
+    __arm_cp.4_1                             0x000011e0   Number         4  pdma.o(.text.PDMA_SetTransferMode)
+    __arm_cp.4_2                             0x000011e4   Number         4  pdma.o(.text.PDMA_SetTransferMode)
+    [Anonymous Symbol]                       0x000011e8   Section        0  retarget.o(.text.ProcessHardFault)
+    __arm_cp.1_0                             0x0000125c   Number         4  retarget.o(.text.ProcessHardFault)
+    __arm_cp.1_1                             0x00001260   Number         4  retarget.o(.text.ProcessHardFault)
+    __arm_cp.1_2                             0x00001264   Number         4  retarget.o(.text.ProcessHardFault)
+    RGB_EffectFill                           0x00001269   Thumb Code    92  rgb_effect.o(.text.RGB_EffectFill)
+    [Anonymous Symbol]                       0x00001268   Section        0  rgb_effect.o(.text.RGB_EffectFill)
+    [Anonymous Symbol]                       0x000012c4   Section        0  rgb_effect.o(.text.RGB_EffectGetConfig)
+    [Anonymous Symbol]                       0x000012c8   Section        0  rgb_effect.o(.text.RGB_EffectInit)
+    [Anonymous Symbol]                       0x000012fc   Section        0  rgb_effect.o(.text.RGB_EffectProcess)
+    __arm_cp.7_4                             0x00001588   Number         4  rgb_effect.o(.text.RGB_EffectProcess)
+    __arm_cp.7_5                             0x0000158c   Number         4  rgb_effect.o(.text.RGB_EffectProcess)
+    RGB_EffectScale                          0x00001591   Thumb Code    32  rgb_effect.o(.text.RGB_EffectScale)
+    [Anonymous Symbol]                       0x00001590   Section        0  rgb_effect.o(.text.RGB_EffectScale)
+    [Anonymous Symbol]                       0x000015b0   Section        0  rgb_effect.o(.text.RGB_EffectSet)
+    __arm_cp.2_0                             0x00001644   Number         4  rgb_effect.o(.text.RGB_EffectSet)
+    __arm_cp.2_1                             0x00001648   Number         4  rgb_effect.o(.text.RGB_EffectSet)
+    __arm_cp.2_2                             0x0000164c   Number         4  rgb_effect.o(.text.RGB_EffectSet)
+    __arm_cp.2_4                             0x00001650   Number         4  rgb_effect.o(.text.RGB_EffectSet)
+    [Anonymous Symbol]                       0x00001654   Section        0  rgb_effect.o(.text.RGB_EffectSetConfig)
+    __arm_cp.1_0                             0x0000172c   Number         4  rgb_effect.o(.text.RGB_EffectSetConfig)
+    __arm_cp.1_1                             0x00001730   Number         4  rgb_effect.o(.text.RGB_EffectSetConfig)
+    [Anonymous Symbol]                       0x00001734   Section        0  rgb_effect.o(.text.RGB_EffectSetPixels)
+    __arm_cp.3_0                             0x0000177c   Number         4  rgb_effect.o(.text.RGB_EffectSetPixels)
+    __arm_cp.3_1                             0x00001780   Number         4  rgb_effect.o(.text.RGB_EffectSetPixels)
+    [Anonymous Symbol]                       0x00001784   Section        0  rgb_effect.o(.text.RGB_EffectStop)
+    __arm_cp.4_0                             0x000017a8   Number         4  rgb_effect.o(.text.RGB_EffectStop)
+    __arm_cp.4_1                             0x000017ac   Number         4  rgb_effect.o(.text.RGB_EffectStop)
+    [Anonymous Symbol]                       0x000017b0   Section        0  rgb_effect.o(.text.RGB_EffectTick1ms)
+    __arm_cp.6_0                             0x00001810   Number         4  rgb_effect.o(.text.RGB_EffectTick1ms)
+    __arm_cp.6_1                             0x00001814   Number         4  rgb_effect.o(.text.RGB_EffectTick1ms)
+    __arm_cp.6_2                             0x00001818   Number         4  rgb_effect.o(.text.RGB_EffectTick1ms)
+    __arm_cp.6_3                             0x0000181c   Number         4  rgb_effect.o(.text.RGB_EffectTick1ms)
+    RGB_EffectWheel                          0x00001821   Thumb Code   154  rgb_effect.o(.text.RGB_EffectWheel)
+    [Anonymous Symbol]                       0x00001820   Section        0  rgb_effect.o(.text.RGB_EffectWheel)
+    [Anonymous Symbol]                       0x000018bc   Section        0  rgb_led.o(.text.RGB_LED_Init)
+    __arm_cp.0_0                             0x0000191c   Number         4  rgb_led.o(.text.RGB_LED_Init)
+    __arm_cp.0_1                             0x00001920   Number         4  rgb_led.o(.text.RGB_LED_Init)
+    __arm_cp.0_2                             0x00001924   Number         4  rgb_led.o(.text.RGB_LED_Init)
+    __arm_cp.0_3                             0x00001928   Number         4  rgb_led.o(.text.RGB_LED_Init)
+    [Anonymous Symbol]                       0x0000192c   Section        0  rgb_led.o(.text.RGB_LED_IsBusy)
+    [Anonymous Symbol]                       0x00001934   Section        0  rgb_led.o(.text.RGB_LED_PdmaIrqHandler)
+    __arm_cp.5_0                             0x00001970   Number         4  rgb_led.o(.text.RGB_LED_PdmaIrqHandler)
+    __arm_cp.5_1                             0x00001974   Number         4  rgb_led.o(.text.RGB_LED_PdmaIrqHandler)
+    RGB_LED_Scale                            0x00001979   Thumb Code    34  rgb_led.o(.text.RGB_LED_Scale)
+    [Anonymous Symbol]                       0x00001978   Section        0  rgb_led.o(.text.RGB_LED_Scale)
+    [Anonymous Symbol]                       0x0000199c   Section        0  rgb_led.o(.text.RGB_LED_Show)
+    __arm_cp.3_0                             0x00001b34   Number         4  rgb_led.o(.text.RGB_LED_Show)
+    __arm_cp.3_1                             0x00001b38   Number         4  rgb_led.o(.text.RGB_LED_Show)
+    __arm_cp.3_2                             0x00001b3c   Number         4  rgb_led.o(.text.RGB_LED_Show)
+    __arm_cp.3_3                             0x00001b40   Number         4  rgb_led.o(.text.RGB_LED_Show)
+    __arm_cp.3_4                             0x00001b44   Number         4  rgb_led.o(.text.RGB_LED_Show)
+    [Anonymous Symbol]                       0x00001b48   Section        0  rgb_protocol.o(.text.RGB_ProtocolCrc8)
+    [Anonymous Symbol]                       0x00001bc4   Section        0  rgb_protocol.o(.text.RGB_ProtocolValidate)
+    [Anonymous Symbol]                       0x00001c1c   Section        0  retarget.o(.text.SH_Return)
+    [Anonymous Symbol]                       0x00001c2c   Section        0  spi.o(.text.SPI_Open)
+    __arm_cp.0_0                             0x00001e40   Number         4  spi.o(.text.SPI_Open)
+    __arm_cp.0_1                             0x00001e44   Number         4  spi.o(.text.SPI_Open)
+    __arm_cp.0_2                             0x00001e48   Number         4  spi.o(.text.SPI_Open)
+    __arm_cp.0_3                             0x00001e4c   Number         4  spi.o(.text.SPI_Open)
+    __arm_cp.0_4                             0x00001e50   Number         4  spi.o(.text.SPI_Open)
+    __arm_cp.0_5                             0x00001e54   Number         4  spi.o(.text.SPI_Open)
+    __arm_cp.0_6                             0x00001e58   Number         4  spi.o(.text.SPI_Open)
+    SYS_Init                                 0x00001e5d   Thumb Code   112  main.o(.text.SYS_Init)
+    [Anonymous Symbol]                       0x00001e5c   Section        0  main.o(.text.SYS_Init)
+    __arm_cp.5_0                             0x00001ecc   Number         4  main.o(.text.SYS_Init)
+    __arm_cp.5_1                             0x00001ed0   Number         4  main.o(.text.SYS_Init)
+    __arm_cp.5_2                             0x00001ed4   Number         4  main.o(.text.SYS_Init)
+    __arm_cp.5_3                             0x00001ed8   Number         4  main.o(.text.SYS_Init)
+    SYS_LockReg                              0x00001edd   Thumb Code     8  system_m031series.o(.text.SYS_LockReg)
+    [Anonymous Symbol]                       0x00001edc   Section        0  system_m031series.o(.text.SYS_LockReg)
+    SYS_LockReg                              0x00001ee5   Thumb Code     8  main.o(.text.SYS_LockReg)
+    [Anonymous Symbol]                       0x00001ee4   Section        0  main.o(.text.SYS_LockReg)
+    SYS_UnlockReg                            0x00001eed   Thumb Code    32  system_m031series.o(.text.SYS_UnlockReg)
+    [Anonymous Symbol]                       0x00001eec   Section        0  system_m031series.o(.text.SYS_UnlockReg)
+    SYS_UnlockReg                            0x00001f0d   Thumb Code    32  main.o(.text.SYS_UnlockReg)
+    [Anonymous Symbol]                       0x00001f0c   Section        0  main.o(.text.SYS_UnlockReg)
+    __arm_cp.4_0                             0x00001f2c   Number         4  main.o(.text.SYS_UnlockReg)
+    [Anonymous Symbol]                       0x00001f30   Section        0  retarget.o(.text.SendChar)
+    [Anonymous Symbol]                       0x00001f40   Section        0  retarget.o(.text.SendChar_ToUART)
+    __arm_cp.3_0                             0x00001f80   Number         4  retarget.o(.text.SendChar_ToUART)
+    __arm_cp.3_1                             0x00001f84   Number         4  retarget.o(.text.SendChar_ToUART)
+    [Anonymous Symbol]                       0x00001f88   Section        0  system_m031series.o(.text.SystemCoreClockUpdate)
+    __arm_cp.0_0                             0x00001fe8   Number         4  system_m031series.o(.text.SystemCoreClockUpdate)
+    __arm_cp.0_1                             0x00001fec   Number         4  system_m031series.o(.text.SystemCoreClockUpdate)
+    __arm_cp.0_2                             0x00001ff0   Number         4  system_m031series.o(.text.SystemCoreClockUpdate)
+    __arm_cp.0_3                             0x00001ff4   Number         4  system_m031series.o(.text.SystemCoreClockUpdate)
+    __arm_cp.0_4                             0x00001ff8   Number         4  system_m031series.o(.text.SystemCoreClockUpdate)
+    __arm_cp.0_5                             0x00001ffc   Number         4  system_m031series.o(.text.SystemCoreClockUpdate)
+    __arm_cp.0_6                             0x00002000   Number         4  system_m031series.o(.text.SystemCoreClockUpdate)
+    __arm_cp.0_7                             0x00002004   Number         4  system_m031series.o(.text.SystemCoreClockUpdate)
+    [Anonymous Symbol]                       0x00002008   Section        0  system_m031series.o(.text.SystemInit)
+    __arm_cp.2_0                             0x00002028   Number         4  system_m031series.o(.text.SystemInit)
+    TIMER_ClearIntFlag                       0x0000202d   Thumb Code    14  main.o(.text.TIMER_ClearIntFlag)
+    [Anonymous Symbol]                       0x0000202c   Section        0  main.o(.text.TIMER_ClearIntFlag)
+    TIMER_EnableInt                          0x0000203b   Thumb Code    20  main.o(.text.TIMER_EnableInt)
+    [Anonymous Symbol]                       0x0000203a   Section        0  main.o(.text.TIMER_EnableInt)
+    [Anonymous Symbol]                       0x00002050   Section        0  timer.o(.text.TIMER_GetModuleClock)
+    __arm_cp.1_0                             0x00002104   Number         4  timer.o(.text.TIMER_GetModuleClock)
+    __arm_cp.1_2                             0x00002108   Number         4  timer.o(.text.TIMER_GetModuleClock)
+    __arm_cp.1_3                             0x0000210c   Number         4  timer.o(.text.TIMER_GetModuleClock)
+    [Anonymous Symbol]                       0x00002110   Section        0  timer.o(.text.TIMER_Open)
+    TIMER_Start                              0x00002185   Thumb Code    20  main.o(.text.TIMER_Start)
+    [Anonymous Symbol]                       0x00002184   Section        0  main.o(.text.TIMER_Start)
+    [Anonymous Symbol]                       0x00002198   Section        0  main.o(.text.TMR0_IRQHandler)
+    __arm_cp.0_0                             0x000021a8   Number         4  main.o(.text.TMR0_IRQHandler)
+    [Anonymous Symbol]                       0x000021ac   Section        0  uart.o(.text.UART_Open)
+    __arm_cp.6_0                             0x000023e8   Number         4  uart.o(.text.UART_Open)
+    __arm_cp.6_1                             0x000023ec   Number         4  uart.o(.text.UART_Open)
+    __arm_cp.6_2                             0x000023f0   Number         4  uart.o(.text.UART_Open)
+    __arm_cp.6_3                             0x000023f4   Number         4  uart.o(.text.UART_Open)
+    __arm_cp.6_4                             0x000023f8   Number         4  uart.o(.text.UART_Open)
+    __arm_cp.6_5                             0x000023fc   Number         4  uart.o(.text.UART_Open)
+    __arm_cp.6_6                             0x00002400   Number         4  uart.o(.text.UART_Open)
+    __arm_cp.6_7                             0x00002404   Number         4  uart.o(.text.UART_Open)
+    __arm_cp.6_8                             0x00002408   Number         4  uart.o(.text.UART_Open)
+    __arm_cp.6_9                             0x0000240c   Number         4  uart.o(.text.UART_Open)
+    __arm_cp.6_10                            0x00002410   Number         4  uart.o(.text.UART_Open)
+    __arm_cp.6_11                            0x00002414   Number         4  uart.o(.text.UART_Open)
+    __arm_cp.6_12                            0x00002418   Number         4  uart.o(.text.UART_Open)
+    __arm_cp.6_13                            0x0000241c   Number         4  uart.o(.text.UART_Open)
+    [Anonymous Symbol]                       0x00002420   Section        0  usbd.o(.text.USBD_CtrlIn)
+    __arm_cp.11_0                            0x00002510   Number         4  usbd.o(.text.USBD_CtrlIn)
+    __arm_cp.11_2                            0x00002514   Number         4  usbd.o(.text.USBD_CtrlIn)
+    __arm_cp.11_3                            0x00002518   Number         4  usbd.o(.text.USBD_CtrlIn)
+    __arm_cp.11_4                            0x0000251c   Number         4  usbd.o(.text.USBD_CtrlIn)
+    __arm_cp.11_5                            0x00002520   Number         4  usbd.o(.text.USBD_CtrlIn)
+    __arm_cp.11_7                            0x00002524   Number         4  usbd.o(.text.USBD_CtrlIn)
+    __arm_cp.11_9                            0x00002528   Number         4  usbd.o(.text.USBD_CtrlIn)
+    [Anonymous Symbol]                       0x0000252c   Section        0  usbd.o(.text.USBD_CtrlOut)
+    __arm_cp.12_0                            0x0000258c   Number         4  usbd.o(.text.USBD_CtrlOut)
+    __arm_cp.12_1                            0x00002590   Number         4  usbd.o(.text.USBD_CtrlOut)
+    __arm_cp.12_2                            0x00002594   Number         4  usbd.o(.text.USBD_CtrlOut)
+    __arm_cp.12_3                            0x00002598   Number         4  usbd.o(.text.USBD_CtrlOut)
+    __arm_cp.12_4                            0x0000259c   Number         4  usbd.o(.text.USBD_CtrlOut)
+    __arm_cp.12_5                            0x000025a0   Number         4  usbd.o(.text.USBD_CtrlOut)
+    __arm_cp.12_6                            0x000025a4   Number         4  usbd.o(.text.USBD_CtrlOut)
+    [Anonymous Symbol]                       0x000025a8   Section        0  usbd.o(.text.USBD_GetDescriptor)
+    __arm_cp.6_3                             0x00002814   Number         4  usbd.o(.text.USBD_GetDescriptor)
+    [Anonymous Symbol]                       0x00002818   Section        0  usbd.o(.text.USBD_GetSetupPacket)
+    __arm_cp.2_0                             0x0000282c   Number         4  usbd.o(.text.USBD_GetSetupPacket)
+    USBD_GetStall                            0x00002831   Thumb Code    88  usbd.o(.text.USBD_GetStall)
+    [Anonymous Symbol]                       0x00002830   Section        0  usbd.o(.text.USBD_GetStall)
+    [Anonymous Symbol]                       0x00002888   Section        0  hid_transfer.o(.text.USBD_IRQHandler)
+    __arm_cp.0_0                             0x000029e0   Number         4  hid_transfer.o(.text.USBD_IRQHandler)
+    __arm_cp.0_2                             0x000029e4   Number         4  hid_transfer.o(.text.USBD_IRQHandler)
+    __arm_cp.0_3                             0x000029e8   Number         4  hid_transfer.o(.text.USBD_IRQHandler)
+    __arm_cp.0_4                             0x000029ec   Number         4  hid_transfer.o(.text.USBD_IRQHandler)
+    USBD_MemCopy                             0x000029f1   Thumb Code    50  usbd.o(.text.USBD_MemCopy)
+    [Anonymous Symbol]                       0x000029f0   Section        0  usbd.o(.text.USBD_MemCopy)
+    USBD_MemCopy                             0x00002a23   Thumb Code    50  hid_transfer.o(.text.USBD_MemCopy)
+    [Anonymous Symbol]                       0x00002a22   Section        0  hid_transfer.o(.text.USBD_MemCopy)
+    [Anonymous Symbol]                       0x00002a54   Section        0  usbd.o(.text.USBD_Open)
+    __arm_cp.0_0                             0x00002a90   Number         4  usbd.o(.text.USBD_Open)
+    __arm_cp.0_2                             0x00002a94   Number         4  usbd.o(.text.USBD_Open)
+    __arm_cp.0_4                             0x00002a98   Number         4  usbd.o(.text.USBD_Open)
+    __arm_cp.0_5                             0x00002a9c   Number         4  usbd.o(.text.USBD_Open)
+    [Anonymous Symbol]                       0x00002aa0   Section        0  usbd.o(.text.USBD_PrepareCtrlIn)
+    __arm_cp.7_1                             0x00002b3c   Number         4  usbd.o(.text.USBD_PrepareCtrlIn)
+    __arm_cp.7_2                             0x00002b40   Number         4  usbd.o(.text.USBD_PrepareCtrlIn)
+    __arm_cp.7_3                             0x00002b44   Number         4  usbd.o(.text.USBD_PrepareCtrlIn)
+    __arm_cp.7_4                             0x00002b48   Number         4  usbd.o(.text.USBD_PrepareCtrlIn)
+    __arm_cp.7_5                             0x00002b4c   Number         4  usbd.o(.text.USBD_PrepareCtrlIn)
+    __arm_cp.7_7                             0x00002b50   Number         4  usbd.o(.text.USBD_PrepareCtrlIn)
+    [Anonymous Symbol]                       0x00002b54   Section        0  usbd.o(.text.USBD_PrepareCtrlOut)
+    __arm_cp.8_0                             0x00002b78   Number         4  usbd.o(.text.USBD_PrepareCtrlOut)
+    __arm_cp.8_1                             0x00002b7c   Number         4  usbd.o(.text.USBD_PrepareCtrlOut)
+    __arm_cp.8_2                             0x00002b80   Number         4  usbd.o(.text.USBD_PrepareCtrlOut)
+    __arm_cp.8_3                             0x00002b84   Number         4  usbd.o(.text.USBD_PrepareCtrlOut)
+    __arm_cp.8_4                             0x00002b88   Number         4  usbd.o(.text.USBD_PrepareCtrlOut)
+    [Anonymous Symbol]                       0x00002b8c   Section        0  usbd.o(.text.USBD_ProcessSetupPacket)
+    __arm_cp.4_0                             0x00002c04   Number         4  usbd.o(.text.USBD_ProcessSetupPacket)
+    __arm_cp.4_1                             0x00002c08   Number         4  usbd.o(.text.USBD_ProcessSetupPacket)
+    __arm_cp.4_2                             0x00002c0c   Number         4  usbd.o(.text.USBD_ProcessSetupPacket)
+    __arm_cp.4_3                             0x00002c10   Number         4  usbd.o(.text.USBD_ProcessSetupPacket)
+    __arm_cp.4_4                             0x00002c14   Number         4  usbd.o(.text.USBD_ProcessSetupPacket)
+    __arm_cp.4_5                             0x00002c18   Number         4  usbd.o(.text.USBD_ProcessSetupPacket)
+    USBD_SetStall                            0x00002c1d   Thumb Code    96  usbd.o(.text.USBD_SetStall)
+    [Anonymous Symbol]                       0x00002c1c   Section        0  usbd.o(.text.USBD_SetStall)
+    USBD_SetStall                            0x00002c7d   Thumb Code    96  hid_transfer.o(.text.USBD_SetStall)
+    [Anonymous Symbol]                       0x00002c7c   Section        0  hid_transfer.o(.text.USBD_SetStall)
+    __arm_cp.6_0                             0x00002cdc   Number         4  hid_transfer.o(.text.USBD_SetStall)
+    __arm_cp.6_1                             0x00002ce0   Number         4  hid_transfer.o(.text.USBD_SetStall)
+    [Anonymous Symbol]                       0x00002ce4   Section        0  usbd.o(.text.USBD_StandardRequest)
+    __arm_cp.5_0                             0x00003030   Number         4  usbd.o(.text.USBD_StandardRequest)
+    __arm_cp.5_1                             0x00003034   Number         4  usbd.o(.text.USBD_StandardRequest)
+    __arm_cp.5_2                             0x00003038   Number         4  usbd.o(.text.USBD_StandardRequest)
+    __arm_cp.5_3                             0x0000303c   Number         4  usbd.o(.text.USBD_StandardRequest)
+    __arm_cp.5_4                             0x00003040   Number         4  usbd.o(.text.USBD_StandardRequest)
+    __arm_cp.5_5                             0x00003044   Number         4  usbd.o(.text.USBD_StandardRequest)
+    __arm_cp.5_6                             0x00003048   Number         4  usbd.o(.text.USBD_StandardRequest)
+    __arm_cp.5_7                             0x0000304c   Number         4  usbd.o(.text.USBD_StandardRequest)
+    __arm_cp.5_8                             0x00003050   Number         4  usbd.o(.text.USBD_StandardRequest)
+    __arm_cp.5_9                             0x00003054   Number         4  usbd.o(.text.USBD_StandardRequest)
+    __arm_cp.5_10                            0x00003058   Number         4  usbd.o(.text.USBD_StandardRequest)
+    __arm_cp.5_12                            0x0000305c   Number         4  usbd.o(.text.USBD_StandardRequest)
+    __arm_cp.5_13                            0x00003060   Number         4  usbd.o(.text.USBD_StandardRequest)
+    __arm_cp.5_14                            0x00003064   Number         4  usbd.o(.text.USBD_StandardRequest)
+    __arm_cp.5_15                            0x00003068   Number         4  usbd.o(.text.USBD_StandardRequest)
+    __arm_cp.5_16                            0x0000306c   Number         4  usbd.o(.text.USBD_StandardRequest)
+    __arm_cp.5_17                            0x00003070   Number         4  usbd.o(.text.USBD_StandardRequest)
+    [Anonymous Symbol]                       0x00003074   Section        0  usbd.o(.text.USBD_Start)
+    __arm_cp.1_0                             0x00003098   Number         4  usbd.o(.text.USBD_Start)
+    __arm_cp.1_1                             0x0000309c   Number         4  usbd.o(.text.USBD_Start)
+    __arm_cp.1_2                             0x000030a0   Number         4  usbd.o(.text.USBD_Start)
+    __arm_cp.1_3                             0x000030a4   Number         4  usbd.o(.text.USBD_Start)
+    [Anonymous Symbol]                       0x000030a8   Section        0  usbd.o(.text.USBD_SwReset)
+    __arm_cp.13_0                            0x00003108   Number         4  usbd.o(.text.USBD_SwReset)
+    __arm_cp.13_1                            0x0000310c   Number         4  usbd.o(.text.USBD_SwReset)
+    __arm_cp.13_2                            0x00003110   Number         4  usbd.o(.text.USBD_SwReset)
+    __arm_cp.13_3                            0x00003114   Number         4  usbd.o(.text.USBD_SwReset)
+    __arm_cp.13_4                            0x00003118   Number         4  usbd.o(.text.USBD_SwReset)
+    __arm_cp.13_5                            0x0000311c   Number         4  usbd.o(.text.USBD_SwReset)
+    __arm_cp.13_6                            0x00003120   Number         4  usbd.o(.text.USBD_SwReset)
+    __arm_cp.13_7                            0x00003124   Number         4  usbd.o(.text.USBD_SwReset)
+    __arm_cp.13_8                            0x00003128   Number         4  usbd.o(.text.USBD_SwReset)
+    __NVIC_EnableIRQ                         0x0000312d   Thumb Code    40  main.o(.text.__NVIC_EnableIRQ)
+    [Anonymous Symbol]                       0x0000312c   Section        0  main.o(.text.__NVIC_EnableIRQ)
+    __NVIC_EnableIRQ                         0x00003155   Thumb Code    40  rgb_led.o(.text.__NVIC_EnableIRQ)
+    [Anonymous Symbol]                       0x00003154   Section        0  rgb_led.o(.text.__NVIC_EnableIRQ)
+    __arm_cp.1_0                             0x0000317c   Number         4  rgb_led.o(.text.__NVIC_EnableIRQ)
+    [Anonymous Symbol]                       0x00003180   Section        0  retarget.o(.text.fputc)
+    [Anonymous Symbol]                       0x00003194   Section        0  main.o(.text.main)
+    __arm_cp.3_0                             0x00003208   Number         4  main.o(.text.main)
+    __arm_cp.3_1                             0x0000320c   Number         4  main.o(.text.main)
+    __arm_cp.3_2                             0x00003210   Number         4  main.o(.text.main)
+    __arm_cp.3_3                             0x00003214   Number         4  main.o(.text.main)
+    __arm_cp.3_4                             0x00003218   Number         4  main.o(.text.main)
+    i.__0printf                              0x0000321c   Section        0  printfa.o(i.__0printf)
+    i.__ARM_clz                              0x0000323c   Section        0  depilogue.o(i.__ARM_clz)
+    i.__scatterload_copy                     0x0000326a   Section       14  handlers.o(i.__scatterload_copy)
+    i.__scatterload_null                     0x00003278   Section        2  handlers.o(i.__scatterload_null)
+    i.__scatterload_zeroinit                 0x0000327a   Section       14  handlers.o(i.__scatterload_zeroinit)
+    _fp_digits                               0x00003289   Thumb Code   344  printfa.o(i._fp_digits)
+    i._fp_digits                             0x00003288   Section        0  printfa.o(i._fp_digits)
+    _printf_core                             0x000033fd   Thumb Code  1754  printfa.o(i._printf_core)
+    i._printf_core                           0x000033fc   Section        0  printfa.o(i._printf_core)
+    _printf_post_padding                     0x00003ae9   Thumb Code    32  printfa.o(i._printf_post_padding)
+    i._printf_post_padding                   0x00003ae8   Section        0  printfa.o(i._printf_post_padding)
+    _printf_pre_padding                      0x00003b09   Thumb Code    44  printfa.o(i._printf_pre_padding)
+    i._printf_pre_padding                    0x00003b08   Section        0  printfa.o(i._printf_pre_padding)
+    [Anonymous Symbol]                       0x00003b34   Section        0  uart.o(.rodata..L__const.UART_Open.u32ClkTbl)
+    [Anonymous Symbol]                       0x00003b4c   Section        0  timer.o(.rodata.cst32)
+    [Anonymous Symbol]                       0x00003ba8   Section        0  retarget.o(.rodata.str1.1)
+    [Anonymous Symbol]                       0x00003bb7   Section        0  main.o(.rodata.str1.1)
+    [Anonymous Symbol]                       0x00003bf0   Section        0  hid_transfer.o(.rodata.str1.1)
+    g_ICE_Connected                          0x2000000c   Data           4  retarget.o(.data.g_ICE_Connected)
+    [Anonymous Symbol]                       0x2000000c   Section        0  retarget.o(.data.g_ICE_Connected)
+    g_usbd_CtrlMaxPktSize                    0x20000010   Data           4  usbd.o(.data.g_usbd_CtrlMaxPktSize)
+    [Anonymous Symbol]                       0x20000010   Section        0  usbd.o(.data.g_usbd_CtrlMaxPktSize)
+    s_apu8Reports                            0x20000014   Data           8  descriptors.o(.data.s_apu8Reports)
+    [Anonymous Symbol]                       0x20000014   Section        0  descriptors.o(.data.s_apu8Reports)
+    s_apu8Strings                            0x2000001c   Data          16  descriptors.o(.data.s_apu8Strings)
+    [Anonymous Symbol]                       0x2000001c   Section        0  descriptors.o(.data.s_apu8Strings)
+    s_au32HidIndexes                         0x2000002c   Data           8  descriptors.o(.data.s_au32HidIndexes)
+    [Anonymous Symbol]                       0x2000002c   Section        0  descriptors.o(.data.s_au32HidIndexes)
+    s_au32ReportLengths                      0x20000034   Data           8  descriptors.o(.data.s_au32ReportLengths)
+    [Anonymous Symbol]                       0x20000034   Section        0  descriptors.o(.data.s_au32ReportLengths)
+    s_au8ConfigDescriptor                    0x2000003c   Data          41  descriptors.o(.data.s_au8ConfigDescriptor)
+    [Anonymous Symbol]                       0x2000003c   Section        0  descriptors.o(.data.s_au8ConfigDescriptor)
+    s_au8DeviceDescriptor                    0x20000065   Data          18  descriptors.o(.data.s_au8DeviceDescriptor)
+    [Anonymous Symbol]                       0x20000065   Section        0  descriptors.o(.data.s_au8DeviceDescriptor)
+    s_au8HidReportDescriptor                 0x20000077   Data          27  descriptors.o(.data.s_au8HidReportDescriptor)
+    [Anonymous Symbol]                       0x20000077   Section        0  descriptors.o(.data.s_au8HidReportDescriptor)
+    s_au8Language                            0x20000092   Data           4  descriptors.o(.data.s_au8Language)
+    [Anonymous Symbol]                       0x20000092   Section        0  descriptors.o(.data.s_au8Language)
+    s_au8Product                             0x20000096   Data          40  descriptors.o(.data.s_au8Product)
+    [Anonymous Symbol]                       0x20000096   Section        0  descriptors.o(.data.s_au8Product)
+    s_au8Serial                              0x200000be   Data          16  descriptors.o(.data.s_au8Serial)
+    [Anonymous Symbol]                       0x200000be   Section        0  descriptors.o(.data.s_au8Serial)
+    s_au8Vendor                              0x200000ce   Data          16  descriptors.o(.data.s_au8Vendor)
+    [Anonymous Symbol]                       0x200000ce   Section        0  descriptors.o(.data.s_au8Vendor)
+    g_usbd_CtrlInPointer                     0x2000013c   Data           4  usbd.o(.bss.g_usbd_CtrlInPointer)
+    [Anonymous Symbol]                       0x2000013c   Section        0  usbd.o(.bss.g_usbd_CtrlInPointer)
+    g_usbd_CtrlInSize                        0x20000140   Data           4  usbd.o(.bss.g_usbd_CtrlInSize)
+    [Anonymous Symbol]                       0x20000140   Section        0  usbd.o(.bss.g_usbd_CtrlInSize)
+    g_usbd_CtrlInZeroFlag                    0x20000144   Data           1  usbd.o(.bss.g_usbd_CtrlInZeroFlag)
+    [Anonymous Symbol]                       0x20000144   Section        0  usbd.o(.bss.g_usbd_CtrlInZeroFlag)
+    g_usbd_CtrlOutPointer                    0x20000148   Data           4  usbd.o(.bss.g_usbd_CtrlOutPointer)
+    [Anonymous Symbol]                       0x20000148   Section        0  usbd.o(.bss.g_usbd_CtrlOutPointer)
+    g_usbd_CtrlOutSize                       0x2000014c   Data           4  usbd.o(.bss.g_usbd_CtrlOutSize)
+    [Anonymous Symbol]                       0x2000014c   Section        0  usbd.o(.bss.g_usbd_CtrlOutSize)
+    g_usbd_CtrlOutSizeLimit                  0x20000150   Data           4  usbd.o(.bss.g_usbd_CtrlOutSizeLimit)
+    [Anonymous Symbol]                       0x20000150   Section        0  usbd.o(.bss.g_usbd_CtrlOutSizeLimit)
+    g_usbd_UsbAddr                           0x20000160   Data           4  usbd.o(.bss.g_usbd_UsbAddr)
+    [Anonymous Symbol]                       0x20000160   Section        0  usbd.o(.bss.g_usbd_UsbAddr)
+    g_usbd_UsbAltInterface                   0x20000164   Data           4  usbd.o(.bss.g_usbd_UsbAltInterface)
+    [Anonymous Symbol]                       0x20000164   Section        0  usbd.o(.bss.g_usbd_UsbAltInterface)
+    g_usbd_UsbConfig                         0x20000168   Data           4  usbd.o(.bss.g_usbd_UsbConfig)
+    [Anonymous Symbol]                       0x20000168   Section        0  usbd.o(.bss.g_usbd_UsbConfig)
+    s_au8Encoded                             0x20000180   Data         496  rgb_led.o(.bss.s_au8Encoded)
+    [Anonymous Symbol]                       0x20000180   Section        0  rgb_led.o(.bss.s_au8Encoded)
+    s_au8Pixels                              0x20000370   Data          30  rgb_effect.o(.bss.s_au8Pixels)
+    [Anonymous Symbol]                       0x20000370   Section        0  rgb_effect.o(.bss.s_au8Pixels)
+    s_au8Report                              0x2000038e   Data          64  hid_transfer.o(.bss.s_au8Report)
+    [Anonymous Symbol]                       0x2000038e   Section        0  hid_transfer.o(.bss.s_au8Report)
+    s_sConfig                                0x200003ce   Data           9  rgb_effect.o(.bss.s_sConfig)
+    [Anonymous Symbol]                       0x200003ce   Section        0  rgb_effect.o(.bss.s_sConfig)
+    s_u16Elapsed                             0x200003d8   Data           2  rgb_effect.o(.bss.s_u16Elapsed)
+    [Anonymous Symbol]                       0x200003d8   Section        0  rgb_effect.o(.bss.s_u16Elapsed)
+    s_u16Phase                               0x200003da   Data           2  rgb_effect.o(.bss.s_u16Phase)
+    [Anonymous Symbol]                       0x200003da   Section        0  rgb_effect.o(.bss.s_u16Phase)
+    s_u8Busy                                 0x200003dc   Data           1  rgb_led.o(.bss.s_u8Busy)
+    [Anonymous Symbol]                       0x200003dc   Section        0  rgb_led.o(.bss.s_u8Busy)
+    s_u8ClearCount                           0x200003dd   Data           1  rgb_effect.o(.bss.s_u8ClearCount)
+    [Anonymous Symbol]                       0x200003dd   Section        0  rgb_effect.o(.bss.s_u8ClearCount)
+    s_u8DirectPixels                         0x200003de   Data           1  rgb_effect.o(.bss.s_u8DirectPixels)
+    [Anonymous Symbol]                       0x200003de   Section        0  rgb_effect.o(.bss.s_u8DirectPixels)
+    s_u8FrameDue                             0x200003df   Data           1  rgb_effect.o(.bss.s_u8FrameDue)
+    [Anonymous Symbol]                       0x200003df   Section        0  rgb_effect.o(.bss.s_u8FrameDue)
+    s_u8ReportReady                          0x200003e0   Data           1  hid_transfer.o(.bss.s_u8ReportReady)
+    [Anonymous Symbol]                       0x200003e0   Section        0  hid_transfer.o(.bss.s_u8ReportReady)
+    u8ChSelect                               0x200003e1   Data           9  pdma.o(.bss.u8ChSelect)
+    [Anonymous Symbol]                       0x200003e1   Section        0  pdma.o(.bss.u8ChSelect)
+    STACK                                    0x200003f0   Section     1024  startup_m031series.o(STACK)
+
+    Global Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    BuildAttributes$$THM_ISAv3M$S$PE$A:L22$X:L11$S22$IEEE1$IW$~IW$USESV6$~STKCKD$USESV7$~SHL$OSPACE$ROPI$EBA8$MICROLIB$REQ8$PRES8$EABIv2 0x00000000   Number         0  anon$$obj.o ABSOLUTE
+    __Vectors                                0x00000000   Data           4  startup_m031series.o(RESET)
+    __cpp_initialize__aeabi_                  - Undefined Weak Reference
+    __cxa_finalize                            - Undefined Weak Reference
+    __decompress                              - Undefined Weak Reference
+    _clock_init                               - Undefined Weak Reference
+    _microlib_exit                            - Undefined Weak Reference
+    __main                                   0x000000c1   Thumb Code     0  entry.o(.ARM.Collect$$$$00000000)
+    _main_stk                                0x000000c1   Thumb Code     0  entry2.o(.ARM.Collect$$$$00000001)
+    _main_scatterload                        0x000000c5   Thumb Code     0  entry5.o(.ARM.Collect$$$$00000004)
+    __main_after_scatterload                 0x000000c9   Thumb Code     0  entry5.o(.ARM.Collect$$$$00000004)
+    _main_clock                              0x000000c9   Thumb Code     0  entry7b.o(.ARM.Collect$$$$00000008)
+    _main_cpp_init                           0x000000c9   Thumb Code     0  entry8b.o(.ARM.Collect$$$$0000000A)
+    _main_init                               0x000000c9   Thumb Code     0  entry9a.o(.ARM.Collect$$$$0000000B)
+    __rt_final_cpp                           0x000000d1   Thumb Code     0  entry10a.o(.ARM.Collect$$$$0000000D)
+    __rt_final_exit                          0x000000d1   Thumb Code     0  entry11a.o(.ARM.Collect$$$$0000000F)
+    Reset_Handler                            0x000000d5   Thumb Code    38  startup_m031series.o(.text)
+    NMI_Handler                              0x000000fb   Thumb Code     2  startup_m031series.o(.text)
+    HardFault_Handler                        0x000000fd   Thumb Code    16  startup_m031series.o(.text)
+    SVC_Handler                              0x0000010d   Thumb Code     2  startup_m031series.o(.text)
+    PendSV_Handler                           0x0000010f   Thumb Code     2  startup_m031series.o(.text)
+    SysTick_Handler                          0x00000111   Thumb Code     2  startup_m031series.o(.text)
+    ACMP01_IRQHandler                        0x00000113   Thumb Code     0  startup_m031series.o(.text)
+    ADC_IRQHandler                           0x00000113   Thumb Code     0  startup_m031series.o(.text)
+    BOD_IRQHandler                           0x00000113   Thumb Code     0  startup_m031series.o(.text)
+    BPWM0_IRQHandler                         0x00000113   Thumb Code     0  startup_m031series.o(.text)
+    BPWM1_IRQHandler                         0x00000113   Thumb Code     0  startup_m031series.o(.text)
+    CKFAIL_IRQHandler                        0x00000113   Thumb Code     0  startup_m031series.o(.text)
+    EINT024_IRQHandler                       0x00000113   Thumb Code     0  startup_m031series.o(.text)
+    EINT135_IRQHandler                       0x00000113   Thumb Code     0  startup_m031series.o(.text)
+    GPABGH_IRQHandler                        0x00000113   Thumb Code     0  startup_m031series.o(.text)
+    GPCDEF_IRQHandler                        0x00000113   Thumb Code     0  startup_m031series.o(.text)
+    I2C0_IRQHandler                          0x00000113   Thumb Code     0  startup_m031series.o(.text)
+    I2C1_IRQHandler                          0x00000113   Thumb Code     0  startup_m031series.o(.text)
+    ISP_IRQHandler                           0x00000113   Thumb Code     0  startup_m031series.o(.text)
+    PWM0_IRQHandler                          0x00000113   Thumb Code     0  startup_m031series.o(.text)
+    PWM1_IRQHandler                          0x00000113   Thumb Code     0  startup_m031series.o(.text)
+    PWRWU_IRQHandler                         0x00000113   Thumb Code     0  startup_m031series.o(.text)
+    QSPI0_IRQHandler                         0x00000113   Thumb Code     0  startup_m031series.o(.text)
+    RTC_IRQHandler                           0x00000113   Thumb Code     0  startup_m031series.o(.text)
+    SPI0_IRQHandler                          0x00000113   Thumb Code     0  startup_m031series.o(.text)
+    TMR1_IRQHandler                          0x00000113   Thumb Code     0  startup_m031series.o(.text)
+    TMR2_IRQHandler                          0x00000113   Thumb Code     0  startup_m031series.o(.text)
+    TMR3_IRQHandler                          0x00000113   Thumb Code     0  startup_m031series.o(.text)
+    UART02_IRQHandler                        0x00000113   Thumb Code     0  startup_m031series.o(.text)
+    UART13_IRQHandler                        0x00000113   Thumb Code     0  startup_m031series.o(.text)
+    UART46_IRQHandler                        0x00000113   Thumb Code     0  startup_m031series.o(.text)
+    UART57_IRQHandler                        0x00000113   Thumb Code     0  startup_m031series.o(.text)
+    USCI01_IRQHandler                        0x00000113   Thumb Code     0  startup_m031series.o(.text)
+    WDT_IRQHandler                           0x00000113   Thumb Code     0  startup_m031series.o(.text)
+    SH_DoCommand                             0x00000115   Thumb Code    10  startup_m031series.o(.text)
+    __PC                                     0x0000011f   Thumb Code     6  startup_m031series.o(.text)
+    __aeabi_memcpy                           0x00000155   Thumb Code    36  memcpya.o(.text)
+    __aeabi_memcpy4                          0x00000155   Thumb Code     0  memcpya.o(.text)
+    __aeabi_memcpy8                          0x00000155   Thumb Code     0  memcpya.o(.text)
+    __aeabi_memset                           0x00000179   Thumb Code    14  memseta.o(.text)
+    __aeabi_memset4                          0x00000179   Thumb Code     0  memseta.o(.text)
+    __aeabi_memset8                          0x00000179   Thumb Code     0  memseta.o(.text)
+    __aeabi_memclr                           0x00000187   Thumb Code     4  memseta.o(.text)
+    __aeabi_memclr4                          0x00000187   Thumb Code     0  memseta.o(.text)
+    __aeabi_memclr8                          0x00000187   Thumb Code     0  memseta.o(.text)
+    _memset$wrapper                          0x0000018b   Thumb Code    18  memseta.o(.text)
+    __aeabi_uidiv                            0x0000019d   Thumb Code     0  uidiv_div0.o(.text)
+    __aeabi_uidivmod                         0x0000019d   Thumb Code    62  uidiv_div0.o(.text)
+    __aeabi_uldivmod                         0x000001db   Thumb Code    96  uldiv.o(.text)
+    __I$use$fp                               0x0000023b   Thumb Code     0  iusefp.o(.text)
+    __aeabi_dadd                             0x0000023d   Thumb Code   328  dadd.o(.text)
+    __aeabi_dsub                             0x00000385   Thumb Code    12  dadd.o(.text)
+    __aeabi_drsub                            0x00000391   Thumb Code    12  dadd.o(.text)
+    __aeabi_dmul                             0x000003a1   Thumb Code   202  dmul.o(.text)
+    __aeabi_ddiv                             0x00000471   Thumb Code   234  ddiv.o(.text)
+    __aeabi_d2ulz                            0x00000561   Thumb Code    54  dfixul.o(.text)
+    __aeabi_cdrcmple                         0x000005a1   Thumb Code    38  cdrcmple.o(.text)
+    __scatterload                            0x000005c9   Thumb Code    38  init.o(.text)
+    __scatterload_rt2                        0x000005c9   Thumb Code     0  init.o(.text)
+    __aeabi_llsl                             0x000005f9   Thumb Code    32  llshl.o(.text)
+    _ll_shift_l                              0x000005f9   Thumb Code     0  llshl.o(.text)
+    __aeabi_llsr                             0x00000619   Thumb Code    34  llushr.o(.text)
+    _ll_ushift_r                             0x00000619   Thumb Code     0  llushr.o(.text)
+    __aeabi_lasr                             0x0000063b   Thumb Code    38  llsshr.o(.text)
+    _ll_sshift_r                             0x0000063b   Thumb Code     0  llsshr.o(.text)
+    _double_round                            0x00000661   Thumb Code    26  depilogue.o(.text)
+    _double_epilogue                         0x0000067b   Thumb Code   164  depilogue.o(.text)
+    CLK_EnableModuleClock                    0x00000721   Thumb Code    48  clk.o(.text.CLK_EnableModuleClock)
+    CLK_EnableXtalRC                         0x00000755   Thumb Code    20  clk.o(.text.CLK_EnableXtalRC)
+    CLK_GetHCLKFreq                          0x00000769   Thumb Code    12  clk.o(.text.CLK_GetHCLKFreq)
+    CLK_GetPCLK0Freq                         0x00000775   Thumb Code    32  clk.o(.text.CLK_GetPCLK0Freq)
+    CLK_GetPCLK1Freq                         0x00000795   Thumb Code    32  clk.o(.text.CLK_GetPCLK1Freq)
+    CLK_SetHCLK                              0x0000097d   Thumb Code    96  clk.o(.text.CLK_SetHCLK)
+    CLK_SetModuleClock                       0x000009e1   Thumb Code   160  clk.o(.text.CLK_SetModuleClock)
+    CLK_WaitClockReady                       0x00000a89   Thumb Code    84  clk.o(.text.CLK_WaitClockReady)
+    EP2_Handler                              0x00000af1   Thumb Code     2  hid_transfer.o(.text.EP2_Handler)
+    EP3_Handler                              0x00000af5   Thumb Code    64  hid_transfer.o(.text.EP3_Handler)
+    HID_ClassRequest                         0x00000b39   Thumb Code   120  hid_transfer.o(.text.HID_ClassRequest)
+    HID_Init                                 0x00000c29   Thumb Code    64  hid_transfer.o(.text.HID_Init)
+    HID_Process                              0x00000c91   Thumb Code   544  hid_transfer.o(.text.HID_Process)
+    PDMA_EnableInt                           0x00000ee9   Thumb Code   104  pdma.o(.text.PDMA_EnableInt)
+    PDMA_IRQHandler                          0x00000f51   Thumb Code     8  main.o(.text.PDMA_IRQHandler)
+    PDMA_Open                                0x00000f59   Thumb Code    80  pdma.o(.text.PDMA_Open)
+    PDMA_SetBurstType                        0x00000fa9   Thumb Code    46  pdma.o(.text.PDMA_SetBurstType)
+    PDMA_SetTransferAddr                     0x00000fd7   Thumb Code    78  pdma.o(.text.PDMA_SetTransferAddr)
+    PDMA_SetTransferCnt                      0x00001025   Thumb Code    52  pdma.o(.text.PDMA_SetTransferCnt)
+    PDMA_SetTransferMode                     0x00001061   Thumb Code   380  pdma.o(.text.PDMA_SetTransferMode)
+    ProcessHardFault                         0x000011e9   Thumb Code   116  retarget.o(.text.ProcessHardFault)
+    RGB_EffectGetConfig                      0x000012c5   Thumb Code     4  rgb_effect.o(.text.RGB_EffectGetConfig)
+    RGB_EffectInit                           0x000012c9   Thumb Code    52  rgb_effect.o(.text.RGB_EffectInit)
+    RGB_EffectProcess                        0x000012fd   Thumb Code   652  rgb_effect.o(.text.RGB_EffectProcess)
+    RGB_EffectSet                            0x000015b1   Thumb Code   148  rgb_effect.o(.text.RGB_EffectSet)
+    RGB_EffectSetConfig                      0x00001655   Thumb Code   216  rgb_effect.o(.text.RGB_EffectSetConfig)
+    RGB_EffectSetPixels                      0x00001735   Thumb Code    72  rgb_effect.o(.text.RGB_EffectSetPixels)
+    RGB_EffectStop                           0x00001785   Thumb Code    36  rgb_effect.o(.text.RGB_EffectStop)
+    RGB_EffectTick1ms                        0x000017b1   Thumb Code    96  rgb_effect.o(.text.RGB_EffectTick1ms)
+    RGB_LED_Init                             0x000018bd   Thumb Code    96  rgb_led.o(.text.RGB_LED_Init)
+    RGB_LED_IsBusy                           0x0000192d   Thumb Code     8  rgb_led.o(.text.RGB_LED_IsBusy)
+    RGB_LED_PdmaIrqHandler                   0x00001935   Thumb Code    60  rgb_led.o(.text.RGB_LED_PdmaIrqHandler)
+    RGB_LED_Show                             0x0000199d   Thumb Code   408  rgb_led.o(.text.RGB_LED_Show)
+    RGB_ProtocolCrc8                         0x00001b49   Thumb Code   124  rgb_protocol.o(.text.RGB_ProtocolCrc8)
+    RGB_ProtocolValidate                     0x00001bc5   Thumb Code    88  rgb_protocol.o(.text.RGB_ProtocolValidate)
+    SH_Return                                0x00001c1d   Thumb Code    14  retarget.o(.text.SH_Return)
+    SPI_Open                                 0x00001c2d   Thumb Code   532  spi.o(.text.SPI_Open)
+    SendChar                                 0x00001f31   Thumb Code    16  retarget.o(.text.SendChar)
+    SendChar_ToUART                          0x00001f41   Thumb Code    64  retarget.o(.text.SendChar_ToUART)
+    SystemCoreClockUpdate                    0x00001f89   Thumb Code    96  system_m031series.o(.text.SystemCoreClockUpdate)
+    SystemInit                               0x00002009   Thumb Code    32  system_m031series.o(.text.SystemInit)
+    TIMER_GetModuleClock                     0x00002051   Thumb Code   180  timer.o(.text.TIMER_GetModuleClock)
+    TIMER_Open                               0x00002111   Thumb Code   116  timer.o(.text.TIMER_Open)
+    TMR0_IRQHandler                          0x00002199   Thumb Code    16  main.o(.text.TMR0_IRQHandler)
+    UART_Open                                0x000021ad   Thumb Code   572  uart.o(.text.UART_Open)
+    USBD_CtrlIn                              0x00002421   Thumb Code   240  usbd.o(.text.USBD_CtrlIn)
+    USBD_CtrlOut                             0x0000252d   Thumb Code    96  usbd.o(.text.USBD_CtrlOut)
+    USBD_GetDescriptor                       0x000025a9   Thumb Code   620  usbd.o(.text.USBD_GetDescriptor)
+    USBD_GetSetupPacket                      0x00002819   Thumb Code    20  usbd.o(.text.USBD_GetSetupPacket)
+    USBD_IRQHandler                          0x00002889   Thumb Code   344  hid_transfer.o(.text.USBD_IRQHandler)
+    USBD_Open                                0x00002a55   Thumb Code    60  usbd.o(.text.USBD_Open)
+    USBD_PrepareCtrlIn                       0x00002aa1   Thumb Code   156  usbd.o(.text.USBD_PrepareCtrlIn)
+    USBD_PrepareCtrlOut                      0x00002b55   Thumb Code    36  usbd.o(.text.USBD_PrepareCtrlOut)
+    USBD_ProcessSetupPacket                  0x00002b8d   Thumb Code   120  usbd.o(.text.USBD_ProcessSetupPacket)
+    USBD_StandardRequest                     0x00002ce5   Thumb Code   844  usbd.o(.text.USBD_StandardRequest)
+    USBD_Start                               0x00003075   Thumb Code    36  usbd.o(.text.USBD_Start)
+    USBD_SwReset                             0x000030a9   Thumb Code    96  usbd.o(.text.USBD_SwReset)
+    fputc                                    0x00003181   Thumb Code    20  retarget.o(.text.fputc)
+    main                                     0x00003195   Thumb Code   116  main.o(.text.main)
+    __0printf                                0x0000321d   Thumb Code    24  printfa.o(i.__0printf)
+    __1printf                                0x0000321d   Thumb Code     0  printfa.o(i.__0printf)
+    __2printf                                0x0000321d   Thumb Code     0  printfa.o(i.__0printf)
+    __c89printf                              0x0000321d   Thumb Code     0  printfa.o(i.__0printf)
+    printf                                   0x0000321d   Thumb Code     0  printfa.o(i.__0printf)
+    __ARM_clz                                0x0000323d   Thumb Code    46  depilogue.o(i.__ARM_clz)
+    __scatterload_copy                       0x0000326b   Thumb Code    14  handlers.o(i.__scatterload_copy)
+    __scatterload_null                       0x00003279   Thumb Code     2  handlers.o(i.__scatterload_null)
+    __scatterload_zeroinit                   0x0000327b   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
+    gau32ClkSrcTbl                           0x00003b6c   Data          32  system_m031series.o(.rodata.gau32ClkSrcTbl)
+    gsInfo                                   0x00003b8c   Data          28  descriptors.o(.rodata.gsInfo)
+    Region$$Table$$Base                      0x00003da4   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x00003dc4   Number         0  anon$$obj.o(Region$$Table)
+    CyclesPerUs                              0x20000000   Data           4  system_m031series.o(.data.CyclesPerUs)
+    PllClock                                 0x20000004   Data           4  system_m031series.o(.data.PllClock)
+    SystemCoreClock                          0x20000008   Data           4  system_m031series.o(.data.SystemCoreClock)
+    __stdout                                 0x200000e0   Data          84  retarget.o(.bss.__stdout)
+    g_CLK_i32ErrCode                         0x20000134   Data           4  clk.o(.bss.g_CLK_i32ErrCode)
+    g_u32EpStallLock                         0x20000138   Data           4  usbd.o(.bss.g_u32EpStallLock)
+    g_usbd_RemoteWakeupEn                    0x20000154   Data           1  usbd.o(.bss.g_usbd_RemoteWakeupEn)
+    g_usbd_SetupPacket                       0x20000155   Data           8  usbd.o(.bss.g_usbd_SetupPacket)
+    g_usbd_pfnClassRequest                   0x2000016c   Data           4  usbd.o(.bss.g_usbd_pfnClassRequest)
+    g_usbd_pfnSetConfigCallback              0x20000170   Data           4  usbd.o(.bss.g_usbd_pfnSetConfigCallback)
+    g_usbd_pfnSetInterface                   0x20000174   Data           4  usbd.o(.bss.g_usbd_pfnSetInterface)
+    g_usbd_pfnVendorRequest                  0x20000178   Data           4  usbd.o(.bss.g_usbd_pfnVendorRequest)
+    g_usbd_sInfo                             0x2000017c   Data           4  usbd.o(.bss.g_usbd_sInfo)
+    __initial_sp                             0x200007f0   Data           0  startup_m031series.o(STACK)
+
+
+
+==============================================================================
+
+Memory Map of the image
+
+  Image Entry point : 0x000000d5
+
+  Load Region LR_1 (Base: 0x00000000, Size: 0x00003ea4, Max: 0xffffffff, ABSOLUTE)
+
+    Execution Region ER_RO (Exec base: 0x00000000, Load base: 0x00000000, Size: 0x00003dc4, Max: 0xffffffff, ABSOLUTE)
+
+    Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x00000000   0x00000000   0x000000c0   Data   RO           25    RESET               startup_m031series.o
+    0x000000c0   0x000000c0   0x00000000   Code   RO          531  * .ARM.Collect$$$$00000000  mc_p.l(entry.o)
+    0x000000c0   0x000000c0   0x00000004   Code   RO          570    .ARM.Collect$$$$00000001  mc_p.l(entry2.o)
+    0x000000c4   0x000000c4   0x00000004   Code   RO          573    .ARM.Collect$$$$00000004  mc_p.l(entry5.o)
+    0x000000c8   0x000000c8   0x00000000   Code   RO          575    .ARM.Collect$$$$00000008  mc_p.l(entry7b.o)
+    0x000000c8   0x000000c8   0x00000000   Code   RO          577    .ARM.Collect$$$$0000000A  mc_p.l(entry8b.o)
+    0x000000c8   0x000000c8   0x00000008   Code   RO          578    .ARM.Collect$$$$0000000B  mc_p.l(entry9a.o)
+    0x000000d0   0x000000d0   0x00000000   Code   RO          580    .ARM.Collect$$$$0000000D  mc_p.l(entry10a.o)
+    0x000000d0   0x000000d0   0x00000000   Code   RO          582    .ARM.Collect$$$$0000000F  mc_p.l(entry11a.o)
+    0x000000d0   0x000000d0   0x00000004   Code   RO          571    .ARM.Collect$$$$00002712  mc_p.l(entry2.o)
+    0x000000d4   0x000000d4   0x00000080   Code   RO           26  * .text               startup_m031series.o
+    0x00000154   0x00000154   0x00000024   Code   RO          536    .text               mc_p.l(memcpya.o)
+    0x00000178   0x00000178   0x00000024   Code   RO          538    .text               mc_p.l(memseta.o)
+    0x0000019c   0x0000019c   0x0000003e   Code   RO          586    .text               mc_p.l(uidiv_div0.o)
+    0x000001da   0x000001da   0x00000060   Code   RO          592    .text               mc_p.l(uldiv.o)
+    0x0000023a   0x0000023a   0x00000000   Code   RO          594    .text               mc_p.l(iusefp.o)
+    0x0000023a   0x0000023a   0x00000002   PAD
+    0x0000023c   0x0000023c   0x00000164   Code   RO          595    .text               mf_p.l(dadd.o)
+    0x000003a0   0x000003a0   0x000000d0   Code   RO          597    .text               mf_p.l(dmul.o)
+    0x00000470   0x00000470   0x000000f0   Code   RO          599    .text               mf_p.l(ddiv.o)
+    0x00000560   0x00000560   0x00000040   Code   RO          601    .text               mf_p.l(dfixul.o)
+    0x000005a0   0x000005a0   0x00000028   Code   RO          603    .text               mf_p.l(cdrcmple.o)
+    0x000005c8   0x000005c8   0x00000030   Code   RO          605    .text               mc_p.l(init.o)
+    0x000005f8   0x000005f8   0x00000020   Code   RO          607    .text               mc_p.l(llshl.o)
+    0x00000618   0x00000618   0x00000022   Code   RO          609    .text               mc_p.l(llushr.o)
+    0x0000063a   0x0000063a   0x00000026   Code   RO          611    .text               mc_p.l(llsshr.o)
+    0x00000660   0x00000660   0x000000be   Code   RO          613    .text               mf_p.l(depilogue.o)
+    0x0000071e   0x0000071e   0x00000002   PAD
+    0x00000720   0x00000720   0x00000034   Code   RO           69    .text.CLK_EnableModuleClock  clk.o
+    0x00000754   0x00000754   0x00000014   Code   RO           65    .text.CLK_EnableXtalRC  clk.o
+    0x00000768   0x00000768   0x0000000c   Code   RO           49    .text.CLK_GetHCLKFreq  clk.o
+    0x00000774   0x00000774   0x00000020   Code   RO           45    .text.CLK_GetPCLK0Freq  clk.o
+    0x00000794   0x00000794   0x00000024   Code   RO           47    .text.CLK_GetPCLK1Freq  clk.o
+    0x000007b8   0x000007b8   0x00000090   Code   RO            4    .text.CLK_GetPLLClockFreq  system_m031series.o
+    0x00000848   0x00000848   0x00000090   Code   RO          175    .text.CLK_GetPLLClockFreq  spi.o
+    0x000008d8   0x000008d8   0x000000a4   Code   RO          304    .text.CLK_GetPLLClockFreq  uart.o
+    0x0000097c   0x0000097c   0x00000064   Code   RO           59    .text.CLK_SetHCLK   clk.o
+    0x000009e0   0x000009e0   0x000000a8   Code   RO           61    .text.CLK_SetModuleClock  clk.o
+    0x00000a88   0x00000a88   0x00000060   Code   RO           55    .text.CLK_WaitClockReady  clk.o
+    0x00000ae8   0x00000ae8   0x00000008   Code   RO          142    .text.DumpStack     retarget.o
+    0x00000af0   0x00000af0   0x00000002   Code   RO          489    .text.EP2_Handler   hid_transfer.o
+    0x00000af2   0x00000af2   0x00000002   PAD
+    0x00000af4   0x00000af4   0x00000044   Code   RO          491    .text.EP3_Handler   hid_transfer.o
+    0x00000b38   0x00000b38   0x0000007c   Code   RO          497    .text.HID_ClassRequest  hid_transfer.o
+    0x00000bb4   0x00000bb4   0x00000074   Code   RO          503    .text.HID_EffectName  hid_transfer.o
+    0x00000c28   0x00000c28   0x00000068   Code   RO          495    .text.HID_Init      hid_transfer.o
+    0x00000c90   0x00000c90   0x00000258   Code   RO          501    .text.HID_Process   hid_transfer.o
+    0x00000ee8   0x00000ee8   0x00000068   Code   RO          126    .text.PDMA_EnableInt  pdma.o
+    0x00000f50   0x00000f50   0x00000008   Code   RO          394    .text.PDMA_IRQHandler  main.o
+    0x00000f58   0x00000f58   0x00000050   Code   RO          106    .text.PDMA_Open     pdma.o
+    0x00000fa8   0x00000fa8   0x0000002e   Code   RO          116    .text.PDMA_SetBurstType  pdma.o
+    0x00000fd6   0x00000fd6   0x0000004e   Code   RO          112    .text.PDMA_SetTransferAddr  pdma.o
+    0x00001024   0x00001024   0x0000003c   Code   RO          110    .text.PDMA_SetTransferCnt  pdma.o
+    0x00001060   0x00001060   0x00000188   Code   RO          114    .text.PDMA_SetTransferMode  pdma.o
+    0x000011e8   0x000011e8   0x00000080   Code   RO          140    .text.ProcessHardFault  retarget.o
+    0x00001268   0x00001268   0x0000005c   Code   RO          461    .text.RGB_EffectFill  rgb_effect.o
+    0x000012c4   0x000012c4   0x00000004   Code   RO          471    .text.RGB_EffectGetConfig  rgb_effect.o
+    0x000012c8   0x000012c8   0x00000034   Code   RO          451    .text.RGB_EffectInit  rgb_effect.o
+    0x000012fc   0x000012fc   0x00000294   Code   RO          465    .text.RGB_EffectProcess  rgb_effect.o
+    0x00001590   0x00001590   0x00000020   Code   RO          467    .text.RGB_EffectScale  rgb_effect.o
+    0x000015b0   0x000015b0   0x000000a4   Code   RO          455    .text.RGB_EffectSet  rgb_effect.o
+    0x00001654   0x00001654   0x000000e0   Code   RO          453    .text.RGB_EffectSetConfig  rgb_effect.o
+    0x00001734   0x00001734   0x00000050   Code   RO          457    .text.RGB_EffectSetPixels  rgb_effect.o
+    0x00001784   0x00001784   0x0000002c   Code   RO          459    .text.RGB_EffectStop  rgb_effect.o
+    0x000017b0   0x000017b0   0x00000070   Code   RO          463    .text.RGB_EffectTick1ms  rgb_effect.o
+    0x00001820   0x00001820   0x0000009a   Code   RO          469    .text.RGB_EffectWheel  rgb_effect.o
+    0x000018ba   0x000018ba   0x00000002   PAD
+    0x000018bc   0x000018bc   0x00000070   Code   RO          430    .text.RGB_LED_Init  rgb_led.o
+    0x0000192c   0x0000192c   0x00000008   Code   RO          434    .text.RGB_LED_IsBusy  rgb_led.o
+    0x00001934   0x00001934   0x00000044   Code   RO          440    .text.RGB_LED_PdmaIrqHandler  rgb_led.o
+    0x00001978   0x00001978   0x00000022   Code   RO          438    .text.RGB_LED_Scale  rgb_led.o
+    0x0000199a   0x0000199a   0x00000002   PAD
+    0x0000199c   0x0000199c   0x000001ac   Code   RO          436    .text.RGB_LED_Show  rgb_led.o
+    0x00001b48   0x00001b48   0x0000007c   Code   RO          419    .text.RGB_ProtocolCrc8  rgb_protocol.o
+    0x00001bc4   0x00001bc4   0x00000058   Code   RO          421    .text.RGB_ProtocolValidate  rgb_protocol.o
+    0x00001c1c   0x00001c1c   0x0000000e   Code   RO          138    .text.SH_Return     retarget.o
+    0x00001c2a   0x00001c2a   0x00000002   PAD
+    0x00001c2c   0x00001c2c   0x00000230   Code   RO          173    .text.SPI_Open      spi.o
+    0x00001e5c   0x00001e5c   0x00000080   Code   RO          400    .text.SYS_Init      main.o
+    0x00001edc   0x00001edc   0x00000008   Code   RO           10    .text.SYS_LockReg   system_m031series.o
+    0x00001ee4   0x00001ee4   0x00000008   Code   RO          408    .text.SYS_LockReg   main.o
+    0x00001eec   0x00001eec   0x00000020   Code   RO            8    .text.SYS_UnlockReg  system_m031series.o
+    0x00001f0c   0x00001f0c   0x00000024   Code   RO          398    .text.SYS_UnlockReg  main.o
+    0x00001f30   0x00001f30   0x00000010   Code   RO          146    .text.SendChar      retarget.o
+    0x00001f40   0x00001f40   0x00000048   Code   RO          144    .text.SendChar_ToUART  retarget.o
+    0x00001f88   0x00001f88   0x00000080   Code   RO            2    .text.SystemCoreClockUpdate  system_m031series.o
+    0x00002008   0x00002008   0x00000024   Code   RO            6    .text.SystemInit    system_m031series.o
+    0x0000202c   0x0000202c   0x0000000e   Code   RO          392    .text.TIMER_ClearIntFlag  main.o
+    0x0000203a   0x0000203a   0x00000014   Code   RO          402    .text.TIMER_EnableInt  main.o
+    0x0000204e   0x0000204e   0x00000002   PAD
+    0x00002050   0x00002050   0x000000c0   Code   RO          256    .text.TIMER_GetModuleClock  timer.o
+    0x00002110   0x00002110   0x00000074   Code   RO          254    .text.TIMER_Open    timer.o
+    0x00002184   0x00002184   0x00000014   Code   RO          406    .text.TIMER_Start   main.o
+    0x00002198   0x00002198   0x00000014   Code   RO          390    .text.TMR0_IRQHandler  main.o
+    0x000021ac   0x000021ac   0x00000274   Code   RO          302    .text.UART_Open     uart.o
+    0x00002420   0x00002420   0x0000010c   Code   RO          353    .text.USBD_CtrlIn   usbd.o
+    0x0000252c   0x0000252c   0x0000007c   Code   RO          355    .text.USBD_CtrlOut  usbd.o
+    0x000025a8   0x000025a8   0x00000270   Code   RO          343    .text.USBD_GetDescriptor  usbd.o
+    0x00002818   0x00002818   0x00000018   Code   RO          335    .text.USBD_GetSetupPacket  usbd.o
+    0x00002830   0x00002830   0x00000058   Code   RO          349    .text.USBD_GetStall  usbd.o
+    0x00002888   0x00002888   0x00000168   Code   RO          487    .text.USBD_IRQHandler  hid_transfer.o
+    0x000029f0   0x000029f0   0x00000032   Code   RO          337    .text.USBD_MemCopy  usbd.o
+    0x00002a22   0x00002a22   0x00000032   Code   RO          493    .text.USBD_MemCopy  hid_transfer.o
+    0x00002a54   0x00002a54   0x0000004c   Code   RO          331    .text.USBD_Open     usbd.o
+    0x00002aa0   0x00002aa0   0x000000b4   Code   RO          345    .text.USBD_PrepareCtrlIn  usbd.o
+    0x00002b54   0x00002b54   0x00000038   Code   RO          347    .text.USBD_PrepareCtrlOut  usbd.o
+    0x00002b8c   0x00002b8c   0x00000090   Code   RO          339    .text.USBD_ProcessSetupPacket  usbd.o
+    0x00002c1c   0x00002c1c   0x00000060   Code   RO          351    .text.USBD_SetStall  usbd.o
+    0x00002c7c   0x00002c7c   0x00000068   Code   RO          499    .text.USBD_SetStall  hid_transfer.o
+    0x00002ce4   0x00002ce4   0x00000390   Code   RO          341    .text.USBD_StandardRequest  usbd.o
+    0x00003074   0x00003074   0x00000034   Code   RO          333    .text.USBD_Start    usbd.o
+    0x000030a8   0x000030a8   0x00000084   Code   RO          357    .text.USBD_SwReset  usbd.o
+    0x0000312c   0x0000312c   0x00000028   Code   RO          404    .text.__NVIC_EnableIRQ  main.o
+    0x00003154   0x00003154   0x0000002c   Code   RO          432    .text.__NVIC_EnableIRQ  rgb_led.o
+    0x00003180   0x00003180   0x00000014   Code   RO          156    .text.fputc         retarget.o
+    0x00003194   0x00003194   0x00000088   Code   RO          396    .text.main          main.o
+    0x0000321c   0x0000321c   0x00000020   Code   RO          543    i.__0printf         mc_p.l(printfa.o)
+    0x0000323c   0x0000323c   0x0000002e   Code   RO          615    i.__ARM_clz         mf_p.l(depilogue.o)
+    0x0000326a   0x0000326a   0x0000000e   Code   RO          619    i.__scatterload_copy  mc_p.l(handlers.o)
+    0x00003278   0x00003278   0x00000002   Code   RO          620    i.__scatterload_null  mc_p.l(handlers.o)
+    0x0000327a   0x0000327a   0x0000000e   Code   RO          621    i.__scatterload_zeroinit  mc_p.l(handlers.o)
+    0x00003288   0x00003288   0x00000174   Code   RO          550    i._fp_digits        mc_p.l(printfa.o)
+    0x000033fc   0x000033fc   0x000006ec   Code   RO          551    i._printf_core      mc_p.l(printfa.o)
+    0x00003ae8   0x00003ae8   0x00000020   Code   RO          552    i._printf_post_padding  mc_p.l(printfa.o)
+    0x00003b08   0x00003b08   0x0000002c   Code   RO          553    i._printf_pre_padding  mc_p.l(printfa.o)
+    0x00003b34   0x00003b34   0x00000018   Data   RO          320    .rodata..L__const.UART_Open.u32ClkTbl  uart.o
+    0x00003b4c   0x00003b4c   0x00000020   Data   RO          282    .rodata.cst32       timer.o
+    0x00003b6c   0x00003b6c   0x00000020   Data   RO           15    .rodata.gau32ClkSrcTbl  system_m031series.o
+    0x00003b8c   0x00003b8c   0x0000001c   Data   RO          521    .rodata.gsInfo      descriptors.o
+    0x00003ba8   0x00003ba8   0x0000000f   Data   RO          163    .rodata.str1.1      retarget.o
+    0x00003bb7   0x00003bb7   0x00000039   Data   RO          410    .rodata.str1.1      main.o
+    0x00003bf0   0x00003bf0   0x000001b4   Data   RO          507    .rodata.str1.1      hid_transfer.o
+    0x00003da4   0x00003da4   0x00000020   Data   RO          618    Region$$Table       anon$$obj.o
+
+
+    Execution Region ER_RW (Exec base: 0x20000000, Load base: 0x00003dc4, Size: 0x000000e0, Max: 0xffffffff, ABSOLUTE)
+
+    Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x20000000   0x00003dc4   0x00000004   Data   RW           13    .data.CyclesPerUs   system_m031series.o
+    0x20000004   0x00003dc8   0x00000004   Data   RW           14    .data.PllClock      system_m031series.o
+    0x20000008   0x00003dcc   0x00000004   Data   RW           12    .data.SystemCoreClock  system_m031series.o
+    0x2000000c   0x00003dd0   0x00000004   Data   RW          162    .data.g_ICE_Connected  retarget.o
+    0x20000010   0x00003dd4   0x00000004   Data   RW          373    .data.g_usbd_CtrlMaxPktSize  usbd.o
+    0x20000014   0x00003dd8   0x00000008   Data   RW          518    .data.s_apu8Reports  descriptors.o
+    0x2000001c   0x00003de0   0x00000010   Data   RW          517    .data.s_apu8Strings  descriptors.o
+    0x2000002c   0x00003df0   0x00000008   Data   RW          520    .data.s_au32HidIndexes  descriptors.o
+    0x20000034   0x00003df8   0x00000008   Data   RW          519    .data.s_au32ReportLengths  descriptors.o
+    0x2000003c   0x00003e00   0x00000029   Data   RW          516    .data.s_au8ConfigDescriptor  descriptors.o
+    0x20000065   0x00003e29   0x00000012   Data   RW          515    .data.s_au8DeviceDescriptor  descriptors.o
+    0x20000077   0x00003e3b   0x0000001b   Data   RW          526    .data.s_au8HidReportDescriptor  descriptors.o
+    0x20000092   0x00003e56   0x00000004   Data   RW          522    .data.s_au8Language  descriptors.o
+    0x20000096   0x00003e5a   0x00000028   Data   RW          524    .data.s_au8Product  descriptors.o
+    0x200000be   0x00003e82   0x00000010   Data   RW          525    .data.s_au8Serial   descriptors.o
+    0x200000ce   0x00003e92   0x00000010   Data   RW          523    .data.s_au8Vendor   descriptors.o
+
+
+    Execution Region ER_ZI (Exec base: 0x200000e0, Load base: 0x00003ea4, Size: 0x00000710, Max: 0xffffffff, ABSOLUTE)
+
+    Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x200000e0        -       0x00000054   Zero   RW          164    .bss.__stdout       retarget.o
+    0x20000134        -       0x00000004   Zero   RW           81    .bss.g_CLK_i32ErrCode  clk.o
+    0x20000138        -       0x00000004   Zero   RW          371    .bss.g_u32EpStallLock  usbd.o
+    0x2000013c        -       0x00000004   Zero   RW          374    .bss.g_usbd_CtrlInPointer  usbd.o
+    0x20000140        -       0x00000004   Zero   RW          375    .bss.g_usbd_CtrlInSize  usbd.o
+    0x20000144        -       0x00000001   Zero   RW          379    .bss.g_usbd_CtrlInZeroFlag  usbd.o
+    0x20000145   0x00003ea4   0x00000003   PAD
+    0x20000148        -       0x00000004   Zero   RW          380    .bss.g_usbd_CtrlOutPointer  usbd.o
+    0x2000014c        -       0x00000004   Zero   RW          381    .bss.g_usbd_CtrlOutSize  usbd.o
+    0x20000150        -       0x00000004   Zero   RW          382    .bss.g_usbd_CtrlOutSizeLimit  usbd.o
+    0x20000154        -       0x00000001   Zero   RW          366    .bss.g_usbd_RemoteWakeupEn  usbd.o
+    0x20000155        -       0x00000008   Zero   RW          365    .bss.g_usbd_SetupPacket  usbd.o
+    0x2000015d   0x00003ea4   0x00000003   PAD
+    0x20000160        -       0x00000004   Zero   RW          378    .bss.g_usbd_UsbAddr  usbd.o
+    0x20000164        -       0x00000004   Zero   RW          377    .bss.g_usbd_UsbAltInterface  usbd.o
+    0x20000168        -       0x00000004   Zero   RW          376    .bss.g_usbd_UsbConfig  usbd.o
+    0x2000016c        -       0x00000004   Zero   RW          368    .bss.g_usbd_pfnClassRequest  usbd.o
+    0x20000170        -       0x00000004   Zero   RW          370    .bss.g_usbd_pfnSetConfigCallback  usbd.o
+    0x20000174        -       0x00000004   Zero   RW          369    .bss.g_usbd_pfnSetInterface  usbd.o
+    0x20000178        -       0x00000004   Zero   RW          367    .bss.g_usbd_pfnVendorRequest  usbd.o
+    0x2000017c        -       0x00000004   Zero   RW          372    .bss.g_usbd_sInfo   usbd.o
+    0x20000180        -       0x000001f0   Zero   RW          443    .bss.s_au8Encoded   rgb_led.o
+    0x20000370        -       0x0000001e   Zero   RW          477    .bss.s_au8Pixels    rgb_effect.o
+    0x2000038e        -       0x00000040   Zero   RW          506    .bss.s_au8Report    hid_transfer.o
+    0x200003ce        -       0x00000009   Zero   RW          473    .bss.s_sConfig      rgb_effect.o
+    0x200003d7   0x00003ea4   0x00000001   PAD
+    0x200003d8        -       0x00000002   Zero   RW          479    .bss.s_u16Elapsed   rgb_effect.o
+    0x200003da        -       0x00000002   Zero   RW          478    .bss.s_u16Phase     rgb_effect.o
+    0x200003dc        -       0x00000001   Zero   RW          442    .bss.s_u8Busy       rgb_led.o
+    0x200003dd        -       0x00000001   Zero   RW          475    .bss.s_u8ClearCount  rgb_effect.o
+    0x200003de        -       0x00000001   Zero   RW          474    .bss.s_u8DirectPixels  rgb_effect.o
+    0x200003df        -       0x00000001   Zero   RW          476    .bss.s_u8FrameDue   rgb_effect.o
+    0x200003e0        -       0x00000001   Zero   RW          505    .bss.s_u8ReportReady  hid_transfer.o
+    0x200003e1        -       0x00000009   Zero   RW          130    .bss.u8ChSelect     pdma.o
+    0x200003ea   0x00003ea4   0x00000006   PAD
+    0x200003f0        -       0x00000400   Zero   RW           23    STACK               startup_m031series.o
+
+
+==============================================================================
+
+Image component sizes
+
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
+
+       516         32          0          0          4       8694   clk.o
+         0          0         28        202          0       1345   descriptors.o
+      1528        172        436          0         65       4133   hid_transfer.o
+       430         44         57          0          0       5174   main.o
+       760         56          0          0          9       4349   pdma.o
+       258         20         15          4         84       3215   retarget.o
+      1618         64          0          0         46       4149   rgb_effect.o
+       694         48          0          0        497       6045   rgb_led.o
+       212          0          0          0          0       1011   rgb_protocol.o
+       704         48          0          0          0      10252   spi.o
+       128         50        192          0       1024        840   startup_m031series.o
+       348         36         32         12          0       4204   system_m031series.o
+       308         12         32          0          0       4838   timer.o
+       792         76         24          0          0       6692   uart.o
+      2826        492          0          4         66       6801   usbd.o
+
+    ----------------------------------------------------------------------
+     11132       1150        848        224       1808      71742   Object Totals
+         0          0         32          0          0          0   (incl. Generated)
+        10          0          0          2         13          0   (incl. Padding)
+
+    ----------------------------------------------------------------------
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Library Member Name
+
+         0          0          0          0          0          0   entry.o
+         0          0          0          0          0          0   entry10a.o
+         0          0          0          0          0          0   entry11a.o
+         8          4          0          0          0          0   entry2.o
+         4          0          0          0          0          0   entry5.o
+         0          0          0          0          0          0   entry7b.o
+         0          0          0          0          0          0   entry8b.o
+         8          4          0          0          0          0   entry9a.o
+        30          0          0          0          0          0   handlers.o
+        48         10          0          0          0         68   init.o
+         0          0          0          0          0          0   iusefp.o
+        32          0          0          0          0         68   llshl.o
+        38          0          0          0          0         68   llsshr.o
+        34          0          0          0          0         68   llushr.o
+        36          0          0          0          0         60   memcpya.o
+        36          0          0          0          0        100   memseta.o
+      2252         98          0          0          0        412   printfa.o
+        62          0          0          0          0         72   uidiv_div0.o
+        96          0          0          0          0         84   uldiv.o
+        40          2          0          0          0         68   cdrcmple.o
+       356          4          0          0          0        140   dadd.o
+       240          6          0          0          0         84   ddiv.o
+       236          0          0          0          0        216   depilogue.o
+        64         10          0          0          0         68   dfixul.o
+       208          6          0          0          0         88   dmul.o
+
+    ----------------------------------------------------------------------
+      3832        144          0          0          0       1664   Library Totals
+         4          0          0          0          0          0   (incl. Padding)
+
+    ----------------------------------------------------------------------
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Library Name
+
+      2684        116          0          0          0       1000   mc_p.l
+      1144         28          0          0          0        664   mf_p.l
+
+    ----------------------------------------------------------------------
+      3832        144          0          0          0       1664   Library Totals
+
+    ----------------------------------------------------------------------
+
+==============================================================================
+
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
+
+     14964       1294        848        224       1808      72518   Grand Totals
+     14964       1294        848        224       1808      72518   ELF Image Totals
+     14964       1294        848        224          0          0   ROM Totals
+
+==============================================================================
+
+    Total RO  Size (Code + RO Data)                15812 (  15.44kB)
+    Total RW  Size (RW Data + ZI Data)              2032 (   1.98kB)
+    Total ROM Size (Code + RO Data + RW Data)      16036 (  15.66kB)
+
+==============================================================================
+

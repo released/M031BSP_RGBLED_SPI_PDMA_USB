@@ -1,0 +1,4657 @@
+	.text
+	.syntax unified
+	.eabi_attribute	67, "2.09"	@ Tag_conformance
+	.cpu	cortex-m0
+	.eabi_attribute	6, 12	@ Tag_CPU_arch
+	.eabi_attribute	7, 77	@ Tag_CPU_arch_profile
+	.eabi_attribute	8, 0	@ Tag_ARM_ISA_use
+	.eabi_attribute	9, 1	@ Tag_THUMB_ISA_use
+	.eabi_attribute	34, 0	@ Tag_CPU_unaligned_access
+	.eabi_attribute	17, 1	@ Tag_ABI_PCS_GOT_use
+	.eabi_attribute	20, 2	@ Tag_ABI_FP_denormal
+	.eabi_attribute	21, 0	@ Tag_ABI_FP_exceptions
+	.eabi_attribute	23, 1	@ Tag_ABI_FP_number_model
+	.eabi_attribute	24, 1	@ Tag_ABI_align_needed
+	.eabi_attribute	25, 1	@ Tag_ABI_align_preserved
+	.eabi_attribute	38, 1	@ Tag_ABI_FP_16bit_format
+	.eabi_attribute	18, 2	@ Tag_ABI_PCS_wchar_t
+	.eabi_attribute	26, 1	@ Tag_ABI_enum_size
+	.eabi_attribute	14, 0	@ Tag_ABI_PCS_R9_use
+	.file	"usbd.c"
+	.file	1 "C:\\Keil_v5\\ARM\\ARMCLANG\\bin\\..\\include" "stdint.h"
+	.file	2 "D:\\SourceCode\\_Avery_M031\\M031BSP_RGBLED_SPI_PDMA_USB\\SampleCode\\Template\\Keil" "../../../Library/StdDriver/src/usbd.c"
+	.file	3 "D:\\SourceCode\\_Avery_M031\\M031BSP_RGBLED_SPI_PDMA_USB\\SampleCode\\Template\\Keil" "../../../Library/StdDriver/inc\\usbd.h"
+	.file	4 "D:\\SourceCode\\_Avery_M031\\M031BSP_RGBLED_SPI_PDMA_USB\\SampleCode\\Template\\Keil" "../../../Library/Device/Nuvoton/M031/Include\\usbd_reg.h"
+	.file	5 "D:\\SourceCode\\_Avery_M031\\M031BSP_RGBLED_SPI_PDMA_USB\\SampleCode\\Template\\Keil" "../../../Library/Device/Nuvoton/M031/Include\\M031Series.h"
+	.section	.text.USBD_Open,"ax",%progbits
+	.hidden	USBD_Open                       @ -- Begin function USBD_Open
+	.globl	USBD_Open
+	.p2align	2
+	.type	USBD_Open,%function
+	.code	16                              @ @USBD_Open
+	.thumb_func
+USBD_Open:
+.Lfunc_begin0:
+	.loc	2 75 0                          @ ../../../Library/StdDriver/src/usbd.c:75:0
+	.fnstart
+	.cfi_sections .debug_frame
+	.cfi_startproc
+@ %bb.0:
+	.pad	#12
+	sub	sp, #12
+	.cfi_def_cfa_offset 12
+	str	r0, [sp, #8]
+	str	r1, [sp, #4]
+	str	r2, [sp]
+.Ltmp0:
+	.loc	2 76 20 prologue_end            @ ../../../Library/StdDriver/src/usbd.c:76:20
+	ldr	r1, [sp, #8]
+	.loc	2 76 18 is_stmt 0               @ ../../../Library/StdDriver/src/usbd.c:76:18
+	ldr	r0, __arm_cp.0_0
+	str	r1, [r0]
+	.loc	2 77 30 is_stmt 1               @ ../../../Library/StdDriver/src/usbd.c:77:30
+	ldr	r1, [sp, #4]
+	.loc	2 77 28 is_stmt 0               @ ../../../Library/StdDriver/src/usbd.c:77:28
+	ldr	r2, __arm_cp.0_1
+	str	r1, [r2]
+	.loc	2 78 30 is_stmt 1               @ ../../../Library/StdDriver/src/usbd.c:78:30
+	ldr	r1, [sp]
+	.loc	2 78 28 is_stmt 0               @ ../../../Library/StdDriver/src/usbd.c:78:28
+	ldr	r2, __arm_cp.0_2
+	str	r1, [r2]
+	.loc	2 81 29 is_stmt 1               @ ../../../Library/StdDriver/src/usbd.c:81:29
+	ldr	r0, [r0]
+	.loc	2 81 43 is_stmt 0               @ ../../../Library/StdDriver/src/usbd.c:81:43
+	ldr	r0, [r0]
+	.loc	2 81 29                         @ ../../../Library/StdDriver/src/usbd.c:81:29
+	ldrb	r0, [r0, #7]
+	.loc	2 81 27                         @ ../../../Library/StdDriver/src/usbd.c:81:27
+	ldr	r1, __arm_cp.0_3
+	str	r0, [r1]
+	movs	r0, #109
+	lsls	r0, r0, #4
+	ldr	r1, __arm_cp.0_4
+	.loc	2 84 16 is_stmt 1               @ ../../../Library/StdDriver/src/usbd.c:84:16
+	str	r0, [r1]
+	ldr	r1, __arm_cp.0_5
+	.loc	2 86 5                          @ ../../../Library/StdDriver/src/usbd.c:86:5
+	ldr	r0, [r1]
+	movs	r2, #1
+	orrs	r0, r2
+	str	r0, [r1]
+	.loc	2 87 1 epilogue_begin           @ ../../../Library/StdDriver/src/usbd.c:87:1
+	add	sp, #12
+	bx	lr
+.Ltmp1:
+	.p2align	2
+@ %bb.1:
+	.loc	2 0 1 is_stmt 0                 @ ../../../Library/StdDriver/src/usbd.c:0:1
+__arm_cp.0_0:
+	.long	g_usbd_sInfo
+.Lcpi_end0:
+	.size	__arm_cp.0_0, .Lcpi_end0-__arm_cp.0_0
+__arm_cp.0_1:
+	.long	g_usbd_pfnClassRequest
+.Lcpi_end1:
+	.size	__arm_cp.0_1, .Lcpi_end1-__arm_cp.0_1
+__arm_cp.0_2:
+	.long	g_usbd_pfnSetInterface
+.Lcpi_end2:
+	.size	__arm_cp.0_2, .Lcpi_end2-__arm_cp.0_2
+__arm_cp.0_3:
+	.long	g_usbd_CtrlMaxPktSize
+.Lcpi_end3:
+	.size	__arm_cp.0_3, .Lcpi_end3-__arm_cp.0_3
+__arm_cp.0_4:
+	.long	1074528272                      @ 0x400c0010
+.Lcpi_end4:
+	.size	__arm_cp.0_4, .Lcpi_end4-__arm_cp.0_4
+__arm_cp.0_5:
+	.long	1074528400                      @ 0x400c0090
+.Lcpi_end5:
+	.size	__arm_cp.0_5, .Lcpi_end5-__arm_cp.0_5
+.Lfunc_end0:
+	.size	USBD_Open, .Lfunc_end0-USBD_Open
+	.cfi_endproc
+	.cantunwind
+	.fnend
+                                        @ -- End function
+	.section	.text.USBD_Start,"ax",%progbits
+	.hidden	USBD_Start                      @ -- Begin function USBD_Start
+	.globl	USBD_Start
+	.p2align	2
+	.type	USBD_Start,%function
+	.code	16                              @ @USBD_Start
+	.thumb_func
+USBD_Start:
+.Lfunc_begin1:
+	.loc	2 99 0 is_stmt 1                @ ../../../Library/StdDriver/src/usbd.c:99:0
+	.fnstart
+	.cfi_startproc
+@ %bb.0:
+	ldr	r1, __arm_cp.1_0
+.Ltmp2:
+	.loc	2 101 5 prologue_end            @ ../../../Library/StdDriver/src/usbd.c:101:5
+	ldr	r0, [r1]
+	movs	r2, #1
+	bics	r0, r2
+	str	r0, [r1]
+	movs	r0, #125
+	lsls	r0, r0, #4
+	ldr	r1, __arm_cp.1_1
+	.loc	2 102 16                        @ ../../../Library/StdDriver/src/usbd.c:102:16
+	str	r0, [r1]
+	movs	r2, #255
+	adds	r2, #16
+	ldr	r0, __arm_cp.1_2
+	.loc	2 105 5                         @ ../../../Library/StdDriver/src/usbd.c:105:5
+	str	r2, [r0]
+	ldr	r1, __arm_cp.1_3
+	.loc	2 108 5                         @ ../../../Library/StdDriver/src/usbd.c:108:5
+	ldr	r0, [r1]
+	orrs	r0, r2
+	str	r0, [r1]
+	.loc	2 109 1                         @ ../../../Library/StdDriver/src/usbd.c:109:1
+	bx	lr
+.Ltmp3:
+	.p2align	2
+@ %bb.1:
+	.loc	2 0 1 is_stmt 0                 @ ../../../Library/StdDriver/src/usbd.c:0:1
+__arm_cp.1_0:
+	.long	1074528400                      @ 0x400c0090
+.Lcpi_end6:
+	.size	__arm_cp.1_0, .Lcpi_end6-__arm_cp.1_0
+__arm_cp.1_1:
+	.long	1074528272                      @ 0x400c0010
+.Lcpi_end7:
+	.size	__arm_cp.1_1, .Lcpi_end7-__arm_cp.1_1
+__arm_cp.1_2:
+	.long	1074528260                      @ 0x400c0004
+.Lcpi_end8:
+	.size	__arm_cp.1_2, .Lcpi_end8-__arm_cp.1_2
+__arm_cp.1_3:
+	.long	1074528256                      @ 0x400c0000
+.Lcpi_end9:
+	.size	__arm_cp.1_3, .Lcpi_end9-__arm_cp.1_3
+.Lfunc_end1:
+	.size	USBD_Start, .Lfunc_end1-USBD_Start
+	.cfi_endproc
+	.cantunwind
+	.fnend
+                                        @ -- End function
+	.section	.text.USBD_GetSetupPacket,"ax",%progbits
+	.hidden	USBD_GetSetupPacket             @ -- Begin function USBD_GetSetupPacket
+	.globl	USBD_GetSetupPacket
+	.p2align	2
+	.type	USBD_GetSetupPacket,%function
+	.code	16                              @ @USBD_GetSetupPacket
+	.thumb_func
+USBD_GetSetupPacket:
+.Lfunc_begin2:
+	.loc	2 122 0 is_stmt 1               @ ../../../Library/StdDriver/src/usbd.c:122:0
+	.fnstart
+	.cfi_startproc
+@ %bb.0:
+	.save	{r7, lr}
+	push	{r7, lr}
+	.cfi_def_cfa_offset 8
+	.cfi_offset lr, -4
+	.cfi_offset r7, -8
+	.pad	#8
+	sub	sp, #8
+	.cfi_def_cfa_offset 16
+	str	r0, [sp, #4]
+.Ltmp4:
+	.loc	2 123 18 prologue_end           @ ../../../Library/StdDriver/src/usbd.c:123:18
+	ldr	r0, [sp, #4]
+	.loc	2 123 5 is_stmt 0               @ ../../../Library/StdDriver/src/usbd.c:123:5
+	ldr	r1, __arm_cp.2_0
+	movs	r2, #8
+	bl	USBD_MemCopy
+	.loc	2 124 1 epilogue_begin is_stmt 1 @ ../../../Library/StdDriver/src/usbd.c:124:1
+	add	sp, #8
+	pop	{r7, pc}
+.Ltmp5:
+	.p2align	2
+@ %bb.1:
+	.loc	2 0 1 is_stmt 0                 @ ../../../Library/StdDriver/src/usbd.c:0:1
+__arm_cp.2_0:
+	.long	g_usbd_SetupPacket
+.Lcpi_end10:
+	.size	__arm_cp.2_0, .Lcpi_end10-__arm_cp.2_0
+.Lfunc_end2:
+	.size	USBD_GetSetupPacket, .Lfunc_end2-USBD_GetSetupPacket
+	.cfi_endproc
+	.cantunwind
+	.fnend
+                                        @ -- End function
+	.section	.text.USBD_MemCopy,"ax",%progbits
+	.p2align	1                               @ -- Begin function USBD_MemCopy
+	.type	USBD_MemCopy,%function
+	.code	16                              @ @USBD_MemCopy
+	.thumb_func
+USBD_MemCopy:
+.Lfunc_begin3:
+	.loc	3 557 0 is_stmt 1               @ ../../../Library/StdDriver/inc\usbd.h:557:0
+	.fnstart
+	.cfi_startproc
+@ %bb.0:
+	.pad	#16
+	sub	sp, #16
+	.cfi_def_cfa_offset 16
+	str	r0, [sp, #12]
+	str	r1, [sp, #8]
+	str	r2, [sp, #4]
+	movs	r0, #0
+.Ltmp6:
+	.loc	3 558 23 prologue_end           @ ../../../Library/StdDriver/inc\usbd.h:558:23
+	str	r0, [sp]
+	.loc	3 560 5                         @ ../../../Library/StdDriver/inc\usbd.h:560:5
+	b	.LBB3_1
+.LBB3_1:                                @ =>This Inner Loop Header: Depth=1
+	.loc	3 560 15 is_stmt 0              @ ../../../Library/StdDriver/inc\usbd.h:560:15
+	ldr	r0, [sp, #4]
+	subs	r1, r0, #1
+	str	r1, [sp, #4]
+	.loc	3 560 5                         @ ../../../Library/StdDriver/inc\usbd.h:560:5
+	cmp	r0, #0
+	beq	.LBB3_3
+	b	.LBB3_2
+.LBB3_2:                                @   in Loop: Header=BB3_1 Depth=1
+.Ltmp7:
+	.loc	3 562 19 is_stmt 1              @ ../../../Library/StdDriver/inc\usbd.h:562:19
+	ldr	r0, [sp, #8]
+	.loc	3 562 23 is_stmt 0              @ ../../../Library/StdDriver/inc\usbd.h:562:23
+	ldr	r1, [sp]
+	.loc	3 562 19                        @ ../../../Library/StdDriver/inc\usbd.h:562:19
+	ldrb	r0, [r0, r1]
+	.loc	3 562 9                         @ ../../../Library/StdDriver/inc\usbd.h:562:9
+	ldr	r1, [sp, #12]
+	.loc	3 562 14                        @ ../../../Library/StdDriver/inc\usbd.h:562:14
+	ldr	r2, [sp]
+	.loc	3 562 17                        @ ../../../Library/StdDriver/inc\usbd.h:562:17
+	strb	r0, [r1, r2]
+	.loc	3 563 10 is_stmt 1              @ ../../../Library/StdDriver/inc\usbd.h:563:10
+	ldr	r0, [sp]
+	adds	r0, r0, #1
+	str	r0, [sp]
+.Ltmp8:
+	.loc	3 560 5                         @ ../../../Library/StdDriver/inc\usbd.h:560:5
+	b	.LBB3_1
+.LBB3_3:
+	.loc	3 565 1 epilogue_begin          @ ../../../Library/StdDriver/inc\usbd.h:565:1
+	add	sp, #16
+	bx	lr
+.Ltmp9:
+.Lfunc_end3:
+	.size	USBD_MemCopy, .Lfunc_end3-USBD_MemCopy
+	.cfi_endproc
+	.cantunwind
+	.fnend
+                                        @ -- End function
+	.section	.text.USBD_ProcessSetupPacket,"ax",%progbits
+	.hidden	USBD_ProcessSetupPacket         @ -- Begin function USBD_ProcessSetupPacket
+	.globl	USBD_ProcessSetupPacket
+	.p2align	2
+	.type	USBD_ProcessSetupPacket,%function
+	.code	16                              @ @USBD_ProcessSetupPacket
+	.thumb_func
+USBD_ProcessSetupPacket:
+.Lfunc_begin4:
+	.loc	2 137 0                         @ ../../../Library/StdDriver/src/usbd.c:137:0
+	.fnstart
+	.cfi_startproc
+@ %bb.0:
+	.save	{r7, lr}
+	push	{r7, lr}
+	.cfi_def_cfa_offset 8
+	.cfi_offset lr, -4
+	.cfi_offset r7, -8
+	.pad	#8
+	sub	sp, #8
+	.cfi_def_cfa_offset 16
+.Ltmp10:
+	.loc	2 139 5 prologue_end            @ ../../../Library/StdDriver/src/usbd.c:139:5
+	ldr	r0, __arm_cp.4_0
+	str	r0, [sp]                        @ 4-byte Spill
+	ldr	r1, __arm_cp.4_1
+	movs	r2, #8
+	bl	USBD_MemCopy
+	ldr	r0, [sp]                        @ 4-byte Reload
+	.loc	2 142 12                        @ ../../../Library/StdDriver/src/usbd.c:142:12
+	ldrb	r0, [r0]
+	movs	r1, #96
+	.loc	2 142 34 is_stmt 0              @ ../../../Library/StdDriver/src/usbd.c:142:34
+	ands	r0, r1
+	.loc	2 142 5                         @ ../../../Library/StdDriver/src/usbd.c:142:5
+	str	r0, [sp, #4]                    @ 4-byte Spill
+	cmp	r0, #0
+	beq	.LBB4_3
+	b	.LBB4_1
+.LBB4_1:
+	ldr	r0, [sp, #4]                    @ 4-byte Reload
+	cmp	r0, #32
+	beq	.LBB4_4
+	b	.LBB4_2
+.LBB4_2:
+	ldr	r0, [sp, #4]                    @ 4-byte Reload
+	cmp	r0, #64
+	beq	.LBB4_7
+	b	.LBB4_10
+.LBB4_3:
+.Ltmp11:
+	.loc	2 146 9 is_stmt 1               @ ../../../Library/StdDriver/src/usbd.c:146:9
+	bl	USBD_StandardRequest
+	.loc	2 147 9                         @ ../../../Library/StdDriver/src/usbd.c:147:9
+	b	.LBB4_11
+.Ltmp12:
+.LBB4_4:
+	.loc	2 151 12                        @ ../../../Library/StdDriver/src/usbd.c:151:12
+	ldr	r0, __arm_cp.4_3
+	ldr	r0, [r0]
+.Ltmp13:
+	.loc	2 151 12 is_stmt 0              @ ../../../Library/StdDriver/src/usbd.c:151:12
+	cmp	r0, #0
+	beq	.LBB4_6
+	b	.LBB4_5
+.LBB4_5:
+.Ltmp14:
+	.loc	2 153 13 is_stmt 1              @ ../../../Library/StdDriver/src/usbd.c:153:13
+	ldr	r0, __arm_cp.4_3
+	ldr	r0, [r0]
+	blx	r0
+	.loc	2 154 9                         @ ../../../Library/StdDriver/src/usbd.c:154:9
+	b	.LBB4_6
+.Ltmp15:
+.LBB4_6:
+	.loc	2 155 9                         @ ../../../Library/StdDriver/src/usbd.c:155:9
+	b	.LBB4_11
+.Ltmp16:
+.LBB4_7:
+	.loc	2 159 12                        @ ../../../Library/StdDriver/src/usbd.c:159:12
+	ldr	r0, __arm_cp.4_2
+	ldr	r0, [r0]
+.Ltmp17:
+	.loc	2 159 12 is_stmt 0              @ ../../../Library/StdDriver/src/usbd.c:159:12
+	cmp	r0, #0
+	beq	.LBB4_9
+	b	.LBB4_8
+.LBB4_8:
+.Ltmp18:
+	.loc	2 161 13 is_stmt 1              @ ../../../Library/StdDriver/src/usbd.c:161:13
+	ldr	r0, __arm_cp.4_2
+	ldr	r0, [r0]
+	blx	r0
+	.loc	2 162 9                         @ ../../../Library/StdDriver/src/usbd.c:162:9
+	b	.LBB4_9
+.Ltmp19:
+.LBB4_9:
+	.loc	2 163 9                         @ ../../../Library/StdDriver/src/usbd.c:163:9
+	b	.LBB4_11
+.Ltmp20:
+.LBB4_10:
+	.loc	2 0 9 is_stmt 0                 @ ../../../Library/StdDriver/src/usbd.c:0:9
+	ldr	r1, __arm_cp.4_4
+.Ltmp21:
+	.loc	2 168 9 is_stmt 1               @ ../../../Library/StdDriver/src/usbd.c:168:9
+	ldr	r0, [r1]
+	movs	r2, #2
+	orrs	r0, r2
+	str	r0, [r1]
+	ldr	r1, __arm_cp.4_5
+	.loc	2 169 9                         @ ../../../Library/StdDriver/src/usbd.c:169:9
+	ldr	r0, [r1]
+	orrs	r0, r2
+	str	r0, [r1]
+	.loc	2 170 9                         @ ../../../Library/StdDriver/src/usbd.c:170:9
+	b	.LBB4_11
+.Ltmp22:
+.LBB4_11:
+	.loc	2 173 1 epilogue_begin          @ ../../../Library/StdDriver/src/usbd.c:173:1
+	add	sp, #8
+	pop	{r7, pc}
+.Ltmp23:
+	.p2align	2
+@ %bb.12:
+	.loc	2 0 1 is_stmt 0                 @ ../../../Library/StdDriver/src/usbd.c:0:1
+__arm_cp.4_0:
+	.long	g_usbd_SetupPacket
+.Lcpi_end11:
+	.size	__arm_cp.4_0, .Lcpi_end11-__arm_cp.4_0
+__arm_cp.4_1:
+	.long	1074528512                      @ 0x400c0100
+.Lcpi_end12:
+	.size	__arm_cp.4_1, .Lcpi_end12-__arm_cp.4_1
+__arm_cp.4_2:
+	.long	g_usbd_pfnVendorRequest
+.Lcpi_end13:
+	.size	__arm_cp.4_2, .Lcpi_end13-__arm_cp.4_2
+__arm_cp.4_3:
+	.long	g_usbd_pfnClassRequest
+.Lcpi_end14:
+	.size	__arm_cp.4_3, .Lcpi_end14-__arm_cp.4_3
+__arm_cp.4_4:
+	.long	1074529548                      @ 0x400c050c
+.Lcpi_end15:
+	.size	__arm_cp.4_4, .Lcpi_end15-__arm_cp.4_4
+__arm_cp.4_5:
+	.long	1074529564                      @ 0x400c051c
+.Lcpi_end16:
+	.size	__arm_cp.4_5, .Lcpi_end16-__arm_cp.4_5
+.Lfunc_end4:
+	.size	USBD_ProcessSetupPacket, .Lfunc_end4-USBD_ProcessSetupPacket
+	.cfi_endproc
+	.cantunwind
+	.fnend
+                                        @ -- End function
+	.section	.text.USBD_StandardRequest,"ax",%progbits
+	.hidden	USBD_StandardRequest            @ -- Begin function USBD_StandardRequest
+	.globl	USBD_StandardRequest
+	.p2align	2
+	.type	USBD_StandardRequest,%function
+	.code	16                              @ @USBD_StandardRequest
+	.thumb_func
+USBD_StandardRequest:
+.Lfunc_begin5:
+	.loc	2 286 0 is_stmt 1               @ ../../../Library/StdDriver/src/usbd.c:286:0
+	.fnstart
+	.cfi_startproc
+@ %bb.0:
+	.save	{r7, lr}
+	push	{r7, lr}
+	.cfi_def_cfa_offset 8
+	.cfi_offset lr, -4
+	.cfi_offset r7, -8
+	.pad	#32
+	sub	sp, #32
+	.cfi_def_cfa_offset 40
+.Ltmp24:
+	.loc	2 289 26 prologue_end           @ ../../../Library/StdDriver/src/usbd.c:289:26
+	ldr	r1, __arm_cp.5_0
+	movs	r0, #0
+	str	r0, [r1]
+	.loc	2 290 23                        @ ../../../Library/StdDriver/src/usbd.c:290:23
+	ldr	r1, __arm_cp.5_1
+	str	r0, [r1]
+.Ltmp25:
+	.loc	2 292 9                         @ ../../../Library/StdDriver/src/usbd.c:292:9
+	ldr	r0, __arm_cp.5_2
+	ldrb	r0, [r0]
+.Ltmp26:
+	.loc	2 292 8 is_stmt 0               @ ../../../Library/StdDriver/src/usbd.c:292:8
+	lsls	r0, r0, #24
+	cmp	r0, #0
+	bmi	.LBB5_1
+	b	.LBB5_22
+.LBB5_1:
+.Ltmp27:
+	.loc	2 295 16 is_stmt 1              @ ../../../Library/StdDriver/src/usbd.c:295:16
+	ldr	r0, __arm_cp.5_2
+	ldrb	r0, [r0, #1]
+	.loc	2 295 9 is_stmt 0               @ ../../../Library/StdDriver/src/usbd.c:295:9
+	str	r0, [sp, #8]                    @ 4-byte Spill
+	cmp	r0, #10
+	bls	.LBB5_2
+	b	.LBB5_20
+.LBB5_2:
+	ldr	r0, [sp, #8]                    @ 4-byte Reload
+	lsls	r1, r0, #2
+	adr	r0, .LJTI5_1
+	ldr	r0, [r0, r1]
+	mov	pc, r0
+@ %bb.3:
+	.loc	2 0 9                           @ ../../../Library/StdDriver/src/usbd.c:0:9
+	.p2align	2
+.LJTI5_1:
+	.long	.LBB5_7+1
+	.long	.LBB5_20+1
+	.long	.LBB5_20+1
+	.long	.LBB5_20+1
+	.long	.LBB5_20+1
+	.long	.LBB5_20+1
+	.long	.LBB5_5+1
+	.long	.LBB5_20+1
+	.long	.LBB5_4+1
+	.long	.LBB5_20+1
+	.long	.LBB5_6+1
+.LBB5_4:
+	ldr	r0, __arm_cp.5_14
+.Ltmp28:
+	.loc	2 301 36 is_stmt 1              @ ../../../Library/StdDriver/src/usbd.c:301:36
+	ldr	r0, [r0]
+	ldr	r1, __arm_cp.5_15
+	.loc	2 301 34 is_stmt 0              @ ../../../Library/StdDriver/src/usbd.c:301:34
+	adds	r0, r0, r1
+	.loc	2 301 18                        @ ../../../Library/StdDriver/src/usbd.c:301:18
+	str	r0, [sp, #28]
+	.loc	2 302 33 is_stmt 1              @ ../../../Library/StdDriver/src/usbd.c:302:33
+	ldr	r0, __arm_cp.5_8
+	ldr	r0, [r0]
+	.loc	2 302 13 is_stmt 0              @ ../../../Library/StdDriver/src/usbd.c:302:13
+	ldr	r1, [sp, #28]
+	.loc	2 302 22                        @ ../../../Library/StdDriver/src/usbd.c:302:22
+	strb	r0, [r1]
+	ldr	r1, __arm_cp.5_5
+	.loc	2 303 13 is_stmt 1              @ ../../../Library/StdDriver/src/usbd.c:303:13
+	ldr	r0, [r1]
+	movs	r2, #128
+	orrs	r0, r2
+	str	r0, [r1]
+	ldr	r1, __arm_cp.5_6
+	movs	r0, #1
+	.loc	2 304 13                        @ ../../../Library/StdDriver/src/usbd.c:304:13
+	str	r0, [r1]
+	movs	r1, #0
+	.loc	2 306 13                        @ ../../../Library/StdDriver/src/usbd.c:306:13
+	mov	r0, r1
+	bl	USBD_PrepareCtrlOut
+	.loc	2 307 13                        @ ../../../Library/StdDriver/src/usbd.c:307:13
+	b	.LBB5_21
+.Ltmp29:
+.LBB5_5:
+	.loc	2 311 13                        @ ../../../Library/StdDriver/src/usbd.c:311:13
+	bl	USBD_GetDescriptor
+	movs	r1, #0
+	.loc	2 312 13                        @ ../../../Library/StdDriver/src/usbd.c:312:13
+	mov	r0, r1
+	bl	USBD_PrepareCtrlOut
+	.loc	2 313 13                        @ ../../../Library/StdDriver/src/usbd.c:313:13
+	b	.LBB5_21
+.Ltmp30:
+.LBB5_6:
+	.loc	2 0 13 is_stmt 0                @ ../../../Library/StdDriver/src/usbd.c:0:13
+	ldr	r0, __arm_cp.5_14
+.Ltmp31:
+	.loc	2 319 36 is_stmt 1              @ ../../../Library/StdDriver/src/usbd.c:319:36
+	ldr	r0, [r0]
+	ldr	r1, __arm_cp.5_15
+	.loc	2 319 34 is_stmt 0              @ ../../../Library/StdDriver/src/usbd.c:319:34
+	adds	r0, r0, r1
+	.loc	2 319 18                        @ ../../../Library/StdDriver/src/usbd.c:319:18
+	str	r0, [sp, #28]
+	.loc	2 320 33 is_stmt 1              @ ../../../Library/StdDriver/src/usbd.c:320:33
+	ldr	r0, __arm_cp.5_3
+	ldr	r0, [r0]
+	.loc	2 320 13 is_stmt 0              @ ../../../Library/StdDriver/src/usbd.c:320:13
+	ldr	r1, [sp, #28]
+	.loc	2 320 22                        @ ../../../Library/StdDriver/src/usbd.c:320:22
+	strb	r0, [r1]
+	ldr	r1, __arm_cp.5_5
+	.loc	2 321 13 is_stmt 1              @ ../../../Library/StdDriver/src/usbd.c:321:13
+	ldr	r0, [r1]
+	movs	r2, #128
+	orrs	r0, r2
+	str	r0, [r1]
+	ldr	r1, __arm_cp.5_6
+	movs	r0, #1
+	.loc	2 322 13                        @ ../../../Library/StdDriver/src/usbd.c:322:13
+	str	r0, [r1]
+	movs	r1, #0
+	.loc	2 324 13                        @ ../../../Library/StdDriver/src/usbd.c:324:13
+	mov	r0, r1
+	bl	USBD_PrepareCtrlOut
+	.loc	2 325 13                        @ ../../../Library/StdDriver/src/usbd.c:325:13
+	b	.LBB5_21
+.Ltmp32:
+.LBB5_7:
+	.loc	2 330 16                        @ ../../../Library/StdDriver/src/usbd.c:330:16
+	ldr	r0, __arm_cp.5_2
+	ldrb	r0, [r0]
+.Ltmp33:
+	.loc	2 330 16 is_stmt 0              @ ../../../Library/StdDriver/src/usbd.c:330:16
+	cmp	r0, #128
+	bne	.LBB5_13
+	b	.LBB5_8
+.LBB5_8:
+	.loc	2 0 16                          @ ../../../Library/StdDriver/src/usbd.c:0:16
+	add	r1, sp, #24
+	movs	r0, #0
+.Ltmp34:
+	.loc	2 334 23 is_stmt 1              @ ../../../Library/StdDriver/src/usbd.c:334:23
+	strb	r0, [r1]
+.Ltmp35:
+	.loc	2 335 22                        @ ../../../Library/StdDriver/src/usbd.c:335:22
+	ldr	r0, __arm_cp.5_16
+	ldr	r0, [r0]
+	.loc	2 335 36 is_stmt 0              @ ../../../Library/StdDriver/src/usbd.c:335:36
+	ldr	r0, [r0, #4]
+	.loc	2 335 22                        @ ../../../Library/StdDriver/src/usbd.c:335:22
+	ldrb	r0, [r0, #7]
+.Ltmp36:
+	.loc	2 335 21                        @ ../../../Library/StdDriver/src/usbd.c:335:21
+	lsls	r0, r0, #25
+	cmp	r0, #0
+	bpl	.LBB5_10
+	b	.LBB5_9
+.LBB5_9:
+.Ltmp37:
+	.loc	2 337 27 is_stmt 1              @ ../../../Library/StdDriver/src/usbd.c:337:27
+	ldr	r0, [sp, #24]
+	movs	r1, #1
+	orrs	r0, r1
+	add	r1, sp, #24
+	strb	r0, [r1]
+	.loc	2 338 17                        @ ../../../Library/StdDriver/src/usbd.c:338:17
+	b	.LBB5_10
+.Ltmp38:
+.LBB5_10:
+	.loc	2 339 22                        @ ../../../Library/StdDriver/src/usbd.c:339:22
+	ldr	r0, __arm_cp.5_16
+	ldr	r0, [r0]
+	.loc	2 339 36 is_stmt 0              @ ../../../Library/StdDriver/src/usbd.c:339:36
+	ldr	r0, [r0, #4]
+	.loc	2 339 22                        @ ../../../Library/StdDriver/src/usbd.c:339:22
+	ldrb	r0, [r0, #7]
+.Ltmp39:
+	.loc	2 339 21                        @ ../../../Library/StdDriver/src/usbd.c:339:21
+	lsls	r0, r0, #26
+	cmp	r0, #0
+	bpl	.LBB5_12
+	b	.LBB5_11
+.LBB5_11:
+.Ltmp40:
+	.loc	2 341 40 is_stmt 1              @ ../../../Library/StdDriver/src/usbd.c:341:40
+	ldr	r0, __arm_cp.5_7
+	ldrb	r0, [r0]
+	.loc	2 341 62 is_stmt 0              @ ../../../Library/StdDriver/src/usbd.c:341:62
+	lsls	r1, r0, #1
+	.loc	2 341 27                        @ ../../../Library/StdDriver/src/usbd.c:341:27
+	ldr	r0, [sp, #24]
+	orrs	r0, r1
+	add	r1, sp, #24
+	strb	r0, [r1]
+	.loc	2 342 17 is_stmt 1              @ ../../../Library/StdDriver/src/usbd.c:342:17
+	b	.LBB5_12
+.Ltmp41:
+.LBB5_12:
+	.loc	2 0 17 is_stmt 0                @ ../../../Library/StdDriver/src/usbd.c:0:17
+	ldr	r0, __arm_cp.5_14
+	.loc	2 344 40 is_stmt 1              @ ../../../Library/StdDriver/src/usbd.c:344:40
+	ldr	r0, [r0]
+	ldr	r1, __arm_cp.5_15
+	.loc	2 344 38 is_stmt 0              @ ../../../Library/StdDriver/src/usbd.c:344:38
+	adds	r0, r0, r1
+	.loc	2 344 22                        @ ../../../Library/StdDriver/src/usbd.c:344:22
+	str	r0, [sp, #28]
+	.loc	2 345 28 is_stmt 1              @ ../../../Library/StdDriver/src/usbd.c:345:28
+	ldr	r0, [sp, #24]
+	.loc	2 345 17 is_stmt 0              @ ../../../Library/StdDriver/src/usbd.c:345:17
+	ldr	r1, [sp, #28]
+	.loc	2 345 26                        @ ../../../Library/StdDriver/src/usbd.c:345:26
+	strb	r0, [r1]
+	.loc	2 346 13 is_stmt 1              @ ../../../Library/StdDriver/src/usbd.c:346:13
+	b	.LBB5_19
+.Ltmp42:
+.LBB5_13:
+	.loc	2 348 21                        @ ../../../Library/StdDriver/src/usbd.c:348:21
+	ldr	r0, __arm_cp.5_2
+	ldrb	r0, [r0]
+.Ltmp43:
+	.loc	2 348 21 is_stmt 0              @ ../../../Library/StdDriver/src/usbd.c:348:21
+	cmp	r0, #129
+	bne	.LBB5_15
+	b	.LBB5_14
+.LBB5_14:
+	.loc	2 0 21                          @ ../../../Library/StdDriver/src/usbd.c:0:21
+	ldr	r0, __arm_cp.5_14
+.Ltmp44:
+	.loc	2 350 40 is_stmt 1              @ ../../../Library/StdDriver/src/usbd.c:350:40
+	ldr	r0, [r0]
+	ldr	r1, __arm_cp.5_15
+	.loc	2 350 38 is_stmt 0              @ ../../../Library/StdDriver/src/usbd.c:350:38
+	adds	r0, r0, r1
+	.loc	2 350 22                        @ ../../../Library/StdDriver/src/usbd.c:350:22
+	str	r0, [sp, #28]
+	.loc	2 351 17 is_stmt 1              @ ../../../Library/StdDriver/src/usbd.c:351:17
+	ldr	r1, [sp, #28]
+	movs	r0, #0
+	.loc	2 351 26 is_stmt 0              @ ../../../Library/StdDriver/src/usbd.c:351:26
+	strb	r0, [r1]
+	.loc	2 352 13 is_stmt 1              @ ../../../Library/StdDriver/src/usbd.c:352:13
+	b	.LBB5_18
+.Ltmp45:
+.LBB5_15:
+	.loc	2 354 21                        @ ../../../Library/StdDriver/src/usbd.c:354:21
+	ldr	r0, __arm_cp.5_2
+	ldrb	r0, [r0]
+.Ltmp46:
+	.loc	2 354 21 is_stmt 0              @ ../../../Library/StdDriver/src/usbd.c:354:21
+	cmp	r0, #130
+	bne	.LBB5_17
+	b	.LBB5_16
+.LBB5_16:
+.Ltmp47:
+	.loc	2 356 40 is_stmt 1              @ ../../../Library/StdDriver/src/usbd.c:356:40
+	ldr	r0, __arm_cp.5_2
+	ldrb	r1, [r0, #4]
+	movs	r0, #15
+	.loc	2 356 62 is_stmt 0              @ ../../../Library/StdDriver/src/usbd.c:356:62
+	ands	r1, r0
+	add	r0, sp, #20
+	.loc	2 356 25                        @ ../../../Library/StdDriver/src/usbd.c:356:25
+	strb	r1, [r0]
+	ldr	r1, __arm_cp.5_14
+	.loc	2 357 40 is_stmt 1              @ ../../../Library/StdDriver/src/usbd.c:357:40
+	ldr	r1, [r1]
+	ldr	r2, __arm_cp.5_15
+	.loc	2 357 38 is_stmt 0              @ ../../../Library/StdDriver/src/usbd.c:357:38
+	adds	r1, r1, r2
+	.loc	2 357 22                        @ ../../../Library/StdDriver/src/usbd.c:357:22
+	str	r1, [sp, #28]
+	.loc	2 358 52 is_stmt 1              @ ../../../Library/StdDriver/src/usbd.c:358:52
+	ldrb	r0, [r0]
+	.loc	2 358 38 is_stmt 0              @ ../../../Library/StdDriver/src/usbd.c:358:38
+	bl	USBD_GetStall
+	subs	r1, r0, #1
+	sbcs	r0, r1
+	.loc	2 358 17                        @ ../../../Library/StdDriver/src/usbd.c:358:17
+	ldr	r1, [sp, #28]
+	.loc	2 358 26                        @ ../../../Library/StdDriver/src/usbd.c:358:26
+	strb	r0, [r1]
+	.loc	2 359 13 is_stmt 1              @ ../../../Library/StdDriver/src/usbd.c:359:13
+	b	.LBB5_17
+.Ltmp48:
+.LBB5_17:
+	.loc	2 0 13 is_stmt 0                @ ../../../Library/StdDriver/src/usbd.c:0:13
+	b	.LBB5_18
+.LBB5_18:
+	b	.LBB5_19
+.LBB5_19:
+	ldr	r0, __arm_cp.5_14
+	.loc	2 361 36 is_stmt 1              @ ../../../Library/StdDriver/src/usbd.c:361:36
+	ldr	r0, [r0]
+	ldr	r1, __arm_cp.5_17
+	.loc	2 361 62 is_stmt 0              @ ../../../Library/StdDriver/src/usbd.c:361:62
+	adds	r0, r0, r1
+	.loc	2 361 18                        @ ../../../Library/StdDriver/src/usbd.c:361:18
+	str	r0, [sp, #28]
+	.loc	2 362 13 is_stmt 1              @ ../../../Library/StdDriver/src/usbd.c:362:13
+	ldr	r0, [sp, #28]
+	movs	r1, #0
+	.loc	2 362 22 is_stmt 0              @ ../../../Library/StdDriver/src/usbd.c:362:22
+	strb	r1, [r0]
+	ldr	r2, __arm_cp.5_5
+	.loc	2 364 13 is_stmt 1              @ ../../../Library/StdDriver/src/usbd.c:364:13
+	ldr	r0, [r2]
+	movs	r3, #128
+	orrs	r0, r3
+	str	r0, [r2]
+	ldr	r2, __arm_cp.5_6
+	movs	r0, #2
+	.loc	2 365 13                        @ ../../../Library/StdDriver/src/usbd.c:365:13
+	str	r0, [r2]
+	.loc	2 367 13                        @ ../../../Library/StdDriver/src/usbd.c:367:13
+	mov	r0, r1
+	bl	USBD_PrepareCtrlOut
+	.loc	2 368 13                        @ ../../../Library/StdDriver/src/usbd.c:368:13
+	b	.LBB5_21
+.Ltmp49:
+.LBB5_20:
+	.loc	2 0 13 is_stmt 0                @ ../../../Library/StdDriver/src/usbd.c:0:13
+	ldr	r1, __arm_cp.5_12
+.Ltmp50:
+	.loc	2 373 13 is_stmt 1              @ ../../../Library/StdDriver/src/usbd.c:373:13
+	ldr	r0, [r1]
+	movs	r2, #2
+	orrs	r0, r2
+	str	r0, [r1]
+	ldr	r1, __arm_cp.5_13
+	.loc	2 374 13                        @ ../../../Library/StdDriver/src/usbd.c:374:13
+	ldr	r0, [r1]
+	orrs	r0, r2
+	str	r0, [r1]
+	.loc	2 375 13                        @ ../../../Library/StdDriver/src/usbd.c:375:13
+	b	.LBB5_21
+.Ltmp51:
+.LBB5_21:
+	.loc	2 378 5                         @ ../../../Library/StdDriver/src/usbd.c:378:5
+	b	.LBB5_53
+.Ltmp52:
+.LBB5_22:
+	.loc	2 382 16                        @ ../../../Library/StdDriver/src/usbd.c:382:16
+	ldr	r0, __arm_cp.5_2
+	ldrb	r0, [r0, #1]
+	.loc	2 382 9 is_stmt 0               @ ../../../Library/StdDriver/src/usbd.c:382:9
+	subs	r0, r0, #1
+	str	r0, [sp, #4]                    @ 4-byte Spill
+	cmp	r0, #10
+	bls	.LBB5_23
+	b	.LBB5_51
+.LBB5_23:
+	ldr	r0, [sp, #4]                    @ 4-byte Reload
+	lsls	r1, r0, #2
+	adr	r0, .LJTI5_0
+	ldr	r0, [r0, r1]
+	mov	pc, r0
+@ %bb.24:
+	.loc	2 0 9                           @ ../../../Library/StdDriver/src/usbd.c:0:9
+	.p2align	2
+.LJTI5_0:
+	.long	.LBB5_25+1
+	.long	.LBB5_51+1
+	.long	.LBB5_42+1
+	.long	.LBB5_51+1
+	.long	.LBB5_38+1
+	.long	.LBB5_51+1
+	.long	.LBB5_51+1
+	.long	.LBB5_51+1
+	.long	.LBB5_39+1
+	.long	.LBB5_51+1
+	.long	.LBB5_48+1
+.LBB5_25:
+.Ltmp53:
+	.loc	2 386 16 is_stmt 1              @ ../../../Library/StdDriver/src/usbd.c:386:16
+	ldr	r0, __arm_cp.5_2
+	ldrb	r0, [r0, #2]
+.Ltmp54:
+	.loc	2 386 16 is_stmt 0              @ ../../../Library/StdDriver/src/usbd.c:386:16
+	cmp	r0, #0
+	bne	.LBB5_34
+	b	.LBB5_26
+.LBB5_26:
+.Ltmp55:
+	.loc	2 391 35 is_stmt 1              @ ../../../Library/StdDriver/src/usbd.c:391:35
+	ldr	r0, __arm_cp.5_2
+	ldrb	r0, [r0, #4]
+	movs	r1, #15
+	.loc	2 391 57 is_stmt 0              @ ../../../Library/StdDriver/src/usbd.c:391:57
+	ands	r0, r1
+	.loc	2 391 23                        @ ../../../Library/StdDriver/src/usbd.c:391:23
+	str	r0, [sp, #16]
+	movs	r0, #0
+.Ltmp56:
+	.loc	2 392 23 is_stmt 1              @ ../../../Library/StdDriver/src/usbd.c:392:23
+	str	r0, [sp, #12]
+	.loc	2 392 21 is_stmt 0              @ ../../../Library/StdDriver/src/usbd.c:392:21
+	b	.LBB5_27
+.LBB5_27:                               @ =>This Inner Loop Header: Depth=1
+.Ltmp57:
+	.loc	2 392 30                        @ ../../../Library/StdDriver/src/usbd.c:392:30
+	ldr	r0, [sp, #12]
+.Ltmp58:
+	.loc	2 392 17                        @ ../../../Library/StdDriver/src/usbd.c:392:17
+	cmp	r0, #7
+	bhi	.LBB5_33
+	b	.LBB5_28
+.LBB5_28:                               @   in Loop: Header=BB5_27 Depth=1
+.Ltmp59:
+	.loc	2 394 35 is_stmt 1              @ ../../../Library/StdDriver/src/usbd.c:394:35
+	ldr	r0, [sp, #12]
+	.loc	2 394 26 is_stmt 0              @ ../../../Library/StdDriver/src/usbd.c:394:26
+	lsls	r0, r0, #4
+	ldr	r1, __arm_cp.5_5
+	.loc	2 394 38                        @ ../../../Library/StdDriver/src/usbd.c:394:38
+	ldr	r0, [r0, r1]
+	movs	r1, #15
+	.loc	2 394 42                        @ ../../../Library/StdDriver/src/usbd.c:394:42
+	ands	r0, r1
+	.loc	2 394 54                        @ ../../../Library/StdDriver/src/usbd.c:394:54
+	ldr	r1, [sp, #16]
+	.loc	2 394 61                        @ ../../../Library/StdDriver/src/usbd.c:394:61
+	cmp	r0, r1
+	bne	.LBB5_31
+	b	.LBB5_29
+.LBB5_29:                               @   in Loop: Header=BB5_27 Depth=1
+	.loc	2 394 66                        @ ../../../Library/StdDriver/src/usbd.c:394:66
+	ldr	r0, __arm_cp.5_11
+	ldr	r0, [r0]
+	.loc	2 394 93                        @ ../../../Library/StdDriver/src/usbd.c:394:93
+	ldr	r1, [sp, #12]
+.Ltmp60:
+	.loc	2 394 24                        @ ../../../Library/StdDriver/src/usbd.c:394:24
+	lsrs	r0, r1
+	lsls	r0, r0, #31
+	cmp	r0, #0
+	bne	.LBB5_31
+	b	.LBB5_30
+.LBB5_30:                               @   in Loop: Header=BB5_27 Depth=1
+.Ltmp61:
+	.loc	2 396 34 is_stmt 1              @ ../../../Library/StdDriver/src/usbd.c:396:34
+	ldr	r0, [sp, #12]
+	.loc	2 396 25 is_stmt 0              @ ../../../Library/StdDriver/src/usbd.c:396:25
+	lsls	r1, r0, #4
+	ldr	r2, __arm_cp.5_12
+	.loc	2 396 42                        @ ../../../Library/StdDriver/src/usbd.c:396:42
+	ldr	r0, [r1, r2]
+	movs	r3, #2
+	bics	r0, r3
+	str	r0, [r1, r2]
+	.loc	2 397 21 is_stmt 1              @ ../../../Library/StdDriver/src/usbd.c:397:21
+	b	.LBB5_31
+.Ltmp62:
+.LBB5_31:                               @   in Loop: Header=BB5_27 Depth=1
+	.loc	2 398 17                        @ ../../../Library/StdDriver/src/usbd.c:398:17
+	b	.LBB5_32
+.Ltmp63:
+.LBB5_32:                               @   in Loop: Header=BB5_27 Depth=1
+	.loc	2 392 48                        @ ../../../Library/StdDriver/src/usbd.c:392:48
+	ldr	r0, [sp, #12]
+	adds	r0, r0, #1
+	str	r0, [sp, #12]
+	.loc	2 392 17 is_stmt 0              @ ../../../Library/StdDriver/src/usbd.c:392:17
+	b	.LBB5_27
+.Ltmp64:
+.LBB5_33:
+	.loc	2 399 13 is_stmt 1              @ ../../../Library/StdDriver/src/usbd.c:399:13
+	b	.LBB5_37
+.Ltmp65:
+.LBB5_34:
+	.loc	2 400 21                        @ ../../../Library/StdDriver/src/usbd.c:400:21
+	ldr	r0, __arm_cp.5_2
+	ldrb	r0, [r0, #2]
+.Ltmp66:
+	.loc	2 400 21 is_stmt 0              @ ../../../Library/StdDriver/src/usbd.c:400:21
+	cmp	r0, #1
+	bne	.LBB5_36
+	b	.LBB5_35
+.LBB5_35:
+.Ltmp67:
+	.loc	2 402 39 is_stmt 1              @ ../../../Library/StdDriver/src/usbd.c:402:39
+	ldr	r1, __arm_cp.5_7
+	movs	r0, #0
+	strb	r0, [r1]
+	.loc	2 403 13                        @ ../../../Library/StdDriver/src/usbd.c:403:13
+	b	.LBB5_36
+.Ltmp68:
+.LBB5_36:
+	.loc	2 0 13 is_stmt 0                @ ../../../Library/StdDriver/src/usbd.c:0:13
+	b	.LBB5_37
+.LBB5_37:
+	ldr	r1, __arm_cp.5_5
+	.loc	2 405 13 is_stmt 1              @ ../../../Library/StdDriver/src/usbd.c:405:13
+	ldr	r0, [r1]
+	movs	r2, #128
+	orrs	r0, r2
+	str	r0, [r1]
+	ldr	r1, __arm_cp.5_6
+	movs	r0, #0
+	.loc	2 406 13                        @ ../../../Library/StdDriver/src/usbd.c:406:13
+	str	r0, [r1]
+	.loc	2 407 13                        @ ../../../Library/StdDriver/src/usbd.c:407:13
+	b	.LBB5_52
+.Ltmp69:
+.LBB5_38:
+	.loc	2 411 30                        @ ../../../Library/StdDriver/src/usbd.c:411:30
+	ldr	r0, __arm_cp.5_2
+	ldrb	r0, [r0, #2]
+	.loc	2 411 28 is_stmt 0              @ ../../../Library/StdDriver/src/usbd.c:411:28
+	ldr	r1, __arm_cp.5_10
+	str	r0, [r1]
+	ldr	r1, __arm_cp.5_5
+	.loc	2 413 13 is_stmt 1              @ ../../../Library/StdDriver/src/usbd.c:413:13
+	ldr	r0, [r1]
+	movs	r2, #128
+	orrs	r0, r2
+	str	r0, [r1]
+	ldr	r1, __arm_cp.5_6
+	movs	r0, #0
+	.loc	2 414 13                        @ ../../../Library/StdDriver/src/usbd.c:414:13
+	str	r0, [r1]
+	.loc	2 416 13                        @ ../../../Library/StdDriver/src/usbd.c:416:13
+	b	.LBB5_52
+.Ltmp70:
+.LBB5_39:
+	.loc	2 420 32                        @ ../../../Library/StdDriver/src/usbd.c:420:32
+	ldr	r0, __arm_cp.5_2
+	ldrb	r0, [r0, #2]
+	.loc	2 420 30 is_stmt 0              @ ../../../Library/StdDriver/src/usbd.c:420:30
+	ldr	r1, __arm_cp.5_8
+	str	r0, [r1]
+.Ltmp71:
+	.loc	2 422 16 is_stmt 1              @ ../../../Library/StdDriver/src/usbd.c:422:16
+	ldr	r0, __arm_cp.5_9
+	ldr	r0, [r0]
+.Ltmp72:
+	.loc	2 422 16 is_stmt 0              @ ../../../Library/StdDriver/src/usbd.c:422:16
+	cmp	r0, #0
+	beq	.LBB5_41
+	b	.LBB5_40
+.LBB5_40:
+.Ltmp73:
+	.loc	2 424 17 is_stmt 1              @ ../../../Library/StdDriver/src/usbd.c:424:17
+	ldr	r0, __arm_cp.5_9
+	ldr	r0, [r0]
+	blx	r0
+	.loc	2 425 13                        @ ../../../Library/StdDriver/src/usbd.c:425:13
+	b	.LBB5_41
+.Ltmp74:
+.LBB5_41:
+	.loc	2 0 13 is_stmt 0                @ ../../../Library/StdDriver/src/usbd.c:0:13
+	ldr	r1, __arm_cp.5_5
+	.loc	2 428 13 is_stmt 1              @ ../../../Library/StdDriver/src/usbd.c:428:13
+	ldr	r0, [r1]
+	movs	r2, #128
+	orrs	r0, r2
+	str	r0, [r1]
+	ldr	r1, __arm_cp.5_6
+	movs	r0, #0
+	.loc	2 429 13                        @ ../../../Library/StdDriver/src/usbd.c:429:13
+	str	r0, [r1]
+	.loc	2 430 13                        @ ../../../Library/StdDriver/src/usbd.c:430:13
+	b	.LBB5_52
+.Ltmp75:
+.LBB5_42:
+	.loc	2 434 16                        @ ../../../Library/StdDriver/src/usbd.c:434:16
+	ldr	r0, __arm_cp.5_2
+	ldrb	r0, [r0, #2]
+.Ltmp76:
+	.loc	2 434 16 is_stmt 0              @ ../../../Library/StdDriver/src/usbd.c:434:16
+	cmp	r0, #0
+	bne	.LBB5_44
+	b	.LBB5_43
+.LBB5_43:
+.Ltmp77:
+	.loc	2 436 41 is_stmt 1              @ ../../../Library/StdDriver/src/usbd.c:436:41
+	ldr	r0, __arm_cp.5_2
+	ldrb	r0, [r0, #4]
+	movs	r1, #15
+	.loc	2 436 63 is_stmt 0              @ ../../../Library/StdDriver/src/usbd.c:436:63
+	ands	r0, r1
+	.loc	2 436 17                        @ ../../../Library/StdDriver/src/usbd.c:436:17
+	bl	USBD_SetStall
+	.loc	2 437 13 is_stmt 1              @ ../../../Library/StdDriver/src/usbd.c:437:13
+	b	.LBB5_47
+.Ltmp78:
+.LBB5_44:
+	.loc	2 438 21                        @ ../../../Library/StdDriver/src/usbd.c:438:21
+	ldr	r0, __arm_cp.5_2
+	ldrb	r0, [r0, #2]
+.Ltmp79:
+	.loc	2 438 21 is_stmt 0              @ ../../../Library/StdDriver/src/usbd.c:438:21
+	cmp	r0, #1
+	bne	.LBB5_46
+	b	.LBB5_45
+.LBB5_45:
+.Ltmp80:
+	.loc	2 440 39 is_stmt 1              @ ../../../Library/StdDriver/src/usbd.c:440:39
+	ldr	r1, __arm_cp.5_7
+	movs	r0, #1
+	strb	r0, [r1]
+	.loc	2 441 13                        @ ../../../Library/StdDriver/src/usbd.c:441:13
+	b	.LBB5_46
+.Ltmp81:
+.LBB5_46:
+	.loc	2 0 13 is_stmt 0                @ ../../../Library/StdDriver/src/usbd.c:0:13
+	b	.LBB5_47
+.LBB5_47:
+	ldr	r1, __arm_cp.5_5
+	.loc	2 444 13 is_stmt 1              @ ../../../Library/StdDriver/src/usbd.c:444:13
+	ldr	r0, [r1]
+	movs	r2, #128
+	orrs	r0, r2
+	str	r0, [r1]
+	ldr	r1, __arm_cp.5_6
+	movs	r0, #0
+	.loc	2 445 13                        @ ../../../Library/StdDriver/src/usbd.c:445:13
+	str	r0, [r1]
+	.loc	2 447 13                        @ ../../../Library/StdDriver/src/usbd.c:447:13
+	b	.LBB5_52
+.Ltmp82:
+.LBB5_48:
+	.loc	2 451 38                        @ ../../../Library/StdDriver/src/usbd.c:451:38
+	ldr	r0, __arm_cp.5_2
+	ldrb	r0, [r0, #2]
+	.loc	2 451 36 is_stmt 0              @ ../../../Library/StdDriver/src/usbd.c:451:36
+	ldr	r1, __arm_cp.5_3
+	str	r0, [r1]
+.Ltmp83:
+	.loc	2 452 16 is_stmt 1              @ ../../../Library/StdDriver/src/usbd.c:452:16
+	ldr	r0, __arm_cp.5_4
+	ldr	r0, [r0]
+.Ltmp84:
+	.loc	2 452 16 is_stmt 0              @ ../../../Library/StdDriver/src/usbd.c:452:16
+	cmp	r0, #0
+	beq	.LBB5_50
+	b	.LBB5_49
+.LBB5_49:
+.Ltmp85:
+	.loc	2 454 17 is_stmt 1              @ ../../../Library/StdDriver/src/usbd.c:454:17
+	ldr	r0, __arm_cp.5_4
+	ldr	r1, [r0]
+	.loc	2 454 40 is_stmt 0              @ ../../../Library/StdDriver/src/usbd.c:454:40
+	ldr	r0, __arm_cp.5_3
+	ldr	r0, [r0]
+	.loc	2 454 17                        @ ../../../Library/StdDriver/src/usbd.c:454:17
+	blx	r1
+	.loc	2 455 13 is_stmt 1              @ ../../../Library/StdDriver/src/usbd.c:455:13
+	b	.LBB5_50
+.Ltmp86:
+.LBB5_50:
+	.loc	2 0 13 is_stmt 0                @ ../../../Library/StdDriver/src/usbd.c:0:13
+	ldr	r1, __arm_cp.5_5
+	.loc	2 457 13 is_stmt 1              @ ../../../Library/StdDriver/src/usbd.c:457:13
+	ldr	r0, [r1]
+	movs	r2, #128
+	orrs	r0, r2
+	str	r0, [r1]
+	ldr	r1, __arm_cp.5_6
+	movs	r0, #0
+	.loc	2 458 13                        @ ../../../Library/StdDriver/src/usbd.c:458:13
+	str	r0, [r1]
+	.loc	2 459 13                        @ ../../../Library/StdDriver/src/usbd.c:459:13
+	b	.LBB5_52
+.Ltmp87:
+.LBB5_51:
+	.loc	2 0 13 is_stmt 0                @ ../../../Library/StdDriver/src/usbd.c:0:13
+	ldr	r1, __arm_cp.5_12
+.Ltmp88:
+	.loc	2 464 13 is_stmt 1              @ ../../../Library/StdDriver/src/usbd.c:464:13
+	ldr	r0, [r1]
+	movs	r2, #2
+	orrs	r0, r2
+	str	r0, [r1]
+	ldr	r1, __arm_cp.5_13
+	.loc	2 465 13                        @ ../../../Library/StdDriver/src/usbd.c:465:13
+	ldr	r0, [r1]
+	orrs	r0, r2
+	str	r0, [r1]
+	.loc	2 466 13                        @ ../../../Library/StdDriver/src/usbd.c:466:13
+	b	.LBB5_52
+.Ltmp89:
+.LBB5_52:
+	.loc	2 0 13 is_stmt 0                @ ../../../Library/StdDriver/src/usbd.c:0:13
+	b	.LBB5_53
+.LBB5_53:
+	.loc	2 470 1 epilogue_begin is_stmt 1 @ ../../../Library/StdDriver/src/usbd.c:470:1
+	add	sp, #32
+	pop	{r7, pc}
+.Ltmp90:
+	.p2align	2
+@ %bb.54:
+	.loc	2 0 1 is_stmt 0                 @ ../../../Library/StdDriver/src/usbd.c:0:1
+__arm_cp.5_0:
+	.long	g_usbd_CtrlInPointer
+.Lcpi_end17:
+	.size	__arm_cp.5_0, .Lcpi_end17-__arm_cp.5_0
+__arm_cp.5_1:
+	.long	g_usbd_CtrlInSize
+.Lcpi_end18:
+	.size	__arm_cp.5_1, .Lcpi_end18-__arm_cp.5_1
+__arm_cp.5_2:
+	.long	g_usbd_SetupPacket
+.Lcpi_end19:
+	.size	__arm_cp.5_2, .Lcpi_end19-__arm_cp.5_2
+__arm_cp.5_3:
+	.long	g_usbd_UsbAltInterface
+.Lcpi_end20:
+	.size	__arm_cp.5_3, .Lcpi_end20-__arm_cp.5_3
+__arm_cp.5_4:
+	.long	g_usbd_pfnSetInterface
+.Lcpi_end21:
+	.size	__arm_cp.5_4, .Lcpi_end21-__arm_cp.5_4
+__arm_cp.5_5:
+	.long	1074529544                      @ 0x400c0508
+.Lcpi_end22:
+	.size	__arm_cp.5_5, .Lcpi_end22-__arm_cp.5_5
+__arm_cp.5_6:
+	.long	1074529540                      @ 0x400c0504
+.Lcpi_end23:
+	.size	__arm_cp.5_6, .Lcpi_end23-__arm_cp.5_6
+__arm_cp.5_7:
+	.long	g_usbd_RemoteWakeupEn
+.Lcpi_end24:
+	.size	__arm_cp.5_7, .Lcpi_end24-__arm_cp.5_7
+__arm_cp.5_8:
+	.long	g_usbd_UsbConfig
+.Lcpi_end25:
+	.size	__arm_cp.5_8, .Lcpi_end25-__arm_cp.5_8
+__arm_cp.5_9:
+	.long	g_usbd_pfnSetConfigCallback
+.Lcpi_end26:
+	.size	__arm_cp.5_9, .Lcpi_end26-__arm_cp.5_9
+__arm_cp.5_10:
+	.long	g_usbd_UsbAddr
+.Lcpi_end27:
+	.size	__arm_cp.5_10, .Lcpi_end27-__arm_cp.5_10
+__arm_cp.5_11:
+	.long	g_u32EpStallLock
+.Lcpi_end28:
+	.size	__arm_cp.5_11, .Lcpi_end28-__arm_cp.5_11
+__arm_cp.5_12:
+	.long	1074529548                      @ 0x400c050c
+.Lcpi_end29:
+	.size	__arm_cp.5_12, .Lcpi_end29-__arm_cp.5_12
+__arm_cp.5_13:
+	.long	1074529564                      @ 0x400c051c
+.Lcpi_end30:
+	.size	__arm_cp.5_13, .Lcpi_end30-__arm_cp.5_13
+__arm_cp.5_14:
+	.long	1074529536                      @ 0x400c0500
+.Lcpi_end31:
+	.size	__arm_cp.5_14, .Lcpi_end31-__arm_cp.5_14
+__arm_cp.5_15:
+	.long	1074528512                      @ 0x400c0100
+.Lcpi_end32:
+	.size	__arm_cp.5_15, .Lcpi_end32-__arm_cp.5_15
+__arm_cp.5_16:
+	.long	g_usbd_sInfo
+.Lcpi_end33:
+	.size	__arm_cp.5_16, .Lcpi_end33-__arm_cp.5_16
+__arm_cp.5_17:
+	.long	1074528513                      @ 0x400c0101
+.Lcpi_end34:
+	.size	__arm_cp.5_17, .Lcpi_end34-__arm_cp.5_17
+.Lfunc_end5:
+	.size	USBD_StandardRequest, .Lfunc_end5-USBD_StandardRequest
+	.cfi_endproc
+	.cantunwind
+	.fnend
+                                        @ -- End function
+	.section	.text.USBD_GetDescriptor,"ax",%progbits
+	.hidden	USBD_GetDescriptor              @ -- Begin function USBD_GetDescriptor
+	.globl	USBD_GetDescriptor
+	.p2align	2
+	.type	USBD_GetDescriptor,%function
+	.code	16                              @ @USBD_GetDescriptor
+	.thumb_func
+USBD_GetDescriptor:
+.Lfunc_begin6:
+	.loc	2 186 0 is_stmt 1               @ ../../../Library/StdDriver/src/usbd.c:186:0
+	.fnstart
+	.cfi_startproc
+@ %bb.0:
+	.save	{r7, lr}
+	push	{r7, lr}
+	.cfi_def_cfa_offset 8
+	.cfi_offset lr, -4
+	.cfi_offset r7, -8
+	.pad	#40
+	sub	sp, #40
+	.cfi_def_cfa_offset 48
+	movs	r0, #0
+.Ltmp91:
+	.loc	2 189 12 prologue_end           @ ../../../Library/StdDriver/src/usbd.c:189:12
+	str	r0, [sp, #36]
+	.loc	2 190 14                        @ ../../../Library/StdDriver/src/usbd.c:190:14
+	ldr	r0, __arm_cp.6_0
+	ldrb	r1, [r0, #7]
+	.loc	2 190 12 is_stmt 0              @ ../../../Library/StdDriver/src/usbd.c:190:12
+	str	r1, [sp, #36]
+	.loc	2 191 12 is_stmt 1              @ ../../../Library/StdDriver/src/usbd.c:191:12
+	ldr	r1, [sp, #36]
+	lsls	r1, r1, #8
+	str	r1, [sp, #36]
+	.loc	2 192 15                        @ ../../../Library/StdDriver/src/usbd.c:192:15
+	ldrb	r2, [r0, #6]
+	.loc	2 192 12 is_stmt 0              @ ../../../Library/StdDriver/src/usbd.c:192:12
+	ldr	r1, [sp, #36]
+	adds	r1, r1, r2
+	str	r1, [sp, #36]
+	.loc	2 194 12 is_stmt 1              @ ../../../Library/StdDriver/src/usbd.c:194:12
+	ldrb	r0, [r0, #3]
+	.loc	2 194 5 is_stmt 0               @ ../../../Library/StdDriver/src/usbd.c:194:5
+	subs	r0, r0, #1
+	str	r0, [sp, #24]                   @ 4-byte Spill
+	cmp	r0, #33
+	bls	.LBB6_1
+	b	.LBB6_32
+.LBB6_1:
+	ldr	r0, [sp, #24]                   @ 4-byte Reload
+	lsls	r1, r0, #2
+	adr	r0, .LJTI6_0
+	ldr	r0, [r0, r1]
+	mov	pc, r0
+@ %bb.2:
+	.loc	2 0 5                           @ ../../../Library/StdDriver/src/usbd.c:0:5
+	.p2align	2
+.LJTI6_0:
+	.long	.LBB6_3+1
+	.long	.LBB6_7+1
+	.long	.LBB6_26+1
+	.long	.LBB6_32+1
+	.long	.LBB6_32+1
+	.long	.LBB6_32+1
+	.long	.LBB6_32+1
+	.long	.LBB6_32+1
+	.long	.LBB6_32+1
+	.long	.LBB6_32+1
+	.long	.LBB6_32+1
+	.long	.LBB6_32+1
+	.long	.LBB6_32+1
+	.long	.LBB6_32+1
+	.long	.LBB6_11+1
+	.long	.LBB6_32+1
+	.long	.LBB6_32+1
+	.long	.LBB6_32+1
+	.long	.LBB6_32+1
+	.long	.LBB6_32+1
+	.long	.LBB6_32+1
+	.long	.LBB6_32+1
+	.long	.LBB6_32+1
+	.long	.LBB6_32+1
+	.long	.LBB6_32+1
+	.long	.LBB6_32+1
+	.long	.LBB6_32+1
+	.long	.LBB6_32+1
+	.long	.LBB6_32+1
+	.long	.LBB6_32+1
+	.long	.LBB6_32+1
+	.long	.LBB6_32+1
+	.long	.LBB6_18+1
+	.long	.LBB6_22+1
+.LBB6_3:
+.Ltmp92:
+	.loc	2 199 18 is_stmt 1              @ ../../../Library/StdDriver/src/usbd.c:199:18
+	ldr	r0, [sp, #36]
+	cmp	r0, #17
+	bhi	.LBB6_5
+	b	.LBB6_4
+.LBB6_4:
+	ldr	r0, [sp, #36]
+	str	r0, [sp, #20]                   @ 4-byte Spill
+	b	.LBB6_6
+.LBB6_5:
+	.loc	2 0 18 is_stmt 0                @ ../../../Library/StdDriver/src/usbd.c:0:18
+	movs	r0, #18
+	.loc	2 199 18                        @ ../../../Library/StdDriver/src/usbd.c:199:18
+	str	r0, [sp, #20]                   @ 4-byte Spill
+	b	.LBB6_6
+.LBB6_6:
+	ldr	r0, [sp, #20]                   @ 4-byte Reload
+	.loc	2 199 16                        @ ../../../Library/StdDriver/src/usbd.c:199:16
+	str	r0, [sp, #36]
+	.loc	2 200 39 is_stmt 1              @ ../../../Library/StdDriver/src/usbd.c:200:39
+	ldr	r0, __arm_cp.6_3
+	ldr	r0, [r0]
+	.loc	2 200 53 is_stmt 0              @ ../../../Library/StdDriver/src/usbd.c:200:53
+	ldr	r0, [r0]
+	.loc	2 200 65                        @ ../../../Library/StdDriver/src/usbd.c:200:65
+	ldr	r1, [sp, #36]
+	.loc	2 200 9                         @ ../../../Library/StdDriver/src/usbd.c:200:9
+	bl	USBD_PrepareCtrlIn
+	.loc	2 201 9 is_stmt 1               @ ../../../Library/StdDriver/src/usbd.c:201:9
+	b	.LBB6_33
+.Ltmp93:
+.LBB6_7:
+	.loc	2 207 23                        @ ../../../Library/StdDriver/src/usbd.c:207:23
+	ldr	r0, __arm_cp.6_3
+	ldr	r1, [r0]
+	.loc	2 207 37 is_stmt 0              @ ../../../Library/StdDriver/src/usbd.c:207:37
+	ldr	r1, [r1, #4]
+	.loc	2 207 23                        @ ../../../Library/StdDriver/src/usbd.c:207:23
+	ldrb	r1, [r1, #3]
+	.loc	2 207 21                        @ ../../../Library/StdDriver/src/usbd.c:207:21
+	str	r1, [sp, #32]
+	.loc	2 208 23 is_stmt 1              @ ../../../Library/StdDriver/src/usbd.c:208:23
+	ldr	r0, [r0]
+	.loc	2 208 37 is_stmt 0              @ ../../../Library/StdDriver/src/usbd.c:208:37
+	ldr	r0, [r0, #4]
+	.loc	2 208 23                        @ ../../../Library/StdDriver/src/usbd.c:208:23
+	ldrb	r0, [r0, #2]
+	.loc	2 208 57                        @ ../../../Library/StdDriver/src/usbd.c:208:57
+	ldr	r1, [sp, #32]
+	.loc	2 208 69                        @ ../../../Library/StdDriver/src/usbd.c:208:69
+	lsls	r1, r1, #8
+	.loc	2 208 54                        @ ../../../Library/StdDriver/src/usbd.c:208:54
+	adds	r0, r0, r1
+	.loc	2 208 21                        @ ../../../Library/StdDriver/src/usbd.c:208:21
+	str	r0, [sp, #32]
+	.loc	2 209 18 is_stmt 1              @ ../../../Library/StdDriver/src/usbd.c:209:18
+	ldr	r0, [sp, #36]
+	ldr	r1, [sp, #32]
+	cmp	r0, r1
+	bhs	.LBB6_9
+	b	.LBB6_8
+.LBB6_8:
+	ldr	r0, [sp, #36]
+	str	r0, [sp, #16]                   @ 4-byte Spill
+	b	.LBB6_10
+.LBB6_9:
+	ldr	r0, [sp, #32]
+	str	r0, [sp, #16]                   @ 4-byte Spill
+	b	.LBB6_10
+.LBB6_10:
+	ldr	r0, [sp, #16]                   @ 4-byte Reload
+	.loc	2 209 16 is_stmt 0              @ ../../../Library/StdDriver/src/usbd.c:209:16
+	str	r0, [sp, #36]
+	.loc	2 210 39 is_stmt 1              @ ../../../Library/StdDriver/src/usbd.c:210:39
+	ldr	r0, __arm_cp.6_3
+	ldr	r0, [r0]
+	.loc	2 210 53 is_stmt 0              @ ../../../Library/StdDriver/src/usbd.c:210:53
+	ldr	r0, [r0, #4]
+	.loc	2 210 68                        @ ../../../Library/StdDriver/src/usbd.c:210:68
+	ldr	r1, [sp, #36]
+	.loc	2 210 9                         @ ../../../Library/StdDriver/src/usbd.c:210:9
+	bl	USBD_PrepareCtrlIn
+	.loc	2 211 9 is_stmt 1               @ ../../../Library/StdDriver/src/usbd.c:211:9
+	b	.LBB6_33
+.Ltmp94:
+.LBB6_11:
+	.loc	2 217 12                        @ ../../../Library/StdDriver/src/usbd.c:217:12
+	ldr	r0, __arm_cp.6_3
+	ldr	r0, [r0]
+	.loc	2 217 26 is_stmt 0              @ ../../../Library/StdDriver/src/usbd.c:217:26
+	ldr	r0, [r0, #16]
+.Ltmp95:
+	.loc	2 217 12                        @ ../../../Library/StdDriver/src/usbd.c:217:12
+	cmp	r0, #0
+	beq	.LBB6_16
+	b	.LBB6_12
+.LBB6_12:
+.Ltmp96:
+	.loc	2 219 22 is_stmt 1              @ ../../../Library/StdDriver/src/usbd.c:219:22
+	ldr	r0, [sp, #36]
+	cmp	r0, #11
+	bhi	.LBB6_14
+	b	.LBB6_13
+.LBB6_13:
+	ldr	r0, [sp, #36]
+	str	r0, [sp, #12]                   @ 4-byte Spill
+	b	.LBB6_15
+.LBB6_14:
+	.loc	2 0 22 is_stmt 0                @ ../../../Library/StdDriver/src/usbd.c:0:22
+	movs	r0, #12
+	.loc	2 219 22                        @ ../../../Library/StdDriver/src/usbd.c:219:22
+	str	r0, [sp, #12]                   @ 4-byte Spill
+	b	.LBB6_15
+.LBB6_15:
+	ldr	r0, [sp, #12]                   @ 4-byte Reload
+	.loc	2 219 20                        @ ../../../Library/StdDriver/src/usbd.c:219:20
+	str	r0, [sp, #36]
+	.loc	2 220 43 is_stmt 1              @ ../../../Library/StdDriver/src/usbd.c:220:43
+	ldr	r0, __arm_cp.6_3
+	ldr	r0, [r0]
+	.loc	2 220 57 is_stmt 0              @ ../../../Library/StdDriver/src/usbd.c:220:57
+	ldr	r0, [r0, #16]
+	.loc	2 220 69                        @ ../../../Library/StdDriver/src/usbd.c:220:69
+	ldr	r1, [sp, #36]
+	.loc	2 220 13                        @ ../../../Library/StdDriver/src/usbd.c:220:13
+	bl	USBD_PrepareCtrlIn
+	.loc	2 221 9 is_stmt 1               @ ../../../Library/StdDriver/src/usbd.c:221:9
+	b	.LBB6_17
+.Ltmp97:
+.LBB6_16:
+	.loc	2 0 9 is_stmt 0                 @ ../../../Library/StdDriver/src/usbd.c:0:9
+	ldr	r1, __arm_cp.6_1
+.Ltmp98:
+	.loc	2 225 13 is_stmt 1              @ ../../../Library/StdDriver/src/usbd.c:225:13
+	ldr	r0, [r1]
+	movs	r2, #2
+	orrs	r0, r2
+	str	r0, [r1]
+	ldr	r1, __arm_cp.6_2
+	.loc	2 226 13                        @ ../../../Library/StdDriver/src/usbd.c:226:13
+	ldr	r0, [r1]
+	orrs	r0, r2
+	str	r0, [r1]
+	b	.LBB6_17
+.Ltmp99:
+.LBB6_17:
+	.loc	2 229 9                         @ ../../../Library/StdDriver/src/usbd.c:229:9
+	b	.LBB6_33
+.Ltmp100:
+.LBB6_18:
+	.loc	2 237 18                        @ ../../../Library/StdDriver/src/usbd.c:237:18
+	ldr	r0, [sp, #36]
+	cmp	r0, #8
+	bhi	.LBB6_20
+	b	.LBB6_19
+.LBB6_19:
+	ldr	r0, [sp, #36]
+	str	r0, [sp, #8]                    @ 4-byte Spill
+	b	.LBB6_21
+.LBB6_20:
+	.loc	2 0 18 is_stmt 0                @ ../../../Library/StdDriver/src/usbd.c:0:18
+	movs	r0, #9
+	.loc	2 237 18                        @ ../../../Library/StdDriver/src/usbd.c:237:18
+	str	r0, [sp, #8]                    @ 4-byte Spill
+	b	.LBB6_21
+.LBB6_21:
+	ldr	r0, [sp, #8]                    @ 4-byte Reload
+	.loc	2 237 16                        @ ../../../Library/StdDriver/src/usbd.c:237:16
+	str	r0, [sp, #36]
+	.loc	2 238 31 is_stmt 1              @ ../../../Library/StdDriver/src/usbd.c:238:31
+	ldr	r0, __arm_cp.6_3
+	ldr	r1, [r0]
+	.loc	2 238 45 is_stmt 0              @ ../../../Library/StdDriver/src/usbd.c:238:45
+	ldr	r1, [r1, #24]
+	.loc	2 238 66                        @ ../../../Library/StdDriver/src/usbd.c:238:66
+	ldr	r2, __arm_cp.6_0
+	ldrb	r2, [r2, #4]
+	.loc	2 238 31                        @ ../../../Library/StdDriver/src/usbd.c:238:31
+	lsls	r2, r2, #2
+	ldr	r1, [r1, r2]
+	.loc	2 238 29                        @ ../../../Library/StdDriver/src/usbd.c:238:29
+	str	r1, [sp, #28]
+	.loc	2 239 40 is_stmt 1              @ ../../../Library/StdDriver/src/usbd.c:239:40
+	ldr	r0, [r0]
+	.loc	2 239 54 is_stmt 0              @ ../../../Library/StdDriver/src/usbd.c:239:54
+	ldr	r0, [r0, #4]
+	.loc	2 239 68                        @ ../../../Library/StdDriver/src/usbd.c:239:68
+	ldr	r1, [sp, #28]
+	.loc	2 239 40                        @ ../../../Library/StdDriver/src/usbd.c:239:40
+	adds	r0, r0, r1
+	.loc	2 239 90                        @ ../../../Library/StdDriver/src/usbd.c:239:90
+	ldr	r1, [sp, #36]
+	.loc	2 239 9                         @ ../../../Library/StdDriver/src/usbd.c:239:9
+	bl	USBD_PrepareCtrlIn
+	.loc	2 240 9 is_stmt 1               @ ../../../Library/StdDriver/src/usbd.c:240:9
+	b	.LBB6_33
+.Ltmp101:
+.LBB6_22:
+	.loc	2 245 18                        @ ../../../Library/StdDriver/src/usbd.c:245:18
+	ldr	r0, [sp, #36]
+	ldr	r1, __arm_cp.6_3
+	ldr	r1, [r1]
+	ldr	r1, [r1, #20]
+	ldr	r2, __arm_cp.6_0
+	ldrb	r2, [r2, #4]
+	lsls	r2, r2, #2
+	ldr	r1, [r1, r2]
+	cmp	r0, r1
+	bhs	.LBB6_24
+	b	.LBB6_23
+.LBB6_23:
+	ldr	r0, [sp, #36]
+	str	r0, [sp, #4]                    @ 4-byte Spill
+	b	.LBB6_25
+.LBB6_24:
+	ldr	r0, __arm_cp.6_3
+	ldr	r0, [r0]
+	ldr	r0, [r0, #20]
+	ldr	r1, __arm_cp.6_0
+	ldrb	r1, [r1, #4]
+	lsls	r1, r1, #2
+	ldr	r0, [r0, r1]
+	str	r0, [sp, #4]                    @ 4-byte Spill
+	b	.LBB6_25
+.LBB6_25:
+	ldr	r0, [sp, #4]                    @ 4-byte Reload
+	.loc	2 245 16 is_stmt 0              @ ../../../Library/StdDriver/src/usbd.c:245:16
+	str	r0, [sp, #36]
+	.loc	2 246 39 is_stmt 1              @ ../../../Library/StdDriver/src/usbd.c:246:39
+	ldr	r0, __arm_cp.6_3
+	ldr	r0, [r0]
+	.loc	2 246 53 is_stmt 0              @ ../../../Library/StdDriver/src/usbd.c:246:53
+	ldr	r0, [r0, #12]
+	.loc	2 246 70                        @ ../../../Library/StdDriver/src/usbd.c:246:70
+	ldr	r1, __arm_cp.6_0
+	ldrb	r1, [r1, #4]
+	.loc	2 246 39                        @ ../../../Library/StdDriver/src/usbd.c:246:39
+	lsls	r1, r1, #2
+	ldr	r0, [r0, r1]
+	.loc	2 246 94                        @ ../../../Library/StdDriver/src/usbd.c:246:94
+	ldr	r1, [sp, #36]
+	.loc	2 246 9                         @ ../../../Library/StdDriver/src/usbd.c:246:9
+	bl	USBD_PrepareCtrlIn
+	.loc	2 247 9 is_stmt 1               @ ../../../Library/StdDriver/src/usbd.c:247:9
+	b	.LBB6_33
+.Ltmp102:
+.LBB6_26:
+	.loc	2 253 12                        @ ../../../Library/StdDriver/src/usbd.c:253:12
+	ldr	r0, __arm_cp.6_0
+	ldrb	r0, [r0, #2]
+.Ltmp103:
+	.loc	2 253 12 is_stmt 0              @ ../../../Library/StdDriver/src/usbd.c:253:12
+	cmp	r0, #3
+	bhi	.LBB6_31
+	b	.LBB6_27
+.LBB6_27:
+.Ltmp104:
+	.loc	2 255 22 is_stmt 1              @ ../../../Library/StdDriver/src/usbd.c:255:22
+	ldr	r0, [sp, #36]
+	ldr	r1, __arm_cp.6_3
+	ldr	r1, [r1]
+	ldr	r1, [r1, #8]
+	ldr	r2, __arm_cp.6_0
+	ldrb	r2, [r2, #2]
+	lsls	r2, r2, #2
+	ldr	r1, [r1, r2]
+	ldrb	r1, [r1]
+	cmp	r0, r1
+	bhs	.LBB6_29
+	b	.LBB6_28
+.LBB6_28:
+	ldr	r0, [sp, #36]
+	str	r0, [sp]                        @ 4-byte Spill
+	b	.LBB6_30
+.LBB6_29:
+	ldr	r0, __arm_cp.6_3
+	ldr	r0, [r0]
+	ldr	r0, [r0, #8]
+	ldr	r1, __arm_cp.6_0
+	ldrb	r1, [r1, #2]
+	lsls	r1, r1, #2
+	ldr	r0, [r0, r1]
+	ldrb	r0, [r0]
+	str	r0, [sp]                        @ 4-byte Spill
+	b	.LBB6_30
+.LBB6_30:
+	ldr	r0, [sp]                        @ 4-byte Reload
+	.loc	2 255 20 is_stmt 0              @ ../../../Library/StdDriver/src/usbd.c:255:20
+	str	r0, [sp, #36]
+	.loc	2 256 43 is_stmt 1              @ ../../../Library/StdDriver/src/usbd.c:256:43
+	ldr	r0, __arm_cp.6_3
+	ldr	r0, [r0]
+	.loc	2 256 57 is_stmt 0              @ ../../../Library/StdDriver/src/usbd.c:256:57
+	ldr	r0, [r0, #8]
+	.loc	2 256 71                        @ ../../../Library/StdDriver/src/usbd.c:256:71
+	ldr	r1, __arm_cp.6_0
+	ldrb	r1, [r1, #2]
+	.loc	2 256 43                        @ ../../../Library/StdDriver/src/usbd.c:256:43
+	lsls	r1, r1, #2
+	ldr	r0, [r0, r1]
+	.loc	2 256 95                        @ ../../../Library/StdDriver/src/usbd.c:256:95
+	ldr	r1, [sp, #36]
+	.loc	2 256 13                        @ ../../../Library/StdDriver/src/usbd.c:256:13
+	bl	USBD_PrepareCtrlIn
+	.loc	2 257 13 is_stmt 1              @ ../../../Library/StdDriver/src/usbd.c:257:13
+	b	.LBB6_33
+.Ltmp105:
+.LBB6_31:
+	.loc	2 0 13 is_stmt 0                @ ../../../Library/StdDriver/src/usbd.c:0:13
+	ldr	r1, __arm_cp.6_1
+.Ltmp106:
+	.loc	2 262 13 is_stmt 1              @ ../../../Library/StdDriver/src/usbd.c:262:13
+	ldr	r0, [r1]
+	movs	r2, #2
+	orrs	r0, r2
+	str	r0, [r1]
+	ldr	r1, __arm_cp.6_2
+	.loc	2 263 13                        @ ../../../Library/StdDriver/src/usbd.c:263:13
+	ldr	r0, [r1]
+	orrs	r0, r2
+	str	r0, [r1]
+	.loc	2 264 13                        @ ../../../Library/StdDriver/src/usbd.c:264:13
+	b	.LBB6_33
+.Ltmp107:
+.LBB6_32:
+	.loc	2 0 13 is_stmt 0                @ ../../../Library/StdDriver/src/usbd.c:0:13
+	ldr	r1, __arm_cp.6_1
+	.loc	2 269 9 is_stmt 1               @ ../../../Library/StdDriver/src/usbd.c:269:9
+	ldr	r0, [r1]
+	movs	r2, #2
+	orrs	r0, r2
+	str	r0, [r1]
+	ldr	r1, __arm_cp.6_2
+	.loc	2 270 9                         @ ../../../Library/StdDriver/src/usbd.c:270:9
+	ldr	r0, [r1]
+	orrs	r0, r2
+	str	r0, [r1]
+	.loc	2 271 9                         @ ../../../Library/StdDriver/src/usbd.c:271:9
+	b	.LBB6_33
+.Ltmp108:
+.LBB6_33:
+	.loc	2 273 1 epilogue_begin          @ ../../../Library/StdDriver/src/usbd.c:273:1
+	add	sp, #40
+	pop	{r7, pc}
+.Ltmp109:
+	.p2align	2
+@ %bb.34:
+	.loc	2 0 1 is_stmt 0                 @ ../../../Library/StdDriver/src/usbd.c:0:1
+__arm_cp.6_0:
+	.long	g_usbd_SetupPacket
+.Lcpi_end35:
+	.size	__arm_cp.6_0, .Lcpi_end35-__arm_cp.6_0
+__arm_cp.6_1:
+	.long	1074529548                      @ 0x400c050c
+.Lcpi_end36:
+	.size	__arm_cp.6_1, .Lcpi_end36-__arm_cp.6_1
+__arm_cp.6_2:
+	.long	1074529564                      @ 0x400c051c
+.Lcpi_end37:
+	.size	__arm_cp.6_2, .Lcpi_end37-__arm_cp.6_2
+__arm_cp.6_3:
+	.long	g_usbd_sInfo
+.Lcpi_end38:
+	.size	__arm_cp.6_3, .Lcpi_end38-__arm_cp.6_3
+.Lfunc_end6:
+	.size	USBD_GetDescriptor, .Lfunc_end6-USBD_GetDescriptor
+	.cfi_endproc
+	.cantunwind
+	.fnend
+                                        @ -- End function
+	.section	.text.USBD_PrepareCtrlIn,"ax",%progbits
+	.hidden	USBD_PrepareCtrlIn              @ -- Begin function USBD_PrepareCtrlIn
+	.globl	USBD_PrepareCtrlIn
+	.p2align	2
+	.type	USBD_PrepareCtrlIn,%function
+	.code	16                              @ @USBD_PrepareCtrlIn
+	.thumb_func
+USBD_PrepareCtrlIn:
+.Lfunc_begin7:
+	.loc	2 484 0 is_stmt 1               @ ../../../Library/StdDriver/src/usbd.c:484:0
+	.fnstart
+	.cfi_startproc
+@ %bb.0:
+	.save	{r7, lr}
+	push	{r7, lr}
+	.cfi_def_cfa_offset 8
+	.cfi_offset lr, -4
+	.cfi_offset r7, -8
+	.pad	#16
+	sub	sp, #16
+	.cfi_def_cfa_offset 24
+	str	r0, [sp, #12]
+	str	r1, [sp, #8]
+.Ltmp110:
+	.loc	2 486 8 prologue_end            @ ../../../Library/StdDriver/src/usbd.c:486:8
+	ldr	r0, [sp, #8]
+	.loc	2 486 18 is_stmt 0              @ ../../../Library/StdDriver/src/usbd.c:486:18
+	ldr	r1, __arm_cp.7_0
+	ldr	r1, [r1]
+.Ltmp111:
+	.loc	2 486 8                         @ ../../../Library/StdDriver/src/usbd.c:486:8
+	cmp	r0, r1
+	bls	.LBB7_2
+	b	.LBB7_1
+.LBB7_1:
+.Ltmp112:
+	.loc	2 489 32 is_stmt 1              @ ../../../Library/StdDriver/src/usbd.c:489:32
+	ldr	r0, [sp, #12]
+	.loc	2 489 41 is_stmt 0              @ ../../../Library/StdDriver/src/usbd.c:489:41
+	ldr	r2, __arm_cp.7_0
+	str	r2, [sp]                        @ 4-byte Spill
+	ldr	r1, [r2]
+	.loc	2 489 39                        @ ../../../Library/StdDriver/src/usbd.c:489:39
+	adds	r0, r0, r1
+	.loc	2 489 30                        @ ../../../Library/StdDriver/src/usbd.c:489:30
+	ldr	r1, __arm_cp.7_1
+	str	r0, [r1]
+	.loc	2 490 29 is_stmt 1              @ ../../../Library/StdDriver/src/usbd.c:490:29
+	ldr	r0, [sp, #8]
+	.loc	2 490 39 is_stmt 0              @ ../../../Library/StdDriver/src/usbd.c:490:39
+	ldr	r1, [r2]
+	.loc	2 490 37                        @ ../../../Library/StdDriver/src/usbd.c:490:37
+	subs	r0, r0, r1
+	.loc	2 490 27                        @ ../../../Library/StdDriver/src/usbd.c:490:27
+	ldr	r1, __arm_cp.7_2
+	str	r0, [r1]
+	ldr	r1, __arm_cp.7_4
+	.loc	2 491 9 is_stmt 1               @ ../../../Library/StdDriver/src/usbd.c:491:9
+	ldr	r0, [r1]
+	movs	r3, #128
+	orrs	r0, r3
+	str	r0, [r1]
+	ldr	r0, __arm_cp.7_5
+	.loc	2 492 32                        @ ../../../Library/StdDriver/src/usbd.c:492:32
+	ldr	r0, [r0]
+	ldr	r1, __arm_cp.7_6
+	.loc	2 492 30 is_stmt 0              @ ../../../Library/StdDriver/src/usbd.c:492:30
+	adds	r0, r0, r1
+	.loc	2 492 14                        @ ../../../Library/StdDriver/src/usbd.c:492:14
+	str	r0, [sp, #4]
+	.loc	2 493 33 is_stmt 1              @ ../../../Library/StdDriver/src/usbd.c:493:33
+	ldr	r0, [sp, #4]
+	.loc	2 493 39 is_stmt 0              @ ../../../Library/StdDriver/src/usbd.c:493:39
+	ldr	r1, [sp, #12]
+	.loc	2 493 47                        @ ../../../Library/StdDriver/src/usbd.c:493:47
+	ldr	r2, [r2]
+	.loc	2 493 9                         @ ../../../Library/StdDriver/src/usbd.c:493:9
+	bl	USBD_MemCopy
+	ldr	r0, [sp]                        @ 4-byte Reload
+	.loc	2 494 9 is_stmt 1               @ ../../../Library/StdDriver/src/usbd.c:494:9
+	ldr	r0, [r0]
+	ldr	r1, __arm_cp.7_7
+	str	r0, [r1]
+	.loc	2 495 5                         @ ../../../Library/StdDriver/src/usbd.c:495:5
+	b	.LBB7_5
+.Ltmp113:
+.LBB7_2:
+	.loc	2 499 30                        @ ../../../Library/StdDriver/src/usbd.c:499:30
+	ldr	r1, __arm_cp.7_1
+	movs	r0, #0
+	str	r0, [r1]
+	.loc	2 500 27                        @ ../../../Library/StdDriver/src/usbd.c:500:27
+	ldr	r1, __arm_cp.7_2
+	str	r0, [r1]
+.Ltmp114:
+	.loc	2 501 13                        @ ../../../Library/StdDriver/src/usbd.c:501:13
+	ldr	r0, [sp, #8]
+	.loc	2 501 24 is_stmt 0              @ ../../../Library/StdDriver/src/usbd.c:501:24
+	ldr	r1, __arm_cp.7_0
+	ldr	r1, [r1]
+.Ltmp115:
+	.loc	2 501 13                        @ ../../../Library/StdDriver/src/usbd.c:501:13
+	cmp	r0, r1
+	bne	.LBB7_4
+	b	.LBB7_3
+.LBB7_3:
+.Ltmp116:
+	.loc	2 502 35 is_stmt 1              @ ../../../Library/StdDriver/src/usbd.c:502:35
+	ldr	r1, __arm_cp.7_3
+	movs	r0, #1
+	strb	r0, [r1]
+	.loc	2 502 13 is_stmt 0              @ ../../../Library/StdDriver/src/usbd.c:502:13
+	b	.LBB7_4
+.Ltmp117:
+.LBB7_4:
+	.loc	2 0 13                          @ ../../../Library/StdDriver/src/usbd.c:0:13
+	ldr	r1, __arm_cp.7_4
+	.loc	2 503 9 is_stmt 1               @ ../../../Library/StdDriver/src/usbd.c:503:9
+	ldr	r0, [r1]
+	movs	r2, #128
+	orrs	r0, r2
+	str	r0, [r1]
+	ldr	r0, __arm_cp.7_5
+	.loc	2 504 32                        @ ../../../Library/StdDriver/src/usbd.c:504:32
+	ldr	r0, [r0]
+	ldr	r1, __arm_cp.7_6
+	.loc	2 504 30 is_stmt 0              @ ../../../Library/StdDriver/src/usbd.c:504:30
+	adds	r0, r0, r1
+	.loc	2 504 14                        @ ../../../Library/StdDriver/src/usbd.c:504:14
+	str	r0, [sp, #4]
+	.loc	2 505 33 is_stmt 1              @ ../../../Library/StdDriver/src/usbd.c:505:33
+	ldr	r0, [sp, #4]
+	.loc	2 505 39 is_stmt 0              @ ../../../Library/StdDriver/src/usbd.c:505:39
+	ldr	r1, [sp, #12]
+	.loc	2 505 47                        @ ../../../Library/StdDriver/src/usbd.c:505:47
+	ldr	r2, [sp, #8]
+	.loc	2 505 9                         @ ../../../Library/StdDriver/src/usbd.c:505:9
+	bl	USBD_MemCopy
+	.loc	2 506 9 is_stmt 1               @ ../../../Library/StdDriver/src/usbd.c:506:9
+	ldr	r0, [sp, #8]
+	ldr	r1, __arm_cp.7_7
+	str	r0, [r1]
+	b	.LBB7_5
+.Ltmp118:
+.LBB7_5:
+	.loc	2 508 1 epilogue_begin          @ ../../../Library/StdDriver/src/usbd.c:508:1
+	add	sp, #16
+	pop	{r7, pc}
+.Ltmp119:
+	.p2align	2
+@ %bb.6:
+	.loc	2 0 1 is_stmt 0                 @ ../../../Library/StdDriver/src/usbd.c:0:1
+__arm_cp.7_0:
+	.long	g_usbd_CtrlMaxPktSize
+.Lcpi_end39:
+	.size	__arm_cp.7_0, .Lcpi_end39-__arm_cp.7_0
+__arm_cp.7_1:
+	.long	g_usbd_CtrlInPointer
+.Lcpi_end40:
+	.size	__arm_cp.7_1, .Lcpi_end40-__arm_cp.7_1
+__arm_cp.7_2:
+	.long	g_usbd_CtrlInSize
+.Lcpi_end41:
+	.size	__arm_cp.7_2, .Lcpi_end41-__arm_cp.7_2
+__arm_cp.7_3:
+	.long	g_usbd_CtrlInZeroFlag
+.Lcpi_end42:
+	.size	__arm_cp.7_3, .Lcpi_end42-__arm_cp.7_3
+__arm_cp.7_4:
+	.long	1074529544                      @ 0x400c0508
+.Lcpi_end43:
+	.size	__arm_cp.7_4, .Lcpi_end43-__arm_cp.7_4
+__arm_cp.7_5:
+	.long	1074529536                      @ 0x400c0500
+.Lcpi_end44:
+	.size	__arm_cp.7_5, .Lcpi_end44-__arm_cp.7_5
+__arm_cp.7_6:
+	.long	1074528512                      @ 0x400c0100
+.Lcpi_end45:
+	.size	__arm_cp.7_6, .Lcpi_end45-__arm_cp.7_6
+__arm_cp.7_7:
+	.long	1074529540                      @ 0x400c0504
+.Lcpi_end46:
+	.size	__arm_cp.7_7, .Lcpi_end46-__arm_cp.7_7
+.Lfunc_end7:
+	.size	USBD_PrepareCtrlIn, .Lfunc_end7-USBD_PrepareCtrlIn
+	.cfi_endproc
+	.cantunwind
+	.fnend
+                                        @ -- End function
+	.section	.text.USBD_PrepareCtrlOut,"ax",%progbits
+	.hidden	USBD_PrepareCtrlOut             @ -- Begin function USBD_PrepareCtrlOut
+	.globl	USBD_PrepareCtrlOut
+	.p2align	2
+	.type	USBD_PrepareCtrlOut,%function
+	.code	16                              @ @USBD_PrepareCtrlOut
+	.thumb_func
+USBD_PrepareCtrlOut:
+.Lfunc_begin8:
+	.loc	2 579 0 is_stmt 1               @ ../../../Library/StdDriver/src/usbd.c:579:0
+	.fnstart
+	.cfi_startproc
+@ %bb.0:
+	.pad	#8
+	sub	sp, #8
+	.cfi_def_cfa_offset 8
+	str	r0, [sp, #4]
+	str	r1, [sp]
+.Ltmp120:
+	.loc	2 580 29 prologue_end           @ ../../../Library/StdDriver/src/usbd.c:580:29
+	ldr	r0, [sp, #4]
+	.loc	2 580 27 is_stmt 0              @ ../../../Library/StdDriver/src/usbd.c:580:27
+	ldr	r1, __arm_cp.8_0
+	str	r0, [r1]
+	.loc	2 581 24 is_stmt 1              @ ../../../Library/StdDriver/src/usbd.c:581:24
+	ldr	r1, __arm_cp.8_1
+	movs	r0, #0
+	str	r0, [r1]
+	.loc	2 582 31                        @ ../../../Library/StdDriver/src/usbd.c:582:31
+	ldr	r0, [sp]
+	.loc	2 582 29 is_stmt 0              @ ../../../Library/StdDriver/src/usbd.c:582:29
+	ldr	r1, __arm_cp.8_2
+	str	r0, [r1]
+	.loc	2 583 5 is_stmt 1               @ ../../../Library/StdDriver/src/usbd.c:583:5
+	ldr	r0, __arm_cp.8_3
+	ldr	r0, [r0]
+	ldr	r1, __arm_cp.8_4
+	str	r0, [r1]
+	.loc	2 584 1 epilogue_begin          @ ../../../Library/StdDriver/src/usbd.c:584:1
+	add	sp, #8
+	bx	lr
+.Ltmp121:
+	.p2align	2
+@ %bb.1:
+	.loc	2 0 1 is_stmt 0                 @ ../../../Library/StdDriver/src/usbd.c:0:1
+__arm_cp.8_0:
+	.long	g_usbd_CtrlOutPointer
+.Lcpi_end47:
+	.size	__arm_cp.8_0, .Lcpi_end47-__arm_cp.8_0
+__arm_cp.8_1:
+	.long	g_usbd_CtrlOutSize
+.Lcpi_end48:
+	.size	__arm_cp.8_1, .Lcpi_end48-__arm_cp.8_1
+__arm_cp.8_2:
+	.long	g_usbd_CtrlOutSizeLimit
+.Lcpi_end49:
+	.size	__arm_cp.8_2, .Lcpi_end49-__arm_cp.8_2
+__arm_cp.8_3:
+	.long	g_usbd_CtrlMaxPktSize
+.Lcpi_end50:
+	.size	__arm_cp.8_3, .Lcpi_end50-__arm_cp.8_3
+__arm_cp.8_4:
+	.long	1074529556                      @ 0x400c0514
+.Lcpi_end51:
+	.size	__arm_cp.8_4, .Lcpi_end51-__arm_cp.8_4
+.Lfunc_end8:
+	.size	USBD_PrepareCtrlOut, .Lfunc_end8-USBD_PrepareCtrlOut
+	.cfi_endproc
+	.cantunwind
+	.fnend
+                                        @ -- End function
+	.section	.text.USBD_GetStall,"ax",%progbits
+	.p2align	2                               @ -- Begin function USBD_GetStall
+	.type	USBD_GetStall,%function
+	.code	16                              @ @USBD_GetStall
+	.thumb_func
+USBD_GetStall:
+.Lfunc_begin9:
+	.loc	3 642 0 is_stmt 1               @ ../../../Library/StdDriver/inc\usbd.h:642:0
+	.fnstart
+	.cfi_startproc
+@ %bb.0:
+	.pad	#16
+	sub	sp, #16
+	.cfi_def_cfa_offset 16
+                                        @ kill: def $r1 killed $r0
+	add	r1, sp, #12
+	strb	r0, [r1]
+	movs	r0, #0
+.Ltmp122:
+	.loc	3 647 11 prologue_end           @ ../../../Library/StdDriver/inc\usbd.h:647:11
+	str	r0, [sp]
+	.loc	3 647 9 is_stmt 0               @ ../../../Library/StdDriver/inc\usbd.h:647:9
+	b	.LBB9_1
+.LBB9_1:                                @ =>This Inner Loop Header: Depth=1
+.Ltmp123:
+	.loc	3 647 18                        @ ../../../Library/StdDriver/inc\usbd.h:647:18
+	ldr	r0, [sp]
+.Ltmp124:
+	.loc	3 647 5                         @ ../../../Library/StdDriver/inc\usbd.h:647:5
+	cmp	r0, #7
+	bhi	.LBB9_6
+	b	.LBB9_2
+.LBB9_2:                                @   in Loop: Header=BB9_1 Depth=1
+.Ltmp125:
+	.loc	3 649 33 is_stmt 1              @ ../../../Library/StdDriver/inc\usbd.h:649:33
+	ldr	r0, [sp]
+	.loc	3 649 35 is_stmt 0              @ ../../../Library/StdDriver/inc\usbd.h:649:35
+	lsls	r0, r0, #4
+	ldr	r1, __arm_cp.9_0
+	.loc	3 649 41                        @ ../../../Library/StdDriver/inc\usbd.h:649:41
+	adds	r0, r0, r1
+	.loc	3 649 20                        @ ../../../Library/StdDriver/inc\usbd.h:649:20
+	str	r0, [sp, #8]
+	.loc	3 650 38 is_stmt 1              @ ../../../Library/StdDriver/inc\usbd.h:650:38
+	ldr	r0, [sp, #8]
+	.loc	3 650 18 is_stmt 0              @ ../../../Library/StdDriver/inc\usbd.h:650:18
+	ldr	r0, [r0]
+	.loc	3 650 16                        @ ../../../Library/StdDriver/inc\usbd.h:650:16
+	str	r0, [sp, #4]
+.Ltmp126:
+	.loc	3 652 13 is_stmt 1              @ ../../../Library/StdDriver/inc\usbd.h:652:13
+	ldr	r0, [sp, #4]
+	movs	r1, #15
+	.loc	3 652 20 is_stmt 0              @ ../../../Library/StdDriver/inc\usbd.h:652:20
+	ands	r0, r1
+	add	r1, sp, #12
+	.loc	3 652 32                        @ ../../../Library/StdDriver/inc\usbd.h:652:32
+	ldrb	r1, [r1]
+.Ltmp127:
+	.loc	3 652 12                        @ ../../../Library/StdDriver/inc\usbd.h:652:12
+	cmp	r0, r1
+	bne	.LBB9_4
+	b	.LBB9_3
+.LBB9_3:
+.Ltmp128:
+	.loc	3 654 37 is_stmt 1              @ ../../../Library/StdDriver/inc\usbd.h:654:37
+	ldr	r0, [sp]
+	.loc	3 654 39 is_stmt 0              @ ../../../Library/StdDriver/inc\usbd.h:654:39
+	lsls	r0, r0, #4
+	ldr	r1, __arm_cp.9_1
+	.loc	3 654 45                        @ ../../../Library/StdDriver/inc\usbd.h:654:45
+	adds	r0, r0, r1
+	.loc	3 654 24                        @ ../../../Library/StdDriver/inc\usbd.h:654:24
+	str	r0, [sp, #8]
+	.loc	3 655 13 is_stmt 1              @ ../../../Library/StdDriver/inc\usbd.h:655:13
+	b	.LBB9_6
+.Ltmp129:
+.LBB9_4:                                @   in Loop: Header=BB9_1 Depth=1
+	.loc	3 657 5                         @ ../../../Library/StdDriver/inc\usbd.h:657:5
+	b	.LBB9_5
+.Ltmp130:
+.LBB9_5:                                @   in Loop: Header=BB9_1 Depth=1
+	.loc	3 647 36                        @ ../../../Library/StdDriver/inc\usbd.h:647:36
+	ldr	r0, [sp]
+	adds	r0, r0, #1
+	str	r0, [sp]
+	.loc	3 647 5 is_stmt 0               @ ../../../Library/StdDriver/inc\usbd.h:647:5
+	b	.LBB9_1
+.Ltmp131:
+.LBB9_6:
+	.loc	3 659 34 is_stmt 1              @ ../../../Library/StdDriver/inc\usbd.h:659:34
+	ldr	r0, [sp, #8]
+	.loc	3 659 14 is_stmt 0              @ ../../../Library/StdDriver/inc\usbd.h:659:14
+	ldr	r0, [r0]
+	movs	r1, #2
+	.loc	3 659 48                        @ ../../../Library/StdDriver/inc\usbd.h:659:48
+	ands	r0, r1
+	.loc	3 659 5 epilogue_begin          @ ../../../Library/StdDriver/inc\usbd.h:659:5
+	add	sp, #16
+	bx	lr
+.Ltmp132:
+	.p2align	2
+@ %bb.7:
+	.loc	3 0 5                           @ ../../../Library/StdDriver/inc\usbd.h:0:5
+__arm_cp.9_0:
+	.long	1074529544                      @ 0x400c0508
+.Lcpi_end52:
+	.size	__arm_cp.9_0, .Lcpi_end52-__arm_cp.9_0
+__arm_cp.9_1:
+	.long	1074529548                      @ 0x400c050c
+.Lcpi_end53:
+	.size	__arm_cp.9_1, .Lcpi_end53-__arm_cp.9_1
+.Lfunc_end9:
+	.size	USBD_GetStall, .Lfunc_end9-USBD_GetStall
+	.cfi_endproc
+	.cantunwind
+	.fnend
+                                        @ -- End function
+	.section	.text.USBD_SetStall,"ax",%progbits
+	.p2align	2                               @ -- Begin function USBD_SetStall
+	.type	USBD_SetStall,%function
+	.code	16                              @ @USBD_SetStall
+	.thumb_func
+USBD_SetStall:
+.Lfunc_begin10:
+	.loc	3 578 0 is_stmt 1               @ ../../../Library/StdDriver/inc\usbd.h:578:0
+	.fnstart
+	.cfi_startproc
+@ %bb.0:
+	.pad	#16
+	sub	sp, #16
+	.cfi_def_cfa_offset 16
+                                        @ kill: def $r1 killed $r0
+	add	r1, sp, #12
+	strb	r0, [r1]
+	movs	r0, #0
+.Ltmp133:
+	.loc	3 583 11 prologue_end           @ ../../../Library/StdDriver/inc\usbd.h:583:11
+	str	r0, [sp]
+	.loc	3 583 9 is_stmt 0               @ ../../../Library/StdDriver/inc\usbd.h:583:9
+	b	.LBB10_1
+.LBB10_1:                               @ =>This Inner Loop Header: Depth=1
+.Ltmp134:
+	.loc	3 583 18                        @ ../../../Library/StdDriver/inc\usbd.h:583:18
+	ldr	r0, [sp]
+.Ltmp135:
+	.loc	3 583 5                         @ ../../../Library/StdDriver/inc\usbd.h:583:5
+	cmp	r0, #7
+	bhi	.LBB10_6
+	b	.LBB10_2
+.LBB10_2:                               @   in Loop: Header=BB10_1 Depth=1
+.Ltmp136:
+	.loc	3 585 33 is_stmt 1              @ ../../../Library/StdDriver/inc\usbd.h:585:33
+	ldr	r0, [sp]
+	.loc	3 585 35 is_stmt 0              @ ../../../Library/StdDriver/inc\usbd.h:585:35
+	lsls	r0, r0, #4
+	ldr	r1, __arm_cp.10_0
+	.loc	3 585 41                        @ ../../../Library/StdDriver/inc\usbd.h:585:41
+	adds	r0, r0, r1
+	.loc	3 585 20                        @ ../../../Library/StdDriver/inc\usbd.h:585:20
+	str	r0, [sp, #8]
+	.loc	3 586 38 is_stmt 1              @ ../../../Library/StdDriver/inc\usbd.h:586:38
+	ldr	r0, [sp, #8]
+	.loc	3 586 18 is_stmt 0              @ ../../../Library/StdDriver/inc\usbd.h:586:18
+	ldr	r0, [r0]
+	.loc	3 586 16                        @ ../../../Library/StdDriver/inc\usbd.h:586:16
+	str	r0, [sp, #4]
+.Ltmp137:
+	.loc	3 588 13 is_stmt 1              @ ../../../Library/StdDriver/inc\usbd.h:588:13
+	ldr	r0, [sp, #4]
+	movs	r1, #15
+	.loc	3 588 20 is_stmt 0              @ ../../../Library/StdDriver/inc\usbd.h:588:20
+	ands	r0, r1
+	add	r1, sp, #12
+	.loc	3 588 32                        @ ../../../Library/StdDriver/inc\usbd.h:588:32
+	ldrb	r1, [r1]
+.Ltmp138:
+	.loc	3 588 12                        @ ../../../Library/StdDriver/inc\usbd.h:588:12
+	cmp	r0, r1
+	bne	.LBB10_4
+	b	.LBB10_3
+.LBB10_3:
+.Ltmp139:
+	.loc	3 590 37 is_stmt 1              @ ../../../Library/StdDriver/inc\usbd.h:590:37
+	ldr	r0, [sp]
+	.loc	3 590 39 is_stmt 0              @ ../../../Library/StdDriver/inc\usbd.h:590:39
+	lsls	r0, r0, #4
+	ldr	r1, __arm_cp.10_1
+	.loc	3 590 45                        @ ../../../Library/StdDriver/inc\usbd.h:590:45
+	adds	r0, r0, r1
+	.loc	3 590 24                        @ ../../../Library/StdDriver/inc\usbd.h:590:24
+	str	r0, [sp, #8]
+	.loc	3 591 42 is_stmt 1              @ ../../../Library/StdDriver/inc\usbd.h:591:42
+	ldr	r0, [sp, #8]
+	.loc	3 591 22 is_stmt 0              @ ../../../Library/StdDriver/inc\usbd.h:591:22
+	ldr	r0, [r0]
+	.loc	3 591 20                        @ ../../../Library/StdDriver/inc\usbd.h:591:20
+	str	r0, [sp, #4]
+	.loc	3 593 49 is_stmt 1              @ ../../../Library/StdDriver/inc\usbd.h:593:49
+	ldr	r0, [sp, #4]
+	movs	r1, #2
+	.loc	3 593 56 is_stmt 0              @ ../../../Library/StdDriver/inc\usbd.h:593:56
+	orrs	r0, r1
+	.loc	3 593 33                        @ ../../../Library/StdDriver/inc\usbd.h:593:33
+	ldr	r1, [sp, #8]
+	.loc	3 593 46                        @ ../../../Library/StdDriver/inc\usbd.h:593:46
+	str	r0, [r1]
+	.loc	3 594 13 is_stmt 1              @ ../../../Library/StdDriver/inc\usbd.h:594:13
+	b	.LBB10_6
+.Ltmp140:
+.LBB10_4:                               @   in Loop: Header=BB10_1 Depth=1
+	.loc	3 596 5                         @ ../../../Library/StdDriver/inc\usbd.h:596:5
+	b	.LBB10_5
+.Ltmp141:
+.LBB10_5:                               @   in Loop: Header=BB10_1 Depth=1
+	.loc	3 583 36                        @ ../../../Library/StdDriver/inc\usbd.h:583:36
+	ldr	r0, [sp]
+	adds	r0, r0, #1
+	str	r0, [sp]
+	.loc	3 583 5 is_stmt 0               @ ../../../Library/StdDriver/inc\usbd.h:583:5
+	b	.LBB10_1
+.Ltmp142:
+.LBB10_6:
+	.loc	3 597 1 epilogue_begin is_stmt 1 @ ../../../Library/StdDriver/inc\usbd.h:597:1
+	add	sp, #16
+	bx	lr
+.Ltmp143:
+	.p2align	2
+@ %bb.7:
+	.loc	3 0 1 is_stmt 0                 @ ../../../Library/StdDriver/inc\usbd.h:0:1
+__arm_cp.10_0:
+	.long	1074529544                      @ 0x400c0508
+.Lcpi_end54:
+	.size	__arm_cp.10_0, .Lcpi_end54-__arm_cp.10_0
+__arm_cp.10_1:
+	.long	1074529548                      @ 0x400c050c
+.Lcpi_end55:
+	.size	__arm_cp.10_1, .Lcpi_end55-__arm_cp.10_1
+.Lfunc_end10:
+	.size	USBD_SetStall, .Lfunc_end10-USBD_SetStall
+	.cfi_endproc
+	.cantunwind
+	.fnend
+                                        @ -- End function
+	.section	.text.USBD_CtrlIn,"ax",%progbits
+	.hidden	USBD_CtrlIn                     @ -- Begin function USBD_CtrlIn
+	.globl	USBD_CtrlIn
+	.p2align	2
+	.type	USBD_CtrlIn,%function
+	.code	16                              @ @USBD_CtrlIn
+	.thumb_func
+USBD_CtrlIn:
+.Lfunc_begin11:
+	.loc	2 521 0 is_stmt 1               @ ../../../Library/StdDriver/src/usbd.c:521:0
+	.fnstart
+	.cfi_startproc
+@ %bb.0:
+	.save	{r7, lr}
+	push	{r7, lr}
+	.cfi_def_cfa_offset 8
+	.cfi_offset lr, -4
+	.cfi_offset r7, -8
+	.pad	#16
+	sub	sp, #16
+	.cfi_def_cfa_offset 24
+.Ltmp144:
+	.loc	2 524 8 prologue_end            @ ../../../Library/StdDriver/src/usbd.c:524:8
+	ldr	r0, __arm_cp.11_0
+	ldr	r0, [r0]
+.Ltmp145:
+	.loc	2 524 8 is_stmt 0               @ ../../../Library/StdDriver/src/usbd.c:524:8
+	cmp	r0, #0
+	beq	.LBB11_7
+	b	.LBB11_1
+.LBB11_1:
+.Ltmp146:
+	.loc	2 527 12 is_stmt 1              @ ../../../Library/StdDriver/src/usbd.c:527:12
+	ldr	r0, __arm_cp.11_0
+	ldr	r0, [r0]
+	.loc	2 527 32 is_stmt 0              @ ../../../Library/StdDriver/src/usbd.c:527:32
+	ldr	r1, __arm_cp.11_6
+	ldr	r1, [r1]
+.Ltmp147:
+	.loc	2 527 12                        @ ../../../Library/StdDriver/src/usbd.c:527:12
+	cmp	r0, r1
+	bls	.LBB11_3
+	b	.LBB11_2
+.LBB11_2:
+	.loc	2 0 12                          @ ../../../Library/StdDriver/src/usbd.c:0:12
+	ldr	r0, __arm_cp.11_7
+.Ltmp148:
+	.loc	2 530 36 is_stmt 1              @ ../../../Library/StdDriver/src/usbd.c:530:36
+	ldr	r0, [r0]
+	ldr	r1, __arm_cp.11_8
+	.loc	2 530 34 is_stmt 0              @ ../../../Library/StdDriver/src/usbd.c:530:34
+	adds	r0, r0, r1
+	.loc	2 530 18                        @ ../../../Library/StdDriver/src/usbd.c:530:18
+	str	r0, [sp, #12]
+	.loc	2 531 37 is_stmt 1              @ ../../../Library/StdDriver/src/usbd.c:531:37
+	ldr	r0, [sp, #12]
+	.loc	2 531 54 is_stmt 0              @ ../../../Library/StdDriver/src/usbd.c:531:54
+	ldr	r1, __arm_cp.11_9
+	str	r1, [sp, #4]                    @ 4-byte Spill
+	ldr	r1, [r1]
+	.loc	2 531 76                        @ ../../../Library/StdDriver/src/usbd.c:531:76
+	ldr	r2, __arm_cp.11_6
+	str	r2, [sp, #8]                    @ 4-byte Spill
+	ldr	r2, [r2]
+	.loc	2 531 13                        @ ../../../Library/StdDriver/src/usbd.c:531:13
+	bl	USBD_MemCopy
+	ldr	r2, [sp, #4]                    @ 4-byte Reload
+	ldr	r0, [sp, #8]                    @ 4-byte Reload
+	.loc	2 532 13 is_stmt 1              @ ../../../Library/StdDriver/src/usbd.c:532:13
+	ldr	r1, [r0]
+	ldr	r3, __arm_cp.11_5
+	str	r1, [r3]
+	.loc	2 533 37                        @ ../../../Library/StdDriver/src/usbd.c:533:37
+	ldr	r3, [r0]
+	.loc	2 533 34 is_stmt 0              @ ../../../Library/StdDriver/src/usbd.c:533:34
+	ldr	r1, [r2]
+	adds	r1, r1, r3
+	str	r1, [r2]
+	.loc	2 534 34 is_stmt 1              @ ../../../Library/StdDriver/src/usbd.c:534:34
+	ldr	r2, [r0]
+	.loc	2 534 31 is_stmt 0              @ ../../../Library/StdDriver/src/usbd.c:534:31
+	ldr	r1, __arm_cp.11_0
+	ldr	r0, [r1]
+	subs	r0, r0, r2
+	str	r0, [r1]
+	.loc	2 535 9 is_stmt 1               @ ../../../Library/StdDriver/src/usbd.c:535:9
+	b	.LBB11_6
+.Ltmp149:
+.LBB11_3:
+	.loc	2 0 9 is_stmt 0                 @ ../../../Library/StdDriver/src/usbd.c:0:9
+	ldr	r0, __arm_cp.11_7
+.Ltmp150:
+	.loc	2 539 36 is_stmt 1              @ ../../../Library/StdDriver/src/usbd.c:539:36
+	ldr	r0, [r0]
+	ldr	r1, __arm_cp.11_8
+	.loc	2 539 34 is_stmt 0              @ ../../../Library/StdDriver/src/usbd.c:539:34
+	adds	r0, r0, r1
+	.loc	2 539 18                        @ ../../../Library/StdDriver/src/usbd.c:539:18
+	str	r0, [sp, #12]
+	.loc	2 540 37 is_stmt 1              @ ../../../Library/StdDriver/src/usbd.c:540:37
+	ldr	r0, [sp, #12]
+	.loc	2 540 54 is_stmt 0              @ ../../../Library/StdDriver/src/usbd.c:540:54
+	ldr	r1, __arm_cp.11_9
+	ldr	r1, [r1]
+	.loc	2 540 76                        @ ../../../Library/StdDriver/src/usbd.c:540:76
+	ldr	r2, __arm_cp.11_0
+	str	r2, [sp]                        @ 4-byte Spill
+	ldr	r2, [r2]
+	.loc	2 540 13                        @ ../../../Library/StdDriver/src/usbd.c:540:13
+	bl	USBD_MemCopy
+	ldr	r0, [sp]                        @ 4-byte Reload
+	.loc	2 541 13 is_stmt 1              @ ../../../Library/StdDriver/src/usbd.c:541:13
+	ldr	r1, [r0]
+	ldr	r2, __arm_cp.11_5
+	str	r1, [r2]
+.Ltmp151:
+	.loc	2 542 16                        @ ../../../Library/StdDriver/src/usbd.c:542:16
+	ldr	r0, [r0]
+	.loc	2 542 37 is_stmt 0              @ ../../../Library/StdDriver/src/usbd.c:542:37
+	ldr	r1, __arm_cp.11_6
+	ldr	r1, [r1]
+.Ltmp152:
+	.loc	2 542 16                        @ ../../../Library/StdDriver/src/usbd.c:542:16
+	cmp	r0, r1
+	bne	.LBB11_5
+	b	.LBB11_4
+.LBB11_4:
+.Ltmp153:
+	.loc	2 543 39 is_stmt 1              @ ../../../Library/StdDriver/src/usbd.c:543:39
+	ldr	r1, __arm_cp.11_4
+	movs	r0, #1
+	strb	r0, [r1]
+	.loc	2 543 17 is_stmt 0              @ ../../../Library/StdDriver/src/usbd.c:543:17
+	b	.LBB11_5
+.Ltmp154:
+.LBB11_5:
+	.loc	2 544 34 is_stmt 1              @ ../../../Library/StdDriver/src/usbd.c:544:34
+	ldr	r1, __arm_cp.11_9
+	movs	r0, #0
+	str	r0, [r1]
+	.loc	2 545 31                        @ ../../../Library/StdDriver/src/usbd.c:545:31
+	ldr	r1, __arm_cp.11_0
+	str	r0, [r1]
+	b	.LBB11_6
+.Ltmp155:
+.LBB11_6:
+	.loc	2 547 5                         @ ../../../Library/StdDriver/src/usbd.c:547:5
+	b	.LBB11_16
+.Ltmp156:
+.LBB11_7:
+	.loc	2 551 13                        @ ../../../Library/StdDriver/src/usbd.c:551:13
+	ldr	r0, __arm_cp.11_1
+	ldrb	r0, [r0]
+	.loc	2 551 52 is_stmt 0              @ ../../../Library/StdDriver/src/usbd.c:551:52
+	cmp	r0, #0
+	bne	.LBB11_13
+	b	.LBB11_8
+.LBB11_8:
+	.loc	2 551 56                        @ ../../../Library/StdDriver/src/usbd.c:551:56
+	ldr	r0, __arm_cp.11_1
+	ldrb	r0, [r0, #1]
+.Ltmp157:
+	.loc	2 551 12                        @ ../../../Library/StdDriver/src/usbd.c:551:12
+	cmp	r0, #5
+	bne	.LBB11_13
+	b	.LBB11_9
+.LBB11_9:
+	.loc	2 0 12                          @ ../../../Library/StdDriver/src/usbd.c:0:12
+	ldr	r0, __arm_cp.11_2
+.Ltmp158:
+	.loc	2 553 20 is_stmt 1              @ ../../../Library/StdDriver/src/usbd.c:553:20
+	ldr	r0, [r0]
+	.loc	2 553 18 is_stmt 0              @ ../../../Library/StdDriver/src/usbd.c:553:18
+	str	r0, [sp, #12]
+.Ltmp159:
+	.loc	2 554 17 is_stmt 1              @ ../../../Library/StdDriver/src/usbd.c:554:17
+	ldr	r0, [sp, #12]
+	.loc	2 554 25 is_stmt 0              @ ../../../Library/StdDriver/src/usbd.c:554:25
+	ldr	r1, __arm_cp.11_3
+	ldr	r1, [r1]
+	.loc	2 554 41                        @ ../../../Library/StdDriver/src/usbd.c:554:41
+	cmp	r0, r1
+	beq	.LBB11_12
+	b	.LBB11_10
+.LBB11_10:
+	.loc	2 554 45                        @ ../../../Library/StdDriver/src/usbd.c:554:45
+	ldr	r0, [sp, #12]
+.Ltmp160:
+	.loc	2 554 16                        @ ../../../Library/StdDriver/src/usbd.c:554:16
+	cmp	r0, #0
+	bne	.LBB11_12
+	b	.LBB11_11
+.LBB11_11:
+.Ltmp161:
+	.loc	2 555 17 is_stmt 1              @ ../../../Library/StdDriver/src/usbd.c:555:17
+	ldr	r0, __arm_cp.11_3
+	ldr	r0, [r0]
+	ldr	r1, __arm_cp.11_2
+	str	r0, [r1]
+	b	.LBB11_12
+.Ltmp162:
+.LBB11_12:
+	.loc	2 556 9                         @ ../../../Library/StdDriver/src/usbd.c:556:9
+	b	.LBB11_13
+.Ltmp163:
+.LBB11_13:
+	.loc	2 559 13                        @ ../../../Library/StdDriver/src/usbd.c:559:13
+	ldr	r0, __arm_cp.11_4
+	ldrb	r0, [r0]
+.Ltmp164:
+	.loc	2 559 13 is_stmt 0              @ ../../../Library/StdDriver/src/usbd.c:559:13
+	cmp	r0, #0
+	beq	.LBB11_15
+	b	.LBB11_14
+.LBB11_14:
+	.loc	2 0 13                          @ ../../../Library/StdDriver/src/usbd.c:0:13
+	ldr	r1, __arm_cp.11_5
+	movs	r0, #0
+.Ltmp165:
+	.loc	2 561 13 is_stmt 1              @ ../../../Library/StdDriver/src/usbd.c:561:13
+	str	r0, [r1]
+	.loc	2 562 35                        @ ../../../Library/StdDriver/src/usbd.c:562:35
+	ldr	r1, __arm_cp.11_4
+	strb	r0, [r1]
+	.loc	2 563 9                         @ ../../../Library/StdDriver/src/usbd.c:563:9
+	b	.LBB11_15
+.Ltmp166:
+.LBB11_15:
+	.loc	2 0 9 is_stmt 0                 @ ../../../Library/StdDriver/src/usbd.c:0:9
+	b	.LBB11_16
+.LBB11_16:
+	.loc	2 565 1 epilogue_begin is_stmt 1 @ ../../../Library/StdDriver/src/usbd.c:565:1
+	add	sp, #16
+	pop	{r7, pc}
+.Ltmp167:
+	.p2align	2
+@ %bb.17:
+	.loc	2 0 1 is_stmt 0                 @ ../../../Library/StdDriver/src/usbd.c:0:1
+__arm_cp.11_0:
+	.long	g_usbd_CtrlInSize
+.Lcpi_end56:
+	.size	__arm_cp.11_0, .Lcpi_end56-__arm_cp.11_0
+__arm_cp.11_1:
+	.long	g_usbd_SetupPacket
+.Lcpi_end57:
+	.size	__arm_cp.11_1, .Lcpi_end57-__arm_cp.11_1
+__arm_cp.11_2:
+	.long	1074528264                      @ 0x400c0008
+.Lcpi_end58:
+	.size	__arm_cp.11_2, .Lcpi_end58-__arm_cp.11_2
+__arm_cp.11_3:
+	.long	g_usbd_UsbAddr
+.Lcpi_end59:
+	.size	__arm_cp.11_3, .Lcpi_end59-__arm_cp.11_3
+__arm_cp.11_4:
+	.long	g_usbd_CtrlInZeroFlag
+.Lcpi_end60:
+	.size	__arm_cp.11_4, .Lcpi_end60-__arm_cp.11_4
+__arm_cp.11_5:
+	.long	1074529540                      @ 0x400c0504
+.Lcpi_end61:
+	.size	__arm_cp.11_5, .Lcpi_end61-__arm_cp.11_5
+__arm_cp.11_6:
+	.long	g_usbd_CtrlMaxPktSize
+.Lcpi_end62:
+	.size	__arm_cp.11_6, .Lcpi_end62-__arm_cp.11_6
+__arm_cp.11_7:
+	.long	1074529536                      @ 0x400c0500
+.Lcpi_end63:
+	.size	__arm_cp.11_7, .Lcpi_end63-__arm_cp.11_7
+__arm_cp.11_8:
+	.long	1074528512                      @ 0x400c0100
+.Lcpi_end64:
+	.size	__arm_cp.11_8, .Lcpi_end64-__arm_cp.11_8
+__arm_cp.11_9:
+	.long	g_usbd_CtrlInPointer
+.Lcpi_end65:
+	.size	__arm_cp.11_9, .Lcpi_end65-__arm_cp.11_9
+.Lfunc_end11:
+	.size	USBD_CtrlIn, .Lfunc_end11-USBD_CtrlIn
+	.cfi_endproc
+	.cantunwind
+	.fnend
+                                        @ -- End function
+	.section	.text.USBD_CtrlOut,"ax",%progbits
+	.hidden	USBD_CtrlOut                    @ -- Begin function USBD_CtrlOut
+	.globl	USBD_CtrlOut
+	.p2align	2
+	.type	USBD_CtrlOut,%function
+	.code	16                              @ @USBD_CtrlOut
+	.thumb_func
+USBD_CtrlOut:
+.Lfunc_begin12:
+	.loc	2 597 0 is_stmt 1               @ ../../../Library/StdDriver/src/usbd.c:597:0
+	.fnstart
+	.cfi_startproc
+@ %bb.0:
+	.save	{r7, lr}
+	push	{r7, lr}
+	.cfi_def_cfa_offset 8
+	.cfi_offset lr, -4
+	.cfi_offset r7, -8
+	.pad	#16
+	sub	sp, #16
+	.cfi_def_cfa_offset 24
+.Ltmp168:
+	.loc	2 601 8 prologue_end            @ ../../../Library/StdDriver/src/usbd.c:601:8
+	ldr	r0, __arm_cp.12_0
+	ldr	r0, [r0]
+	.loc	2 601 29 is_stmt 0              @ ../../../Library/StdDriver/src/usbd.c:601:29
+	ldr	r1, __arm_cp.12_1
+	ldr	r1, [r1]
+.Ltmp169:
+	.loc	2 601 8                         @ ../../../Library/StdDriver/src/usbd.c:601:8
+	cmp	r0, r1
+	bhs	.LBB12_4
+	b	.LBB12_1
+.LBB12_1:
+	.loc	2 0 8                           @ ../../../Library/StdDriver/src/usbd.c:0:8
+	ldr	r0, __arm_cp.12_2
+.Ltmp170:
+	.loc	2 603 19 is_stmt 1              @ ../../../Library/StdDriver/src/usbd.c:603:19
+	ldr	r0, [r0]
+	.loc	2 603 17 is_stmt 0              @ ../../../Library/StdDriver/src/usbd.c:603:17
+	str	r0, [sp, #12]
+	ldr	r0, __arm_cp.12_3
+	.loc	2 604 32 is_stmt 1              @ ../../../Library/StdDriver/src/usbd.c:604:32
+	ldr	r0, [r0]
+	ldr	r1, __arm_cp.12_4
+	.loc	2 604 30 is_stmt 0              @ ../../../Library/StdDriver/src/usbd.c:604:30
+	adds	r0, r0, r1
+	.loc	2 604 14                        @ ../../../Library/StdDriver/src/usbd.c:604:14
+	str	r0, [sp, #8]
+	.loc	2 605 33 is_stmt 1              @ ../../../Library/StdDriver/src/usbd.c:605:33
+	ldr	r0, __arm_cp.12_5
+	str	r0, [sp, #4]                    @ 4-byte Spill
+	ldr	r0, [r0]
+	.loc	2 605 67 is_stmt 0              @ ../../../Library/StdDriver/src/usbd.c:605:67
+	ldr	r1, [sp, #8]
+	.loc	2 605 73                        @ ../../../Library/StdDriver/src/usbd.c:605:73
+	ldr	r2, [sp, #12]
+	.loc	2 605 9                         @ ../../../Library/StdDriver/src/usbd.c:605:9
+	bl	USBD_MemCopy
+	ldr	r1, [sp, #4]                    @ 4-byte Reload
+	.loc	2 606 34 is_stmt 1              @ ../../../Library/StdDriver/src/usbd.c:606:34
+	ldr	r2, [sp, #12]
+	.loc	2 606 31 is_stmt 0              @ ../../../Library/StdDriver/src/usbd.c:606:31
+	ldr	r0, [r1]
+	adds	r0, r0, r2
+	str	r0, [r1]
+	.loc	2 607 31 is_stmt 1              @ ../../../Library/StdDriver/src/usbd.c:607:31
+	ldr	r2, [sp, #12]
+	.loc	2 607 28 is_stmt 0              @ ../../../Library/StdDriver/src/usbd.c:607:28
+	ldr	r0, __arm_cp.12_0
+	ldr	r1, [r0]
+	adds	r1, r1, r2
+	str	r1, [r0]
+.Ltmp171:
+	.loc	2 609 12 is_stmt 1              @ ../../../Library/StdDriver/src/usbd.c:609:12
+	ldr	r0, [r0]
+	.loc	2 609 33 is_stmt 0              @ ../../../Library/StdDriver/src/usbd.c:609:33
+	ldr	r1, __arm_cp.12_1
+	ldr	r1, [r1]
+.Ltmp172:
+	.loc	2 609 12                        @ ../../../Library/StdDriver/src/usbd.c:609:12
+	cmp	r0, r1
+	bhs	.LBB12_3
+	b	.LBB12_2
+.LBB12_2:
+.Ltmp173:
+	.loc	2 611 13 is_stmt 1              @ ../../../Library/StdDriver/src/usbd.c:611:13
+	ldr	r0, __arm_cp.12_6
+	ldr	r0, [r0]
+	ldr	r1, __arm_cp.12_2
+	str	r0, [r1]
+	.loc	2 612 9                         @ ../../../Library/StdDriver/src/usbd.c:612:9
+	b	.LBB12_3
+.Ltmp174:
+.LBB12_3:
+	.loc	2 614 5                         @ ../../../Library/StdDriver/src/usbd.c:614:5
+	b	.LBB12_4
+.Ltmp175:
+.LBB12_4:
+	.loc	2 615 1 epilogue_begin          @ ../../../Library/StdDriver/src/usbd.c:615:1
+	add	sp, #16
+	pop	{r7, pc}
+.Ltmp176:
+	.p2align	2
+@ %bb.5:
+	.loc	2 0 1 is_stmt 0                 @ ../../../Library/StdDriver/src/usbd.c:0:1
+__arm_cp.12_0:
+	.long	g_usbd_CtrlOutSize
+.Lcpi_end66:
+	.size	__arm_cp.12_0, .Lcpi_end66-__arm_cp.12_0
+__arm_cp.12_1:
+	.long	g_usbd_CtrlOutSizeLimit
+.Lcpi_end67:
+	.size	__arm_cp.12_1, .Lcpi_end67-__arm_cp.12_1
+__arm_cp.12_2:
+	.long	1074529556                      @ 0x400c0514
+.Lcpi_end68:
+	.size	__arm_cp.12_2, .Lcpi_end68-__arm_cp.12_2
+__arm_cp.12_3:
+	.long	1074529552                      @ 0x400c0510
+.Lcpi_end69:
+	.size	__arm_cp.12_3, .Lcpi_end69-__arm_cp.12_3
+__arm_cp.12_4:
+	.long	1074528512                      @ 0x400c0100
+.Lcpi_end70:
+	.size	__arm_cp.12_4, .Lcpi_end70-__arm_cp.12_4
+__arm_cp.12_5:
+	.long	g_usbd_CtrlOutPointer
+.Lcpi_end71:
+	.size	__arm_cp.12_5, .Lcpi_end71-__arm_cp.12_5
+__arm_cp.12_6:
+	.long	g_usbd_CtrlMaxPktSize
+.Lcpi_end72:
+	.size	__arm_cp.12_6, .Lcpi_end72-__arm_cp.12_6
+.Lfunc_end12:
+	.size	USBD_CtrlOut, .Lfunc_end12-USBD_CtrlOut
+	.cfi_endproc
+	.cantunwind
+	.fnend
+                                        @ -- End function
+	.section	.text.USBD_SwReset,"ax",%progbits
+	.hidden	USBD_SwReset                    @ -- Begin function USBD_SwReset
+	.globl	USBD_SwReset
+	.p2align	2
+	.type	USBD_SwReset,%function
+	.code	16                              @ @USBD_SwReset
+	.thumb_func
+USBD_SwReset:
+.Lfunc_begin13:
+	.loc	2 628 0 is_stmt 1               @ ../../../Library/StdDriver/src/usbd.c:628:0
+	.fnstart
+	.cfi_startproc
+@ %bb.0:
+	.pad	#12
+	sub	sp, #12
+	.cfi_def_cfa_offset 12
+.Ltmp177:
+	.loc	2 632 26 prologue_end           @ ../../../Library/StdDriver/src/usbd.c:632:26
+	ldr	r1, __arm_cp.13_0
+	movs	r0, #0
+	str	r0, [sp]                        @ 4-byte Spill
+	str	r0, [r1]
+	.loc	2 633 23                        @ ../../../Library/StdDriver/src/usbd.c:633:23
+	ldr	r1, __arm_cp.13_1
+	str	r0, [r1]
+	.loc	2 634 27                        @ ../../../Library/StdDriver/src/usbd.c:634:27
+	ldr	r1, __arm_cp.13_2
+	str	r0, [r1]
+	.loc	2 635 24                        @ ../../../Library/StdDriver/src/usbd.c:635:24
+	ldr	r1, __arm_cp.13_3
+	str	r0, [r1]
+	.loc	2 636 29                        @ ../../../Library/StdDriver/src/usbd.c:636:29
+	ldr	r1, __arm_cp.13_4
+	str	r0, [r1]
+	.loc	2 637 22                        @ ../../../Library/StdDriver/src/usbd.c:637:22
+	ldr	r1, __arm_cp.13_5
+	str	r0, [r1]
+	.loc	2 638 5                         @ ../../../Library/StdDriver/src/usbd.c:638:5
+	ldr	r1, __arm_cp.13_6
+	str	r1, [sp, #4]                    @ 4-byte Spill
+	strb	r0, [r1, #7]
+	strb	r0, [r1, #6]
+	strb	r0, [r1, #5]
+	strb	r0, [r1, #4]
+	strb	r0, [r1, #3]
+	strb	r0, [r1, #2]
+	strb	r0, [r1, #1]
+	strb	r0, [r1]
+.Ltmp178:
+	.loc	2 641 10                        @ ../../../Library/StdDriver/src/usbd.c:641:10
+	str	r0, [sp, #8]
+	.loc	2 641 9 is_stmt 0               @ ../../../Library/StdDriver/src/usbd.c:641:9
+	b	.LBB13_1
+.LBB13_1:                               @ =>This Inner Loop Header: Depth=1
+.Ltmp179:
+	.loc	2 641 16                        @ ../../../Library/StdDriver/src/usbd.c:641:16
+	ldr	r0, [sp, #8]
+.Ltmp180:
+	.loc	2 641 5                         @ ../../../Library/StdDriver/src/usbd.c:641:5
+	cmp	r0, #7
+	bhi	.LBB13_4
+	b	.LBB13_2
+.LBB13_2:                               @   in Loop: Header=BB13_1 Depth=1
+.Ltmp181:
+	.loc	2 643 18 is_stmt 1              @ ../../../Library/StdDriver/src/usbd.c:643:18
+	ldr	r0, [sp, #8]
+	.loc	2 643 9 is_stmt 0               @ ../../../Library/StdDriver/src/usbd.c:643:9
+	lsls	r1, r0, #4
+	ldr	r2, __arm_cp.13_8
+	.loc	2 643 25                        @ ../../../Library/StdDriver/src/usbd.c:643:25
+	ldr	r0, [r1, r2]
+	movs	r3, #128
+	bics	r0, r3
+	str	r0, [r1, r2]
+	.loc	2 644 5 is_stmt 1               @ ../../../Library/StdDriver/src/usbd.c:644:5
+	b	.LBB13_3
+.Ltmp182:
+.LBB13_3:                               @   in Loop: Header=BB13_1 Depth=1
+	.loc	2 641 32                        @ ../../../Library/StdDriver/src/usbd.c:641:32
+	ldr	r0, [sp, #8]
+	adds	r0, r0, #1
+	str	r0, [sp, #8]
+	.loc	2 641 5 is_stmt 0               @ ../../../Library/StdDriver/src/usbd.c:641:5
+	b	.LBB13_1
+.Ltmp183:
+.LBB13_4:
+	.loc	2 0 5                           @ ../../../Library/StdDriver/src/usbd.c:0:5
+	ldr	r1, __arm_cp.13_7
+	movs	r0, #0
+	.loc	2 647 5 is_stmt 1               @ ../../../Library/StdDriver/src/usbd.c:647:5
+	str	r0, [r1]
+	.loc	2 648 1 epilogue_begin          @ ../../../Library/StdDriver/src/usbd.c:648:1
+	add	sp, #12
+	bx	lr
+.Ltmp184:
+	.p2align	2
+@ %bb.5:
+	.loc	2 0 1 is_stmt 0                 @ ../../../Library/StdDriver/src/usbd.c:0:1
+__arm_cp.13_0:
+	.long	g_usbd_CtrlInPointer
+.Lcpi_end73:
+	.size	__arm_cp.13_0, .Lcpi_end73-__arm_cp.13_0
+__arm_cp.13_1:
+	.long	g_usbd_CtrlInSize
+.Lcpi_end74:
+	.size	__arm_cp.13_1, .Lcpi_end74-__arm_cp.13_1
+__arm_cp.13_2:
+	.long	g_usbd_CtrlOutPointer
+.Lcpi_end75:
+	.size	__arm_cp.13_2, .Lcpi_end75-__arm_cp.13_2
+__arm_cp.13_3:
+	.long	g_usbd_CtrlOutSize
+.Lcpi_end76:
+	.size	__arm_cp.13_3, .Lcpi_end76-__arm_cp.13_3
+__arm_cp.13_4:
+	.long	g_usbd_CtrlOutSizeLimit
+.Lcpi_end77:
+	.size	__arm_cp.13_4, .Lcpi_end77-__arm_cp.13_4
+__arm_cp.13_5:
+	.long	g_u32EpStallLock
+.Lcpi_end78:
+	.size	__arm_cp.13_5, .Lcpi_end78-__arm_cp.13_5
+__arm_cp.13_6:
+	.long	g_usbd_SetupPacket
+.Lcpi_end79:
+	.size	__arm_cp.13_6, .Lcpi_end79-__arm_cp.13_6
+__arm_cp.13_7:
+	.long	1074528264                      @ 0x400c0008
+.Lcpi_end80:
+	.size	__arm_cp.13_7, .Lcpi_end80-__arm_cp.13_7
+__arm_cp.13_8:
+	.long	1074529544                      @ 0x400c0508
+.Lcpi_end81:
+	.size	__arm_cp.13_8, .Lcpi_end81-__arm_cp.13_8
+.Lfunc_end13:
+	.size	USBD_SwReset, .Lfunc_end13-USBD_SwReset
+	.cfi_endproc
+	.cantunwind
+	.fnend
+                                        @ -- End function
+	.section	.text.USBD_SetVendorRequest,"ax",%progbits
+	.hidden	USBD_SetVendorRequest           @ -- Begin function USBD_SetVendorRequest
+	.globl	USBD_SetVendorRequest
+	.p2align	2
+	.type	USBD_SetVendorRequest,%function
+	.code	16                              @ @USBD_SetVendorRequest
+	.thumb_func
+USBD_SetVendorRequest:
+.Lfunc_begin14:
+	.loc	2 660 0 is_stmt 1               @ ../../../Library/StdDriver/src/usbd.c:660:0
+	.fnstart
+	.cfi_startproc
+@ %bb.0:
+	.pad	#4
+	sub	sp, #4
+	.cfi_def_cfa_offset 4
+	str	r0, [sp]
+.Ltmp185:
+	.loc	2 661 31 prologue_end           @ ../../../Library/StdDriver/src/usbd.c:661:31
+	ldr	r0, [sp]
+	.loc	2 661 29 is_stmt 0              @ ../../../Library/StdDriver/src/usbd.c:661:29
+	ldr	r1, __arm_cp.14_0
+	str	r0, [r1]
+	.loc	2 662 1 epilogue_begin is_stmt 1 @ ../../../Library/StdDriver/src/usbd.c:662:1
+	add	sp, #4
+	bx	lr
+.Ltmp186:
+	.p2align	2
+@ %bb.1:
+	.loc	2 0 1 is_stmt 0                 @ ../../../Library/StdDriver/src/usbd.c:0:1
+__arm_cp.14_0:
+	.long	g_usbd_pfnVendorRequest
+.Lcpi_end82:
+	.size	__arm_cp.14_0, .Lcpi_end82-__arm_cp.14_0
+.Lfunc_end14:
+	.size	USBD_SetVendorRequest, .Lfunc_end14-USBD_SetVendorRequest
+	.cfi_endproc
+	.cantunwind
+	.fnend
+                                        @ -- End function
+	.section	.text.USBD_SetConfigCallback,"ax",%progbits
+	.hidden	USBD_SetConfigCallback          @ -- Begin function USBD_SetConfigCallback
+	.globl	USBD_SetConfigCallback
+	.p2align	2
+	.type	USBD_SetConfigCallback,%function
+	.code	16                              @ @USBD_SetConfigCallback
+	.thumb_func
+USBD_SetConfigCallback:
+.Lfunc_begin15:
+	.loc	2 674 0 is_stmt 1               @ ../../../Library/StdDriver/src/usbd.c:674:0
+	.fnstart
+	.cfi_startproc
+@ %bb.0:
+	.pad	#4
+	sub	sp, #4
+	.cfi_def_cfa_offset 4
+	str	r0, [sp]
+.Ltmp187:
+	.loc	2 675 35 prologue_end           @ ../../../Library/StdDriver/src/usbd.c:675:35
+	ldr	r0, [sp]
+	.loc	2 675 33 is_stmt 0              @ ../../../Library/StdDriver/src/usbd.c:675:33
+	ldr	r1, __arm_cp.15_0
+	str	r0, [r1]
+	.loc	2 676 1 epilogue_begin is_stmt 1 @ ../../../Library/StdDriver/src/usbd.c:676:1
+	add	sp, #4
+	bx	lr
+.Ltmp188:
+	.p2align	2
+@ %bb.1:
+	.loc	2 0 1 is_stmt 0                 @ ../../../Library/StdDriver/src/usbd.c:0:1
+__arm_cp.15_0:
+	.long	g_usbd_pfnSetConfigCallback
+.Lcpi_end83:
+	.size	__arm_cp.15_0, .Lcpi_end83-__arm_cp.15_0
+.Lfunc_end15:
+	.size	USBD_SetConfigCallback, .Lfunc_end15-USBD_SetConfigCallback
+	.cfi_endproc
+	.cantunwind
+	.fnend
+                                        @ -- End function
+	.section	.text.USBD_LockEpStall,"ax",%progbits
+	.hidden	USBD_LockEpStall                @ -- Begin function USBD_LockEpStall
+	.globl	USBD_LockEpStall
+	.p2align	2
+	.type	USBD_LockEpStall,%function
+	.code	16                              @ @USBD_LockEpStall
+	.thumb_func
+USBD_LockEpStall:
+.Lfunc_begin16:
+	.loc	2 690 0 is_stmt 1               @ ../../../Library/StdDriver/src/usbd.c:690:0
+	.fnstart
+	.cfi_startproc
+@ %bb.0:
+	.pad	#4
+	sub	sp, #4
+	.cfi_def_cfa_offset 4
+	str	r0, [sp]
+.Ltmp189:
+	.loc	2 691 24 prologue_end           @ ../../../Library/StdDriver/src/usbd.c:691:24
+	ldr	r0, [sp]
+	.loc	2 691 22 is_stmt 0              @ ../../../Library/StdDriver/src/usbd.c:691:22
+	ldr	r1, __arm_cp.16_0
+	str	r0, [r1]
+	.loc	2 692 1 epilogue_begin is_stmt 1 @ ../../../Library/StdDriver/src/usbd.c:692:1
+	add	sp, #4
+	bx	lr
+.Ltmp190:
+	.p2align	2
+@ %bb.1:
+	.loc	2 0 1 is_stmt 0                 @ ../../../Library/StdDriver/src/usbd.c:0:1
+__arm_cp.16_0:
+	.long	g_u32EpStallLock
+.Lcpi_end84:
+	.size	__arm_cp.16_0, .Lcpi_end84-__arm_cp.16_0
+.Lfunc_end16:
+	.size	USBD_LockEpStall, .Lfunc_end16-USBD_LockEpStall
+	.cfi_endproc
+	.cantunwind
+	.fnend
+                                        @ -- End function
+	.hidden	g_usbd_SetupPacket              @ @g_usbd_SetupPacket
+	.type	g_usbd_SetupPacket,%object
+	.section	.bss.g_usbd_SetupPacket,"aw",%nobits
+	.globl	g_usbd_SetupPacket
+g_usbd_SetupPacket:
+	.zero	8
+	.size	g_usbd_SetupPacket, 8
+
+	.hidden	g_usbd_RemoteWakeupEn           @ @g_usbd_RemoteWakeupEn
+	.type	g_usbd_RemoteWakeupEn,%object
+	.section	.bss.g_usbd_RemoteWakeupEn,"aw",%nobits
+	.globl	g_usbd_RemoteWakeupEn
+g_usbd_RemoteWakeupEn:
+	.byte	0                               @ 0x0
+	.size	g_usbd_RemoteWakeupEn, 1
+
+	.hidden	g_usbd_pfnVendorRequest         @ @g_usbd_pfnVendorRequest
+	.type	g_usbd_pfnVendorRequest,%object
+	.section	.bss.g_usbd_pfnVendorRequest,"aw",%nobits
+	.globl	g_usbd_pfnVendorRequest
+	.p2align	2, 0x0
+g_usbd_pfnVendorRequest:
+	.long	0
+	.size	g_usbd_pfnVendorRequest, 4
+
+	.hidden	g_usbd_pfnClassRequest          @ @g_usbd_pfnClassRequest
+	.type	g_usbd_pfnClassRequest,%object
+	.section	.bss.g_usbd_pfnClassRequest,"aw",%nobits
+	.globl	g_usbd_pfnClassRequest
+	.p2align	2, 0x0
+g_usbd_pfnClassRequest:
+	.long	0
+	.size	g_usbd_pfnClassRequest, 4
+
+	.hidden	g_usbd_pfnSetInterface          @ @g_usbd_pfnSetInterface
+	.type	g_usbd_pfnSetInterface,%object
+	.section	.bss.g_usbd_pfnSetInterface,"aw",%nobits
+	.globl	g_usbd_pfnSetInterface
+	.p2align	2, 0x0
+g_usbd_pfnSetInterface:
+	.long	0
+	.size	g_usbd_pfnSetInterface, 4
+
+	.hidden	g_usbd_pfnSetConfigCallback     @ @g_usbd_pfnSetConfigCallback
+	.type	g_usbd_pfnSetConfigCallback,%object
+	.section	.bss.g_usbd_pfnSetConfigCallback,"aw",%nobits
+	.globl	g_usbd_pfnSetConfigCallback
+	.p2align	2, 0x0
+g_usbd_pfnSetConfigCallback:
+	.long	0
+	.size	g_usbd_pfnSetConfigCallback, 4
+
+	.hidden	g_u32EpStallLock                @ @g_u32EpStallLock
+	.type	g_u32EpStallLock,%object
+	.section	.bss.g_u32EpStallLock,"aw",%nobits
+	.globl	g_u32EpStallLock
+	.p2align	2, 0x0
+g_u32EpStallLock:
+	.long	0                               @ 0x0
+	.size	g_u32EpStallLock, 4
+
+	.hidden	g_usbd_sInfo                    @ @g_usbd_sInfo
+	.type	g_usbd_sInfo,%object
+	.section	.bss.g_usbd_sInfo,"aw",%nobits
+	.globl	g_usbd_sInfo
+	.p2align	2, 0x0
+g_usbd_sInfo:
+	.long	0
+	.size	g_usbd_sInfo, 4
+
+	.type	g_usbd_CtrlMaxPktSize,%object   @ @g_usbd_CtrlMaxPktSize
+	.section	.data.g_usbd_CtrlMaxPktSize,"aw",%progbits
+	.p2align	2, 0x0
+g_usbd_CtrlMaxPktSize:
+	.long	8                               @ 0x8
+	.size	g_usbd_CtrlMaxPktSize, 4
+
+	.type	g_usbd_CtrlInPointer,%object    @ @g_usbd_CtrlInPointer
+	.section	.bss.g_usbd_CtrlInPointer,"aw",%nobits
+	.p2align	2, 0x0
+g_usbd_CtrlInPointer:
+	.long	0
+	.size	g_usbd_CtrlInPointer, 4
+
+	.type	g_usbd_CtrlInSize,%object       @ @g_usbd_CtrlInSize
+	.section	.bss.g_usbd_CtrlInSize,"aw",%nobits
+	.p2align	2, 0x0
+g_usbd_CtrlInSize:
+	.long	0                               @ 0x0
+	.size	g_usbd_CtrlInSize, 4
+
+	.type	g_usbd_UsbConfig,%object        @ @g_usbd_UsbConfig
+	.section	.bss.g_usbd_UsbConfig,"aw",%nobits
+	.p2align	2, 0x0
+g_usbd_UsbConfig:
+	.long	0                               @ 0x0
+	.size	g_usbd_UsbConfig, 4
+
+	.type	g_usbd_UsbAltInterface,%object  @ @g_usbd_UsbAltInterface
+	.section	.bss.g_usbd_UsbAltInterface,"aw",%nobits
+	.p2align	2, 0x0
+g_usbd_UsbAltInterface:
+	.long	0                               @ 0x0
+	.size	g_usbd_UsbAltInterface, 4
+
+	.type	g_usbd_UsbAddr,%object          @ @g_usbd_UsbAddr
+	.section	.bss.g_usbd_UsbAddr,"aw",%nobits
+	.p2align	2, 0x0
+g_usbd_UsbAddr:
+	.long	0                               @ 0x0
+	.size	g_usbd_UsbAddr, 4
+
+	.type	g_usbd_CtrlInZeroFlag,%object   @ @g_usbd_CtrlInZeroFlag
+	.section	.bss.g_usbd_CtrlInZeroFlag,"aw",%nobits
+g_usbd_CtrlInZeroFlag:
+	.byte	0                               @ 0x0
+	.size	g_usbd_CtrlInZeroFlag, 1
+
+	.type	g_usbd_CtrlOutPointer,%object   @ @g_usbd_CtrlOutPointer
+	.section	.bss.g_usbd_CtrlOutPointer,"aw",%nobits
+	.p2align	2, 0x0
+g_usbd_CtrlOutPointer:
+	.long	0
+	.size	g_usbd_CtrlOutPointer, 4
+
+	.type	g_usbd_CtrlOutSize,%object      @ @g_usbd_CtrlOutSize
+	.section	.bss.g_usbd_CtrlOutSize,"aw",%nobits
+	.p2align	2, 0x0
+g_usbd_CtrlOutSize:
+	.long	0                               @ 0x0
+	.size	g_usbd_CtrlOutSize, 4
+
+	.type	g_usbd_CtrlOutSizeLimit,%object @ @g_usbd_CtrlOutSizeLimit
+	.section	.bss.g_usbd_CtrlOutSizeLimit,"aw",%nobits
+	.p2align	2, 0x0
+g_usbd_CtrlOutSizeLimit:
+	.long	0                               @ 0x0
+	.size	g_usbd_CtrlOutSizeLimit, 4
+
+	.section	.debug_abbrev,"",%progbits
+	.byte	1                               @ Abbreviation Code
+	.byte	17                              @ DW_TAG_compile_unit
+	.byte	1                               @ DW_CHILDREN_yes
+	.byte	37                              @ DW_AT_producer
+	.byte	14                              @ DW_FORM_strp
+	.byte	19                              @ DW_AT_language
+	.byte	5                               @ DW_FORM_data2
+	.byte	3                               @ DW_AT_name
+	.byte	14                              @ DW_FORM_strp
+	.byte	16                              @ DW_AT_stmt_list
+	.byte	23                              @ DW_FORM_sec_offset
+	.byte	27                              @ DW_AT_comp_dir
+	.byte	14                              @ DW_FORM_strp
+	.byte	17                              @ DW_AT_low_pc
+	.byte	1                               @ DW_FORM_addr
+	.byte	85                              @ DW_AT_ranges
+	.byte	23                              @ DW_FORM_sec_offset
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	2                               @ Abbreviation Code
+	.byte	52                              @ DW_TAG_variable
+	.byte	0                               @ DW_CHILDREN_no
+	.byte	3                               @ DW_AT_name
+	.byte	14                              @ DW_FORM_strp
+	.byte	73                              @ DW_AT_type
+	.byte	19                              @ DW_FORM_ref4
+	.byte	63                              @ DW_AT_external
+	.byte	25                              @ DW_FORM_flag_present
+	.byte	58                              @ DW_AT_decl_file
+	.byte	11                              @ DW_FORM_data1
+	.byte	59                              @ DW_AT_decl_line
+	.byte	11                              @ DW_FORM_data1
+	.byte	2                               @ DW_AT_location
+	.byte	24                              @ DW_FORM_exprloc
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	3                               @ Abbreviation Code
+	.byte	1                               @ DW_TAG_array_type
+	.byte	1                               @ DW_CHILDREN_yes
+	.byte	73                              @ DW_AT_type
+	.byte	19                              @ DW_FORM_ref4
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	4                               @ Abbreviation Code
+	.byte	33                              @ DW_TAG_subrange_type
+	.byte	0                               @ DW_CHILDREN_no
+	.byte	73                              @ DW_AT_type
+	.byte	19                              @ DW_FORM_ref4
+	.byte	55                              @ DW_AT_count
+	.byte	11                              @ DW_FORM_data1
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	5                               @ Abbreviation Code
+	.byte	22                              @ DW_TAG_typedef
+	.byte	0                               @ DW_CHILDREN_no
+	.byte	73                              @ DW_AT_type
+	.byte	19                              @ DW_FORM_ref4
+	.byte	3                               @ DW_AT_name
+	.byte	14                              @ DW_FORM_strp
+	.byte	58                              @ DW_AT_decl_file
+	.byte	11                              @ DW_FORM_data1
+	.byte	59                              @ DW_AT_decl_line
+	.byte	11                              @ DW_FORM_data1
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	6                               @ Abbreviation Code
+	.byte	36                              @ DW_TAG_base_type
+	.byte	0                               @ DW_CHILDREN_no
+	.byte	3                               @ DW_AT_name
+	.byte	14                              @ DW_FORM_strp
+	.byte	62                              @ DW_AT_encoding
+	.byte	11                              @ DW_FORM_data1
+	.byte	11                              @ DW_AT_byte_size
+	.byte	11                              @ DW_FORM_data1
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	7                               @ Abbreviation Code
+	.byte	36                              @ DW_TAG_base_type
+	.byte	0                               @ DW_CHILDREN_no
+	.byte	3                               @ DW_AT_name
+	.byte	14                              @ DW_FORM_strp
+	.byte	11                              @ DW_AT_byte_size
+	.byte	11                              @ DW_FORM_data1
+	.byte	62                              @ DW_AT_encoding
+	.byte	11                              @ DW_FORM_data1
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	8                               @ Abbreviation Code
+	.byte	53                              @ DW_TAG_volatile_type
+	.byte	0                               @ DW_CHILDREN_no
+	.byte	73                              @ DW_AT_type
+	.byte	19                              @ DW_FORM_ref4
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	9                               @ Abbreviation Code
+	.byte	22                              @ DW_TAG_typedef
+	.byte	0                               @ DW_CHILDREN_no
+	.byte	73                              @ DW_AT_type
+	.byte	19                              @ DW_FORM_ref4
+	.byte	3                               @ DW_AT_name
+	.byte	14                              @ DW_FORM_strp
+	.byte	58                              @ DW_AT_decl_file
+	.byte	11                              @ DW_FORM_data1
+	.byte	59                              @ DW_AT_decl_line
+	.byte	5                               @ DW_FORM_data2
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	10                              @ Abbreviation Code
+	.byte	15                              @ DW_TAG_pointer_type
+	.byte	0                               @ DW_CHILDREN_no
+	.byte	73                              @ DW_AT_type
+	.byte	19                              @ DW_FORM_ref4
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	11                              @ Abbreviation Code
+	.byte	21                              @ DW_TAG_subroutine_type
+	.byte	0                               @ DW_CHILDREN_no
+	.byte	39                              @ DW_AT_prototyped
+	.byte	25                              @ DW_FORM_flag_present
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	12                              @ Abbreviation Code
+	.byte	21                              @ DW_TAG_subroutine_type
+	.byte	1                               @ DW_CHILDREN_yes
+	.byte	39                              @ DW_AT_prototyped
+	.byte	25                              @ DW_FORM_flag_present
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	13                              @ Abbreviation Code
+	.byte	5                               @ DW_TAG_formal_parameter
+	.byte	0                               @ DW_CHILDREN_no
+	.byte	73                              @ DW_AT_type
+	.byte	19                              @ DW_FORM_ref4
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	14                              @ Abbreviation Code
+	.byte	38                              @ DW_TAG_const_type
+	.byte	0                               @ DW_CHILDREN_no
+	.byte	73                              @ DW_AT_type
+	.byte	19                              @ DW_FORM_ref4
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	15                              @ Abbreviation Code
+	.byte	19                              @ DW_TAG_structure_type
+	.byte	1                               @ DW_CHILDREN_yes
+	.byte	3                               @ DW_AT_name
+	.byte	14                              @ DW_FORM_strp
+	.byte	11                              @ DW_AT_byte_size
+	.byte	11                              @ DW_FORM_data1
+	.byte	58                              @ DW_AT_decl_file
+	.byte	11                              @ DW_FORM_data1
+	.byte	59                              @ DW_AT_decl_line
+	.byte	11                              @ DW_FORM_data1
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	16                              @ Abbreviation Code
+	.byte	13                              @ DW_TAG_member
+	.byte	0                               @ DW_CHILDREN_no
+	.byte	3                               @ DW_AT_name
+	.byte	14                              @ DW_FORM_strp
+	.byte	73                              @ DW_AT_type
+	.byte	19                              @ DW_FORM_ref4
+	.byte	58                              @ DW_AT_decl_file
+	.byte	11                              @ DW_FORM_data1
+	.byte	59                              @ DW_AT_decl_line
+	.byte	11                              @ DW_FORM_data1
+	.byte	56                              @ DW_AT_data_member_location
+	.byte	11                              @ DW_FORM_data1
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	17                              @ Abbreviation Code
+	.byte	52                              @ DW_TAG_variable
+	.byte	0                               @ DW_CHILDREN_no
+	.byte	3                               @ DW_AT_name
+	.byte	14                              @ DW_FORM_strp
+	.byte	73                              @ DW_AT_type
+	.byte	19                              @ DW_FORM_ref4
+	.byte	58                              @ DW_AT_decl_file
+	.byte	11                              @ DW_FORM_data1
+	.byte	59                              @ DW_AT_decl_line
+	.byte	11                              @ DW_FORM_data1
+	.byte	2                               @ DW_AT_location
+	.byte	24                              @ DW_FORM_exprloc
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	18                              @ Abbreviation Code
+	.byte	19                              @ DW_TAG_structure_type
+	.byte	1                               @ DW_CHILDREN_yes
+	.byte	11                              @ DW_AT_byte_size
+	.byte	5                               @ DW_FORM_data2
+	.byte	58                              @ DW_AT_decl_file
+	.byte	11                              @ DW_FORM_data1
+	.byte	59                              @ DW_AT_decl_line
+	.byte	11                              @ DW_FORM_data1
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	19                              @ Abbreviation Code
+	.byte	13                              @ DW_TAG_member
+	.byte	0                               @ DW_CHILDREN_no
+	.byte	3                               @ DW_AT_name
+	.byte	14                              @ DW_FORM_strp
+	.byte	73                              @ DW_AT_type
+	.byte	19                              @ DW_FORM_ref4
+	.byte	58                              @ DW_AT_decl_file
+	.byte	11                              @ DW_FORM_data1
+	.byte	59                              @ DW_AT_decl_line
+	.byte	5                               @ DW_FORM_data2
+	.byte	56                              @ DW_AT_data_member_location
+	.byte	11                              @ DW_FORM_data1
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	20                              @ Abbreviation Code
+	.byte	13                              @ DW_TAG_member
+	.byte	0                               @ DW_CHILDREN_no
+	.byte	3                               @ DW_AT_name
+	.byte	14                              @ DW_FORM_strp
+	.byte	73                              @ DW_AT_type
+	.byte	19                              @ DW_FORM_ref4
+	.byte	58                              @ DW_AT_decl_file
+	.byte	11                              @ DW_FORM_data1
+	.byte	59                              @ DW_AT_decl_line
+	.byte	5                               @ DW_FORM_data2
+	.byte	56                              @ DW_AT_data_member_location
+	.byte	5                               @ DW_FORM_data2
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	21                              @ Abbreviation Code
+	.byte	33                              @ DW_TAG_subrange_type
+	.byte	0                               @ DW_CHILDREN_no
+	.byte	73                              @ DW_AT_type
+	.byte	19                              @ DW_FORM_ref4
+	.byte	55                              @ DW_AT_count
+	.byte	5                               @ DW_FORM_data2
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	22                              @ Abbreviation Code
+	.byte	19                              @ DW_TAG_structure_type
+	.byte	1                               @ DW_CHILDREN_yes
+	.byte	11                              @ DW_AT_byte_size
+	.byte	11                              @ DW_FORM_data1
+	.byte	58                              @ DW_AT_decl_file
+	.byte	11                              @ DW_FORM_data1
+	.byte	59                              @ DW_AT_decl_line
+	.byte	11                              @ DW_FORM_data1
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	23                              @ Abbreviation Code
+	.byte	46                              @ DW_TAG_subprogram
+	.byte	1                               @ DW_CHILDREN_yes
+	.byte	17                              @ DW_AT_low_pc
+	.byte	1                               @ DW_FORM_addr
+	.byte	18                              @ DW_AT_high_pc
+	.byte	6                               @ DW_FORM_data4
+	.byte	64                              @ DW_AT_frame_base
+	.byte	24                              @ DW_FORM_exprloc
+	.byte	3                               @ DW_AT_name
+	.byte	14                              @ DW_FORM_strp
+	.byte	58                              @ DW_AT_decl_file
+	.byte	11                              @ DW_FORM_data1
+	.byte	59                              @ DW_AT_decl_line
+	.byte	11                              @ DW_FORM_data1
+	.byte	39                              @ DW_AT_prototyped
+	.byte	25                              @ DW_FORM_flag_present
+	.byte	63                              @ DW_AT_external
+	.byte	25                              @ DW_FORM_flag_present
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	24                              @ Abbreviation Code
+	.byte	5                               @ DW_TAG_formal_parameter
+	.byte	0                               @ DW_CHILDREN_no
+	.byte	2                               @ DW_AT_location
+	.byte	24                              @ DW_FORM_exprloc
+	.byte	3                               @ DW_AT_name
+	.byte	14                              @ DW_FORM_strp
+	.byte	58                              @ DW_AT_decl_file
+	.byte	11                              @ DW_FORM_data1
+	.byte	59                              @ DW_AT_decl_line
+	.byte	11                              @ DW_FORM_data1
+	.byte	73                              @ DW_AT_type
+	.byte	19                              @ DW_FORM_ref4
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	25                              @ Abbreviation Code
+	.byte	46                              @ DW_TAG_subprogram
+	.byte	0                               @ DW_CHILDREN_no
+	.byte	17                              @ DW_AT_low_pc
+	.byte	1                               @ DW_FORM_addr
+	.byte	18                              @ DW_AT_high_pc
+	.byte	6                               @ DW_FORM_data4
+	.byte	64                              @ DW_AT_frame_base
+	.byte	24                              @ DW_FORM_exprloc
+	.byte	3                               @ DW_AT_name
+	.byte	14                              @ DW_FORM_strp
+	.byte	58                              @ DW_AT_decl_file
+	.byte	11                              @ DW_FORM_data1
+	.byte	59                              @ DW_AT_decl_line
+	.byte	11                              @ DW_FORM_data1
+	.byte	39                              @ DW_AT_prototyped
+	.byte	25                              @ DW_FORM_flag_present
+	.byte	63                              @ DW_AT_external
+	.byte	25                              @ DW_FORM_flag_present
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	26                              @ Abbreviation Code
+	.byte	46                              @ DW_TAG_subprogram
+	.byte	1                               @ DW_CHILDREN_yes
+	.byte	17                              @ DW_AT_low_pc
+	.byte	1                               @ DW_FORM_addr
+	.byte	18                              @ DW_AT_high_pc
+	.byte	6                               @ DW_FORM_data4
+	.byte	64                              @ DW_AT_frame_base
+	.byte	24                              @ DW_FORM_exprloc
+	.byte	3                               @ DW_AT_name
+	.byte	14                              @ DW_FORM_strp
+	.byte	58                              @ DW_AT_decl_file
+	.byte	11                              @ DW_FORM_data1
+	.byte	59                              @ DW_AT_decl_line
+	.byte	5                               @ DW_FORM_data2
+	.byte	39                              @ DW_AT_prototyped
+	.byte	25                              @ DW_FORM_flag_present
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	27                              @ Abbreviation Code
+	.byte	5                               @ DW_TAG_formal_parameter
+	.byte	0                               @ DW_CHILDREN_no
+	.byte	2                               @ DW_AT_location
+	.byte	24                              @ DW_FORM_exprloc
+	.byte	3                               @ DW_AT_name
+	.byte	14                              @ DW_FORM_strp
+	.byte	58                              @ DW_AT_decl_file
+	.byte	11                              @ DW_FORM_data1
+	.byte	59                              @ DW_AT_decl_line
+	.byte	5                               @ DW_FORM_data2
+	.byte	73                              @ DW_AT_type
+	.byte	19                              @ DW_FORM_ref4
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	28                              @ Abbreviation Code
+	.byte	52                              @ DW_TAG_variable
+	.byte	0                               @ DW_CHILDREN_no
+	.byte	2                               @ DW_AT_location
+	.byte	24                              @ DW_FORM_exprloc
+	.byte	3                               @ DW_AT_name
+	.byte	14                              @ DW_FORM_strp
+	.byte	58                              @ DW_AT_decl_file
+	.byte	11                              @ DW_FORM_data1
+	.byte	59                              @ DW_AT_decl_line
+	.byte	5                               @ DW_FORM_data2
+	.byte	73                              @ DW_AT_type
+	.byte	19                              @ DW_FORM_ref4
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	29                              @ Abbreviation Code
+	.byte	46                              @ DW_TAG_subprogram
+	.byte	1                               @ DW_CHILDREN_yes
+	.byte	17                              @ DW_AT_low_pc
+	.byte	1                               @ DW_FORM_addr
+	.byte	18                              @ DW_AT_high_pc
+	.byte	6                               @ DW_FORM_data4
+	.byte	64                              @ DW_AT_frame_base
+	.byte	24                              @ DW_FORM_exprloc
+	.byte	3                               @ DW_AT_name
+	.byte	14                              @ DW_FORM_strp
+	.byte	58                              @ DW_AT_decl_file
+	.byte	11                              @ DW_FORM_data1
+	.byte	59                              @ DW_AT_decl_line
+	.byte	5                               @ DW_FORM_data2
+	.byte	39                              @ DW_AT_prototyped
+	.byte	25                              @ DW_FORM_flag_present
+	.byte	63                              @ DW_AT_external
+	.byte	25                              @ DW_FORM_flag_present
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	30                              @ Abbreviation Code
+	.byte	11                              @ DW_TAG_lexical_block
+	.byte	1                               @ DW_CHILDREN_yes
+	.byte	17                              @ DW_AT_low_pc
+	.byte	1                               @ DW_FORM_addr
+	.byte	18                              @ DW_AT_high_pc
+	.byte	6                               @ DW_FORM_data4
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	31                              @ Abbreviation Code
+	.byte	52                              @ DW_TAG_variable
+	.byte	0                               @ DW_CHILDREN_no
+	.byte	2                               @ DW_AT_location
+	.byte	24                              @ DW_FORM_exprloc
+	.byte	3                               @ DW_AT_name
+	.byte	14                              @ DW_FORM_strp
+	.byte	58                              @ DW_AT_decl_file
+	.byte	11                              @ DW_FORM_data1
+	.byte	59                              @ DW_AT_decl_line
+	.byte	11                              @ DW_FORM_data1
+	.byte	73                              @ DW_AT_type
+	.byte	19                              @ DW_FORM_ref4
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	32                              @ Abbreviation Code
+	.byte	46                              @ DW_TAG_subprogram
+	.byte	1                               @ DW_CHILDREN_yes
+	.byte	17                              @ DW_AT_low_pc
+	.byte	1                               @ DW_FORM_addr
+	.byte	18                              @ DW_AT_high_pc
+	.byte	6                               @ DW_FORM_data4
+	.byte	64                              @ DW_AT_frame_base
+	.byte	24                              @ DW_FORM_exprloc
+	.byte	3                               @ DW_AT_name
+	.byte	14                              @ DW_FORM_strp
+	.byte	58                              @ DW_AT_decl_file
+	.byte	11                              @ DW_FORM_data1
+	.byte	59                              @ DW_AT_decl_line
+	.byte	5                               @ DW_FORM_data2
+	.byte	39                              @ DW_AT_prototyped
+	.byte	25                              @ DW_FORM_flag_present
+	.byte	73                              @ DW_AT_type
+	.byte	19                              @ DW_FORM_ref4
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	0                               @ EOM(3)
+	.section	.debug_info,"",%progbits
+.Lcu_begin0:
+	.long	.Ldebug_info_end0-.Ldebug_info_start0 @ Length of Unit
+.Ldebug_info_start0:
+	.short	4                               @ DWARF version number
+	.long	.debug_abbrev                   @ Offset Into Abbrev. Section
+	.byte	4                               @ Address Size (in bytes)
+	.byte	1                               @ Abbrev [1] 0xb:0x745 DW_TAG_compile_unit
+	.long	.Linfo_string0                  @ DW_AT_producer
+	.short	12                              @ DW_AT_language
+	.long	.Linfo_string1                  @ DW_AT_name
+	.long	.Lline_table_start0             @ DW_AT_stmt_list
+	.long	.Linfo_string2                  @ DW_AT_comp_dir
+	.long	0                               @ DW_AT_low_pc
+	.long	.Ldebug_ranges0                 @ DW_AT_ranges
+	.byte	2                               @ Abbrev [2] 0x26:0x11 DW_TAG_variable
+	.long	.Linfo_string3                  @ DW_AT_name
+	.long	55                              @ DW_AT_type
+                                        @ DW_AT_external
+	.byte	2                               @ DW_AT_decl_file
+	.byte	35                              @ DW_AT_decl_line
+	.byte	5                               @ DW_AT_location
+	.byte	3
+	.long	g_usbd_SetupPacket
+	.byte	3                               @ Abbrev [3] 0x37:0xc DW_TAG_array_type
+	.long	67                              @ DW_AT_type
+	.byte	4                               @ Abbrev [4] 0x3c:0x6 DW_TAG_subrange_type
+	.long	85                              @ DW_AT_type
+	.byte	8                               @ DW_AT_count
+	.byte	0                               @ End Of Children Mark
+	.byte	5                               @ Abbrev [5] 0x43:0xb DW_TAG_typedef
+	.long	78                              @ DW_AT_type
+	.long	.Linfo_string5                  @ DW_AT_name
+	.byte	1                               @ DW_AT_decl_file
+	.byte	62                              @ DW_AT_decl_line
+	.byte	6                               @ Abbrev [6] 0x4e:0x7 DW_TAG_base_type
+	.long	.Linfo_string4                  @ DW_AT_name
+	.byte	8                               @ DW_AT_encoding
+	.byte	1                               @ DW_AT_byte_size
+	.byte	7                               @ Abbrev [7] 0x55:0x7 DW_TAG_base_type
+	.long	.Linfo_string6                  @ DW_AT_name
+	.byte	8                               @ DW_AT_byte_size
+	.byte	7                               @ DW_AT_encoding
+	.byte	2                               @ Abbrev [2] 0x5c:0x11 DW_TAG_variable
+	.long	.Linfo_string7                  @ DW_AT_name
+	.long	109                             @ DW_AT_type
+                                        @ DW_AT_external
+	.byte	2                               @ DW_AT_decl_file
+	.byte	36                              @ DW_AT_decl_line
+	.byte	5                               @ DW_AT_location
+	.byte	3
+	.long	g_usbd_RemoteWakeupEn
+	.byte	8                               @ Abbrev [8] 0x6d:0x5 DW_TAG_volatile_type
+	.long	67                              @ DW_AT_type
+	.byte	2                               @ Abbrev [2] 0x72:0x11 DW_TAG_variable
+	.long	.Linfo_string8                  @ DW_AT_name
+	.long	131                             @ DW_AT_type
+                                        @ DW_AT_external
+	.byte	2                               @ DW_AT_decl_file
+	.byte	57                              @ DW_AT_decl_line
+	.byte	5                               @ DW_AT_location
+	.byte	3
+	.long	g_usbd_pfnVendorRequest
+	.byte	9                               @ Abbrev [9] 0x83:0xc DW_TAG_typedef
+	.long	143                             @ DW_AT_type
+	.long	.Linfo_string9                  @ DW_AT_name
+	.byte	3                               @ DW_AT_decl_file
+	.short	666                             @ DW_AT_decl_line
+	.byte	10                              @ Abbrev [10] 0x8f:0x5 DW_TAG_pointer_type
+	.long	148                             @ DW_AT_type
+	.byte	11                              @ Abbrev [11] 0x94:0x1 DW_TAG_subroutine_type
+                                        @ DW_AT_prototyped
+	.byte	2                               @ Abbrev [2] 0x95:0x11 DW_TAG_variable
+	.long	.Linfo_string10                 @ DW_AT_name
+	.long	166                             @ DW_AT_type
+                                        @ DW_AT_external
+	.byte	2                               @ DW_AT_decl_file
+	.byte	58                              @ DW_AT_decl_line
+	.byte	5                               @ DW_AT_location
+	.byte	3
+	.long	g_usbd_pfnClassRequest
+	.byte	9                               @ Abbrev [9] 0xa6:0xc DW_TAG_typedef
+	.long	143                             @ DW_AT_type
+	.long	.Linfo_string11                 @ DW_AT_name
+	.byte	3                               @ DW_AT_decl_file
+	.short	667                             @ DW_AT_decl_line
+	.byte	2                               @ Abbrev [2] 0xb2:0x11 DW_TAG_variable
+	.long	.Linfo_string12                 @ DW_AT_name
+	.long	195                             @ DW_AT_type
+                                        @ DW_AT_external
+	.byte	2                               @ DW_AT_decl_file
+	.byte	59                              @ DW_AT_decl_line
+	.byte	5                               @ DW_AT_location
+	.byte	3
+	.long	g_usbd_pfnSetInterface
+	.byte	9                               @ Abbrev [9] 0xc3:0xc DW_TAG_typedef
+	.long	207                             @ DW_AT_type
+	.long	.Linfo_string15                 @ DW_AT_name
+	.byte	3                               @ DW_AT_decl_file
+	.short	668                             @ DW_AT_decl_line
+	.byte	10                              @ Abbrev [10] 0xcf:0x5 DW_TAG_pointer_type
+	.long	212                             @ DW_AT_type
+	.byte	12                              @ Abbrev [12] 0xd4:0x7 DW_TAG_subroutine_type
+                                        @ DW_AT_prototyped
+	.byte	13                              @ Abbrev [13] 0xd5:0x5 DW_TAG_formal_parameter
+	.long	219                             @ DW_AT_type
+	.byte	0                               @ End Of Children Mark
+	.byte	5                               @ Abbrev [5] 0xdb:0xb DW_TAG_typedef
+	.long	230                             @ DW_AT_type
+	.long	.Linfo_string14                 @ DW_AT_name
+	.byte	1                               @ DW_AT_decl_file
+	.byte	64                              @ DW_AT_decl_line
+	.byte	6                               @ Abbrev [6] 0xe6:0x7 DW_TAG_base_type
+	.long	.Linfo_string13                 @ DW_AT_name
+	.byte	7                               @ DW_AT_encoding
+	.byte	4                               @ DW_AT_byte_size
+	.byte	2                               @ Abbrev [2] 0xed:0x11 DW_TAG_variable
+	.long	.Linfo_string16                 @ DW_AT_name
+	.long	254                             @ DW_AT_type
+                                        @ DW_AT_external
+	.byte	2                               @ DW_AT_decl_file
+	.byte	60                              @ DW_AT_decl_line
+	.byte	5                               @ DW_AT_location
+	.byte	3
+	.long	g_usbd_pfnSetConfigCallback
+	.byte	9                               @ Abbrev [9] 0xfe:0xc DW_TAG_typedef
+	.long	143                             @ DW_AT_type
+	.long	.Linfo_string17                 @ DW_AT_name
+	.byte	3                               @ DW_AT_decl_file
+	.short	669                             @ DW_AT_decl_line
+	.byte	2                               @ Abbrev [2] 0x10a:0x11 DW_TAG_variable
+	.long	.Linfo_string18                 @ DW_AT_name
+	.long	219                             @ DW_AT_type
+                                        @ DW_AT_external
+	.byte	2                               @ DW_AT_decl_file
+	.byte	61                              @ DW_AT_decl_line
+	.byte	5                               @ DW_AT_location
+	.byte	3
+	.long	g_u32EpStallLock
+	.byte	2                               @ Abbrev [2] 0x11b:0x11 DW_TAG_variable
+	.long	.Linfo_string19                 @ DW_AT_name
+	.long	300                             @ DW_AT_type
+                                        @ DW_AT_external
+	.byte	2                               @ DW_AT_decl_file
+	.byte	55                              @ DW_AT_decl_line
+	.byte	5                               @ DW_AT_location
+	.byte	3
+	.long	g_usbd_sInfo
+	.byte	10                              @ Abbrev [10] 0x12c:0x5 DW_TAG_pointer_type
+	.long	305                             @ DW_AT_type
+	.byte	14                              @ Abbrev [14] 0x131:0x5 DW_TAG_const_type
+	.long	310                             @ DW_AT_type
+	.byte	5                               @ Abbrev [5] 0x136:0xb DW_TAG_typedef
+	.long	321                             @ DW_AT_type
+	.long	.Linfo_string28                 @ DW_AT_name
+	.byte	3                               @ DW_AT_decl_file
+	.byte	43                              @ DW_AT_decl_line
+	.byte	15                              @ Abbrev [15] 0x141:0x5d DW_TAG_structure_type
+	.long	.Linfo_string27                 @ DW_AT_name
+	.byte	28                              @ DW_AT_byte_size
+	.byte	3                               @ DW_AT_decl_file
+	.byte	33                              @ DW_AT_decl_line
+	.byte	16                              @ Abbrev [16] 0x149:0xc DW_TAG_member
+	.long	.Linfo_string20                 @ DW_AT_name
+	.long	414                             @ DW_AT_type
+	.byte	3                               @ DW_AT_decl_file
+	.byte	35                              @ DW_AT_decl_line
+	.byte	0                               @ DW_AT_data_member_location
+	.byte	16                              @ Abbrev [16] 0x155:0xc DW_TAG_member
+	.long	.Linfo_string21                 @ DW_AT_name
+	.long	414                             @ DW_AT_type
+	.byte	3                               @ DW_AT_decl_file
+	.byte	36                              @ DW_AT_decl_line
+	.byte	4                               @ DW_AT_data_member_location
+	.byte	16                              @ Abbrev [16] 0x161:0xc DW_TAG_member
+	.long	.Linfo_string22                 @ DW_AT_name
+	.long	419                             @ DW_AT_type
+	.byte	3                               @ DW_AT_decl_file
+	.byte	37                              @ DW_AT_decl_line
+	.byte	8                               @ DW_AT_data_member_location
+	.byte	16                              @ Abbrev [16] 0x16d:0xc DW_TAG_member
+	.long	.Linfo_string23                 @ DW_AT_name
+	.long	419                             @ DW_AT_type
+	.byte	3                               @ DW_AT_decl_file
+	.byte	38                              @ DW_AT_decl_line
+	.byte	12                              @ DW_AT_data_member_location
+	.byte	16                              @ Abbrev [16] 0x179:0xc DW_TAG_member
+	.long	.Linfo_string24                 @ DW_AT_name
+	.long	414                             @ DW_AT_type
+	.byte	3                               @ DW_AT_decl_file
+	.byte	39                              @ DW_AT_decl_line
+	.byte	16                              @ DW_AT_data_member_location
+	.byte	16                              @ Abbrev [16] 0x185:0xc DW_TAG_member
+	.long	.Linfo_string25                 @ DW_AT_name
+	.long	424                             @ DW_AT_type
+	.byte	3                               @ DW_AT_decl_file
+	.byte	40                              @ DW_AT_decl_line
+	.byte	20                              @ DW_AT_data_member_location
+	.byte	16                              @ Abbrev [16] 0x191:0xc DW_TAG_member
+	.long	.Linfo_string26                 @ DW_AT_name
+	.long	424                             @ DW_AT_type
+	.byte	3                               @ DW_AT_decl_file
+	.byte	41                              @ DW_AT_decl_line
+	.byte	24                              @ DW_AT_data_member_location
+	.byte	0                               @ End Of Children Mark
+	.byte	10                              @ Abbrev [10] 0x19e:0x5 DW_TAG_pointer_type
+	.long	67                              @ DW_AT_type
+	.byte	10                              @ Abbrev [10] 0x1a3:0x5 DW_TAG_pointer_type
+	.long	414                             @ DW_AT_type
+	.byte	10                              @ Abbrev [10] 0x1a8:0x5 DW_TAG_pointer_type
+	.long	219                             @ DW_AT_type
+	.byte	17                              @ Abbrev [17] 0x1ad:0x11 DW_TAG_variable
+	.long	.Linfo_string29                 @ DW_AT_name
+	.long	446                             @ DW_AT_type
+	.byte	2                               @ DW_AT_decl_file
+	.byte	48                              @ DW_AT_decl_line
+	.byte	5                               @ DW_AT_location
+	.byte	3
+	.long	g_usbd_CtrlMaxPktSize
+	.byte	8                               @ Abbrev [8] 0x1be:0x5 DW_TAG_volatile_type
+	.long	219                             @ DW_AT_type
+	.byte	17                              @ Abbrev [17] 0x1c3:0x11 DW_TAG_variable
+	.long	.Linfo_string30                 @ DW_AT_name
+	.long	414                             @ DW_AT_type
+	.byte	2                               @ DW_AT_decl_file
+	.byte	41                              @ DW_AT_decl_line
+	.byte	5                               @ DW_AT_location
+	.byte	3
+	.long	g_usbd_CtrlInPointer
+	.byte	17                              @ Abbrev [17] 0x1d4:0x11 DW_TAG_variable
+	.long	.Linfo_string31                 @ DW_AT_name
+	.long	446                             @ DW_AT_type
+	.byte	2                               @ DW_AT_decl_file
+	.byte	43                              @ DW_AT_decl_line
+	.byte	5                               @ DW_AT_location
+	.byte	3
+	.long	g_usbd_CtrlInSize
+	.byte	17                              @ Abbrev [17] 0x1e5:0x11 DW_TAG_variable
+	.long	.Linfo_string32                 @ DW_AT_name
+	.long	446                             @ DW_AT_type
+	.byte	2                               @ DW_AT_decl_file
+	.byte	47                              @ DW_AT_decl_line
+	.byte	5                               @ DW_AT_location
+	.byte	3
+	.long	g_usbd_UsbConfig
+	.byte	17                              @ Abbrev [17] 0x1f6:0x11 DW_TAG_variable
+	.long	.Linfo_string33                 @ DW_AT_name
+	.long	446                             @ DW_AT_type
+	.byte	2                               @ DW_AT_decl_file
+	.byte	49                              @ DW_AT_decl_line
+	.byte	5                               @ DW_AT_location
+	.byte	3
+	.long	g_usbd_UsbAltInterface
+	.byte	17                              @ Abbrev [17] 0x207:0x11 DW_TAG_variable
+	.long	.Linfo_string34                 @ DW_AT_name
+	.long	446                             @ DW_AT_type
+	.byte	2                               @ DW_AT_decl_file
+	.byte	46                              @ DW_AT_decl_line
+	.byte	5                               @ DW_AT_location
+	.byte	3
+	.long	g_usbd_UsbAddr
+	.byte	17                              @ Abbrev [17] 0x218:0x11 DW_TAG_variable
+	.long	.Linfo_string35                 @ DW_AT_name
+	.long	109                             @ DW_AT_type
+	.byte	2                               @ DW_AT_decl_file
+	.byte	50                              @ DW_AT_decl_line
+	.byte	5                               @ DW_AT_location
+	.byte	3
+	.long	g_usbd_CtrlInZeroFlag
+	.byte	17                              @ Abbrev [17] 0x229:0x11 DW_TAG_variable
+	.long	.Linfo_string36                 @ DW_AT_name
+	.long	414                             @ DW_AT_type
+	.byte	2                               @ DW_AT_decl_file
+	.byte	42                              @ DW_AT_decl_line
+	.byte	5                               @ DW_AT_location
+	.byte	3
+	.long	g_usbd_CtrlOutPointer
+	.byte	17                              @ Abbrev [17] 0x23a:0x11 DW_TAG_variable
+	.long	.Linfo_string37                 @ DW_AT_name
+	.long	446                             @ DW_AT_type
+	.byte	2                               @ DW_AT_decl_file
+	.byte	44                              @ DW_AT_decl_line
+	.byte	5                               @ DW_AT_location
+	.byte	3
+	.long	g_usbd_CtrlOutSize
+	.byte	17                              @ Abbrev [17] 0x24b:0x11 DW_TAG_variable
+	.long	.Linfo_string38                 @ DW_AT_name
+	.long	446                             @ DW_AT_type
+	.byte	2                               @ DW_AT_decl_file
+	.byte	45                              @ DW_AT_decl_line
+	.byte	5                               @ DW_AT_location
+	.byte	3
+	.long	g_usbd_CtrlOutSizeLimit
+	.byte	10                              @ Abbrev [10] 0x25c:0x5 DW_TAG_pointer_type
+	.long	609                             @ DW_AT_type
+	.byte	9                               @ Abbrev [9] 0x261:0xc DW_TAG_typedef
+	.long	621                             @ DW_AT_type
+	.long	.Linfo_string59                 @ DW_AT_name
+	.byte	4                               @ DW_AT_decl_file
+	.short	378                             @ DW_AT_decl_line
+	.byte	18                              @ Abbrev [18] 0x26d:0xca DW_TAG_structure_type
+	.short	1408                            @ DW_AT_byte_size
+	.byte	4                               @ DW_AT_decl_file
+	.byte	103                             @ DW_AT_decl_line
+	.byte	19                              @ Abbrev [19] 0x272:0xd DW_TAG_member
+	.long	.Linfo_string39                 @ DW_AT_name
+	.long	446                             @ DW_AT_type
+	.byte	4                               @ DW_AT_decl_file
+	.short	356                             @ DW_AT_decl_line
+	.byte	0                               @ DW_AT_data_member_location
+	.byte	19                              @ Abbrev [19] 0x27f:0xd DW_TAG_member
+	.long	.Linfo_string40                 @ DW_AT_name
+	.long	446                             @ DW_AT_type
+	.byte	4                               @ DW_AT_decl_file
+	.short	357                             @ DW_AT_decl_line
+	.byte	4                               @ DW_AT_data_member_location
+	.byte	19                              @ Abbrev [19] 0x28c:0xd DW_TAG_member
+	.long	.Linfo_string41                 @ DW_AT_name
+	.long	446                             @ DW_AT_type
+	.byte	4                               @ DW_AT_decl_file
+	.short	358                             @ DW_AT_decl_line
+	.byte	8                               @ DW_AT_data_member_location
+	.byte	19                              @ Abbrev [19] 0x299:0xd DW_TAG_member
+	.long	.Linfo_string42                 @ DW_AT_name
+	.long	823                             @ DW_AT_type
+	.byte	4                               @ DW_AT_decl_file
+	.short	359                             @ DW_AT_decl_line
+	.byte	12                              @ DW_AT_data_member_location
+	.byte	19                              @ Abbrev [19] 0x2a6:0xd DW_TAG_member
+	.long	.Linfo_string43                 @ DW_AT_name
+	.long	446                             @ DW_AT_type
+	.byte	4                               @ DW_AT_decl_file
+	.short	360                             @ DW_AT_decl_line
+	.byte	16                              @ DW_AT_data_member_location
+	.byte	19                              @ Abbrev [19] 0x2b3:0xd DW_TAG_member
+	.long	.Linfo_string44                 @ DW_AT_name
+	.long	823                             @ DW_AT_type
+	.byte	4                               @ DW_AT_decl_file
+	.short	361                             @ DW_AT_decl_line
+	.byte	20                              @ DW_AT_data_member_location
+	.byte	19                              @ Abbrev [19] 0x2c0:0xd DW_TAG_member
+	.long	.Linfo_string45                 @ DW_AT_name
+	.long	446                             @ DW_AT_type
+	.byte	4                               @ DW_AT_decl_file
+	.short	362                             @ DW_AT_decl_line
+	.byte	24                              @ DW_AT_data_member_location
+	.byte	19                              @ Abbrev [19] 0x2cd:0xd DW_TAG_member
+	.long	.Linfo_string46                 @ DW_AT_name
+	.long	828                             @ DW_AT_type
+	.byte	4                               @ DW_AT_decl_file
+	.short	364                             @ DW_AT_decl_line
+	.byte	28                              @ DW_AT_data_member_location
+	.byte	19                              @ Abbrev [19] 0x2da:0xd DW_TAG_member
+	.long	.Linfo_string47                 @ DW_AT_name
+	.long	823                             @ DW_AT_type
+	.byte	4                               @ DW_AT_decl_file
+	.short	366                             @ DW_AT_decl_line
+	.byte	32                              @ DW_AT_data_member_location
+	.byte	19                              @ Abbrev [19] 0x2e7:0xd DW_TAG_member
+	.long	.Linfo_string48                 @ DW_AT_name
+	.long	840                             @ DW_AT_type
+	.byte	4                               @ DW_AT_decl_file
+	.short	368                             @ DW_AT_decl_line
+	.byte	36                              @ DW_AT_data_member_location
+	.byte	19                              @ Abbrev [19] 0x2f4:0xd DW_TAG_member
+	.long	.Linfo_string49                 @ DW_AT_name
+	.long	823                             @ DW_AT_type
+	.byte	4                               @ DW_AT_decl_file
+	.short	370                             @ DW_AT_decl_line
+	.byte	136                             @ DW_AT_data_member_location
+	.byte	19                              @ Abbrev [19] 0x301:0xd DW_TAG_member
+	.long	.Linfo_string50                 @ DW_AT_name
+	.long	823                             @ DW_AT_type
+	.byte	4                               @ DW_AT_decl_file
+	.short	371                             @ DW_AT_decl_line
+	.byte	140                             @ DW_AT_data_member_location
+	.byte	19                              @ Abbrev [19] 0x30e:0xd DW_TAG_member
+	.long	.Linfo_string51                 @ DW_AT_name
+	.long	446                             @ DW_AT_type
+	.byte	4                               @ DW_AT_decl_file
+	.short	372                             @ DW_AT_decl_line
+	.byte	144                             @ DW_AT_data_member_location
+	.byte	19                              @ Abbrev [19] 0x31b:0xd DW_TAG_member
+	.long	.Linfo_string52                 @ DW_AT_name
+	.long	852                             @ DW_AT_type
+	.byte	4                               @ DW_AT_decl_file
+	.short	374                             @ DW_AT_decl_line
+	.byte	148                             @ DW_AT_data_member_location
+	.byte	20                              @ Abbrev [20] 0x328:0xe DW_TAG_member
+	.long	.Linfo_string53                 @ DW_AT_name
+	.long	865                             @ DW_AT_type
+	.byte	4                               @ DW_AT_decl_file
+	.short	376                             @ DW_AT_decl_line
+	.short	1280                            @ DW_AT_data_member_location
+	.byte	0                               @ End Of Children Mark
+	.byte	14                              @ Abbrev [14] 0x337:0x5 DW_TAG_const_type
+	.long	446                             @ DW_AT_type
+	.byte	3                               @ Abbrev [3] 0x33c:0xc DW_TAG_array_type
+	.long	823                             @ DW_AT_type
+	.byte	4                               @ Abbrev [4] 0x341:0x6 DW_TAG_subrange_type
+	.long	85                              @ DW_AT_type
+	.byte	1                               @ DW_AT_count
+	.byte	0                               @ End Of Children Mark
+	.byte	3                               @ Abbrev [3] 0x348:0xc DW_TAG_array_type
+	.long	823                             @ DW_AT_type
+	.byte	4                               @ Abbrev [4] 0x34d:0x6 DW_TAG_subrange_type
+	.long	85                              @ DW_AT_type
+	.byte	25                              @ DW_AT_count
+	.byte	0                               @ End Of Children Mark
+	.byte	3                               @ Abbrev [3] 0x354:0xd DW_TAG_array_type
+	.long	823                             @ DW_AT_type
+	.byte	21                              @ Abbrev [21] 0x359:0x7 DW_TAG_subrange_type
+	.long	85                              @ DW_AT_type
+	.short	283                             @ DW_AT_count
+	.byte	0                               @ End Of Children Mark
+	.byte	3                               @ Abbrev [3] 0x361:0xc DW_TAG_array_type
+	.long	877                             @ DW_AT_type
+	.byte	4                               @ Abbrev [4] 0x366:0x6 DW_TAG_subrange_type
+	.long	85                              @ DW_AT_type
+	.byte	8                               @ DW_AT_count
+	.byte	0                               @ End Of Children Mark
+	.byte	5                               @ Abbrev [5] 0x36d:0xb DW_TAG_typedef
+	.long	888                             @ DW_AT_type
+	.long	.Linfo_string58                 @ DW_AT_name
+	.byte	4                               @ DW_AT_decl_file
+	.byte	101                             @ DW_AT_decl_line
+	.byte	22                              @ Abbrev [22] 0x378:0x35 DW_TAG_structure_type
+	.byte	16                              @ DW_AT_byte_size
+	.byte	4                               @ DW_AT_decl_file
+	.byte	28                              @ DW_AT_decl_line
+	.byte	16                              @ Abbrev [16] 0x37c:0xc DW_TAG_member
+	.long	.Linfo_string54                 @ DW_AT_name
+	.long	446                             @ DW_AT_type
+	.byte	4                               @ DW_AT_decl_file
+	.byte	96                              @ DW_AT_decl_line
+	.byte	0                               @ DW_AT_data_member_location
+	.byte	16                              @ Abbrev [16] 0x388:0xc DW_TAG_member
+	.long	.Linfo_string55                 @ DW_AT_name
+	.long	446                             @ DW_AT_type
+	.byte	4                               @ DW_AT_decl_file
+	.byte	97                              @ DW_AT_decl_line
+	.byte	4                               @ DW_AT_data_member_location
+	.byte	16                              @ Abbrev [16] 0x394:0xc DW_TAG_member
+	.long	.Linfo_string56                 @ DW_AT_name
+	.long	446                             @ DW_AT_type
+	.byte	4                               @ DW_AT_decl_file
+	.byte	98                              @ DW_AT_decl_line
+	.byte	8                               @ DW_AT_data_member_location
+	.byte	16                              @ Abbrev [16] 0x3a0:0xc DW_TAG_member
+	.long	.Linfo_string57                 @ DW_AT_name
+	.long	446                             @ DW_AT_type
+	.byte	4                               @ DW_AT_decl_file
+	.byte	99                              @ DW_AT_decl_line
+	.byte	12                              @ DW_AT_data_member_location
+	.byte	0                               @ End Of Children Mark
+	.byte	10                              @ Abbrev [10] 0x3ad:0x5 DW_TAG_pointer_type
+	.long	446                             @ DW_AT_type
+	.byte	10                              @ Abbrev [10] 0x3b2:0x5 DW_TAG_pointer_type
+	.long	951                             @ DW_AT_type
+	.byte	9                               @ Abbrev [9] 0x3b7:0xc DW_TAG_typedef
+	.long	963                             @ DW_AT_type
+	.long	.Linfo_string60                 @ DW_AT_name
+	.byte	5                               @ DW_AT_decl_file
+	.short	355                             @ DW_AT_decl_line
+	.byte	8                               @ Abbrev [8] 0x3c3:0x5 DW_TAG_volatile_type
+	.long	78                              @ DW_AT_type
+	.byte	23                              @ Abbrev [23] 0x3c8:0x3c DW_TAG_subprogram
+	.long	.Lfunc_begin0                   @ DW_AT_low_pc
+	.long	.Lfunc_end0-.Lfunc_begin0       @ DW_AT_high_pc
+	.byte	1                               @ DW_AT_frame_base
+	.byte	93
+	.long	.Linfo_string61                 @ DW_AT_name
+	.byte	2                               @ DW_AT_decl_file
+	.byte	74                              @ DW_AT_decl_line
+                                        @ DW_AT_prototyped
+                                        @ DW_AT_external
+	.byte	24                              @ Abbrev [24] 0x3d9:0xe DW_TAG_formal_parameter
+	.byte	2                               @ DW_AT_location
+	.byte	145
+	.byte	8
+	.long	.Linfo_string78                 @ DW_AT_name
+	.byte	2                               @ DW_AT_decl_file
+	.byte	74                              @ DW_AT_decl_line
+	.long	300                             @ DW_AT_type
+	.byte	24                              @ Abbrev [24] 0x3e7:0xe DW_TAG_formal_parameter
+	.byte	2                               @ DW_AT_location
+	.byte	145
+	.byte	4
+	.long	.Linfo_string79                 @ DW_AT_name
+	.byte	2                               @ DW_AT_decl_file
+	.byte	74                              @ DW_AT_decl_line
+	.long	166                             @ DW_AT_type
+	.byte	24                              @ Abbrev [24] 0x3f5:0xe DW_TAG_formal_parameter
+	.byte	2                               @ DW_AT_location
+	.byte	145
+	.byte	0
+	.long	.Linfo_string80                 @ DW_AT_name
+	.byte	2                               @ DW_AT_decl_file
+	.byte	74                              @ DW_AT_decl_line
+	.long	195                             @ DW_AT_type
+	.byte	0                               @ End Of Children Mark
+	.byte	25                              @ Abbrev [25] 0x404:0x11 DW_TAG_subprogram
+	.long	.Lfunc_begin1                   @ DW_AT_low_pc
+	.long	.Lfunc_end1-.Lfunc_begin1       @ DW_AT_high_pc
+	.byte	1                               @ DW_AT_frame_base
+	.byte	93
+	.long	.Linfo_string62                 @ DW_AT_name
+	.byte	2                               @ DW_AT_decl_file
+	.byte	98                              @ DW_AT_decl_line
+                                        @ DW_AT_prototyped
+                                        @ DW_AT_external
+	.byte	23                              @ Abbrev [23] 0x415:0x20 DW_TAG_subprogram
+	.long	.Lfunc_begin2                   @ DW_AT_low_pc
+	.long	.Lfunc_end2-.Lfunc_begin2       @ DW_AT_high_pc
+	.byte	1                               @ DW_AT_frame_base
+	.byte	93
+	.long	.Linfo_string63                 @ DW_AT_name
+	.byte	2                               @ DW_AT_decl_file
+	.byte	121                             @ DW_AT_decl_line
+                                        @ DW_AT_prototyped
+                                        @ DW_AT_external
+	.byte	24                              @ Abbrev [24] 0x426:0xe DW_TAG_formal_parameter
+	.byte	2                               @ DW_AT_location
+	.byte	145
+	.byte	4
+	.long	.Linfo_string81                 @ DW_AT_name
+	.byte	2                               @ DW_AT_decl_file
+	.byte	121                             @ DW_AT_decl_line
+	.long	414                             @ DW_AT_type
+	.byte	0                               @ End Of Children Mark
+	.byte	26                              @ Abbrev [26] 0x435:0x4f DW_TAG_subprogram
+	.long	.Lfunc_begin3                   @ DW_AT_low_pc
+	.long	.Lfunc_end3-.Lfunc_begin3       @ DW_AT_high_pc
+	.byte	1                               @ DW_AT_frame_base
+	.byte	93
+	.long	.Linfo_string64                 @ DW_AT_name
+	.byte	3                               @ DW_AT_decl_file
+	.short	556                             @ DW_AT_decl_line
+                                        @ DW_AT_prototyped
+	.byte	27                              @ Abbrev [27] 0x447:0xf DW_TAG_formal_parameter
+	.byte	2                               @ DW_AT_location
+	.byte	145
+	.byte	12
+	.long	.Linfo_string82                 @ DW_AT_name
+	.byte	3                               @ DW_AT_decl_file
+	.short	556                             @ DW_AT_decl_line
+	.long	414                             @ DW_AT_type
+	.byte	27                              @ Abbrev [27] 0x456:0xf DW_TAG_formal_parameter
+	.byte	2                               @ DW_AT_location
+	.byte	145
+	.byte	8
+	.long	.Linfo_string83                 @ DW_AT_name
+	.byte	3                               @ DW_AT_decl_file
+	.short	556                             @ DW_AT_decl_line
+	.long	414                             @ DW_AT_type
+	.byte	27                              @ Abbrev [27] 0x465:0xf DW_TAG_formal_parameter
+	.byte	2                               @ DW_AT_location
+	.byte	145
+	.byte	4
+	.long	.Linfo_string84                 @ DW_AT_name
+	.byte	3                               @ DW_AT_decl_file
+	.short	556                             @ DW_AT_decl_line
+	.long	219                             @ DW_AT_type
+	.byte	28                              @ Abbrev [28] 0x474:0xf DW_TAG_variable
+	.byte	2                               @ DW_AT_location
+	.byte	145
+	.byte	0
+	.long	.Linfo_string85                 @ DW_AT_name
+	.byte	3                               @ DW_AT_decl_file
+	.short	558                             @ DW_AT_decl_line
+	.long	446                             @ DW_AT_type
+	.byte	0                               @ End Of Children Mark
+	.byte	25                              @ Abbrev [25] 0x484:0x11 DW_TAG_subprogram
+	.long	.Lfunc_begin4                   @ DW_AT_low_pc
+	.long	.Lfunc_end4-.Lfunc_begin4       @ DW_AT_high_pc
+	.byte	1                               @ DW_AT_frame_base
+	.byte	93
+	.long	.Linfo_string65                 @ DW_AT_name
+	.byte	2                               @ DW_AT_decl_file
+	.byte	136                             @ DW_AT_decl_line
+                                        @ DW_AT_prototyped
+                                        @ DW_AT_external
+	.byte	29                              @ Abbrev [29] 0x495:0x7c DW_TAG_subprogram
+	.long	.Lfunc_begin5                   @ DW_AT_low_pc
+	.long	.Lfunc_end5-.Lfunc_begin5       @ DW_AT_high_pc
+	.byte	1                               @ DW_AT_frame_base
+	.byte	93
+	.long	.Linfo_string66                 @ DW_AT_name
+	.byte	2                               @ DW_AT_decl_file
+	.short	285                             @ DW_AT_decl_line
+                                        @ DW_AT_prototyped
+                                        @ DW_AT_external
+	.byte	28                              @ Abbrev [28] 0x4a7:0xf DW_TAG_variable
+	.byte	2                               @ DW_AT_location
+	.byte	145
+	.byte	28
+	.long	.Linfo_string86                 @ DW_AT_name
+	.byte	2                               @ DW_AT_decl_file
+	.short	287                             @ DW_AT_decl_line
+	.long	219                             @ DW_AT_type
+	.byte	30                              @ Abbrev [30] 0x4b6:0x19 DW_TAG_lexical_block
+	.long	.Ltmp34                         @ DW_AT_low_pc
+	.long	.Ltmp42-.Ltmp34                 @ DW_AT_high_pc
+	.byte	28                              @ Abbrev [28] 0x4bf:0xf DW_TAG_variable
+	.byte	2                               @ DW_AT_location
+	.byte	145
+	.byte	24
+	.long	.Linfo_string87                 @ DW_AT_name
+	.byte	2                               @ DW_AT_decl_file
+	.short	332                             @ DW_AT_decl_line
+	.long	67                              @ DW_AT_type
+	.byte	0                               @ End Of Children Mark
+	.byte	30                              @ Abbrev [30] 0x4cf:0x19 DW_TAG_lexical_block
+	.long	.Ltmp47                         @ DW_AT_low_pc
+	.long	.Ltmp48-.Ltmp47                 @ DW_AT_high_pc
+	.byte	28                              @ Abbrev [28] 0x4d8:0xf DW_TAG_variable
+	.byte	2                               @ DW_AT_location
+	.byte	145
+	.byte	20
+	.long	.Linfo_string88                 @ DW_AT_name
+	.byte	2                               @ DW_AT_decl_file
+	.short	356                             @ DW_AT_decl_line
+	.long	67                              @ DW_AT_type
+	.byte	0                               @ End Of Children Mark
+	.byte	30                              @ Abbrev [30] 0x4e8:0x28 DW_TAG_lexical_block
+	.long	.Ltmp55                         @ DW_AT_low_pc
+	.long	.Ltmp65-.Ltmp55                 @ DW_AT_high_pc
+	.byte	28                              @ Abbrev [28] 0x4f1:0xf DW_TAG_variable
+	.byte	2                               @ DW_AT_location
+	.byte	145
+	.byte	16
+	.long	.Linfo_string89                 @ DW_AT_name
+	.byte	2                               @ DW_AT_decl_file
+	.short	388                             @ DW_AT_decl_line
+	.long	219                             @ DW_AT_type
+	.byte	28                              @ Abbrev [28] 0x500:0xf DW_TAG_variable
+	.byte	2                               @ DW_AT_location
+	.byte	145
+	.byte	12
+	.long	.Linfo_string85                 @ DW_AT_name
+	.byte	2                               @ DW_AT_decl_file
+	.short	388                             @ DW_AT_decl_line
+	.long	219                             @ DW_AT_type
+	.byte	0                               @ End Of Children Mark
+	.byte	0                               @ End Of Children Mark
+	.byte	23                              @ Abbrev [23] 0x511:0x50 DW_TAG_subprogram
+	.long	.Lfunc_begin6                   @ DW_AT_low_pc
+	.long	.Lfunc_end6-.Lfunc_begin6       @ DW_AT_high_pc
+	.byte	1                               @ DW_AT_frame_base
+	.byte	93
+	.long	.Linfo_string67                 @ DW_AT_name
+	.byte	2                               @ DW_AT_decl_file
+	.byte	185                             @ DW_AT_decl_line
+                                        @ DW_AT_prototyped
+                                        @ DW_AT_external
+	.byte	31                              @ Abbrev [31] 0x522:0xe DW_TAG_variable
+	.byte	2                               @ DW_AT_location
+	.byte	145
+	.byte	36
+	.long	.Linfo_string90                 @ DW_AT_name
+	.byte	2                               @ DW_AT_decl_file
+	.byte	187                             @ DW_AT_decl_line
+	.long	219                             @ DW_AT_type
+	.byte	30                              @ Abbrev [30] 0x530:0x18 DW_TAG_lexical_block
+	.long	.Ltmp93                         @ DW_AT_low_pc
+	.long	.Ltmp94-.Ltmp93                 @ DW_AT_high_pc
+	.byte	31                              @ Abbrev [31] 0x539:0xe DW_TAG_variable
+	.byte	2                               @ DW_AT_location
+	.byte	145
+	.byte	32
+	.long	.Linfo_string91                 @ DW_AT_name
+	.byte	2                               @ DW_AT_decl_file
+	.byte	206                             @ DW_AT_decl_line
+	.long	219                             @ DW_AT_type
+	.byte	0                               @ End Of Children Mark
+	.byte	30                              @ Abbrev [30] 0x548:0x18 DW_TAG_lexical_block
+	.long	.Ltmp100                        @ DW_AT_low_pc
+	.long	.Ltmp101-.Ltmp100               @ DW_AT_high_pc
+	.byte	31                              @ Abbrev [31] 0x551:0xe DW_TAG_variable
+	.byte	2                               @ DW_AT_location
+	.byte	145
+	.byte	28
+	.long	.Linfo_string92                 @ DW_AT_name
+	.byte	2                               @ DW_AT_decl_file
+	.byte	236                             @ DW_AT_decl_line
+	.long	219                             @ DW_AT_type
+	.byte	0                               @ End Of Children Mark
+	.byte	0                               @ End Of Children Mark
+	.byte	29                              @ Abbrev [29] 0x561:0x40 DW_TAG_subprogram
+	.long	.Lfunc_begin7                   @ DW_AT_low_pc
+	.long	.Lfunc_end7-.Lfunc_begin7       @ DW_AT_high_pc
+	.byte	1                               @ DW_AT_frame_base
+	.byte	93
+	.long	.Linfo_string68                 @ DW_AT_name
+	.byte	2                               @ DW_AT_decl_file
+	.short	483                             @ DW_AT_decl_line
+                                        @ DW_AT_prototyped
+                                        @ DW_AT_external
+	.byte	27                              @ Abbrev [27] 0x573:0xf DW_TAG_formal_parameter
+	.byte	2                               @ DW_AT_location
+	.byte	145
+	.byte	12
+	.long	.Linfo_string93                 @ DW_AT_name
+	.byte	2                               @ DW_AT_decl_file
+	.short	483                             @ DW_AT_decl_line
+	.long	414                             @ DW_AT_type
+	.byte	27                              @ Abbrev [27] 0x582:0xf DW_TAG_formal_parameter
+	.byte	2                               @ DW_AT_location
+	.byte	145
+	.byte	8
+	.long	.Linfo_string94                 @ DW_AT_name
+	.byte	2                               @ DW_AT_decl_file
+	.short	483                             @ DW_AT_decl_line
+	.long	219                             @ DW_AT_type
+	.byte	28                              @ Abbrev [28] 0x591:0xf DW_TAG_variable
+	.byte	2                               @ DW_AT_location
+	.byte	145
+	.byte	4
+	.long	.Linfo_string86                 @ DW_AT_name
+	.byte	2                               @ DW_AT_decl_file
+	.short	485                             @ DW_AT_decl_line
+	.long	219                             @ DW_AT_type
+	.byte	0                               @ End Of Children Mark
+	.byte	29                              @ Abbrev [29] 0x5a1:0x31 DW_TAG_subprogram
+	.long	.Lfunc_begin8                   @ DW_AT_low_pc
+	.long	.Lfunc_end8-.Lfunc_begin8       @ DW_AT_high_pc
+	.byte	1                               @ DW_AT_frame_base
+	.byte	93
+	.long	.Linfo_string69                 @ DW_AT_name
+	.byte	2                               @ DW_AT_decl_file
+	.short	578                             @ DW_AT_decl_line
+                                        @ DW_AT_prototyped
+                                        @ DW_AT_external
+	.byte	27                              @ Abbrev [27] 0x5b3:0xf DW_TAG_formal_parameter
+	.byte	2                               @ DW_AT_location
+	.byte	145
+	.byte	4
+	.long	.Linfo_string93                 @ DW_AT_name
+	.byte	2                               @ DW_AT_decl_file
+	.short	578                             @ DW_AT_decl_line
+	.long	414                             @ DW_AT_type
+	.byte	27                              @ Abbrev [27] 0x5c2:0xf DW_TAG_formal_parameter
+	.byte	2                               @ DW_AT_location
+	.byte	145
+	.byte	0
+	.long	.Linfo_string94                 @ DW_AT_name
+	.byte	2                               @ DW_AT_decl_file
+	.short	578                             @ DW_AT_decl_line
+	.long	219                             @ DW_AT_type
+	.byte	0                               @ End Of Children Mark
+	.byte	32                              @ Abbrev [32] 0x5d2:0x53 DW_TAG_subprogram
+	.long	.Lfunc_begin9                   @ DW_AT_low_pc
+	.long	.Lfunc_end9-.Lfunc_begin9       @ DW_AT_high_pc
+	.byte	1                               @ DW_AT_frame_base
+	.byte	93
+	.long	.Linfo_string70                 @ DW_AT_name
+	.byte	3                               @ DW_AT_decl_file
+	.short	641                             @ DW_AT_decl_line
+                                        @ DW_AT_prototyped
+	.long	219                             @ DW_AT_type
+	.byte	27                              @ Abbrev [27] 0x5e8:0xf DW_TAG_formal_parameter
+	.byte	2                               @ DW_AT_location
+	.byte	145
+	.byte	12
+	.long	.Linfo_string95                 @ DW_AT_name
+	.byte	3                               @ DW_AT_decl_file
+	.short	641                             @ DW_AT_decl_line
+	.long	67                              @ DW_AT_type
+	.byte	28                              @ Abbrev [28] 0x5f7:0xf DW_TAG_variable
+	.byte	2                               @ DW_AT_location
+	.byte	145
+	.byte	8
+	.long	.Linfo_string96                 @ DW_AT_name
+	.byte	3                               @ DW_AT_decl_file
+	.short	643                             @ DW_AT_decl_line
+	.long	219                             @ DW_AT_type
+	.byte	28                              @ Abbrev [28] 0x606:0xf DW_TAG_variable
+	.byte	2                               @ DW_AT_location
+	.byte	145
+	.byte	4
+	.long	.Linfo_string97                 @ DW_AT_name
+	.byte	3                               @ DW_AT_decl_file
+	.short	644                             @ DW_AT_decl_line
+	.long	219                             @ DW_AT_type
+	.byte	28                              @ Abbrev [28] 0x615:0xf DW_TAG_variable
+	.byte	2                               @ DW_AT_location
+	.byte	145
+	.byte	0
+	.long	.Linfo_string85                 @ DW_AT_name
+	.byte	3                               @ DW_AT_decl_file
+	.short	645                             @ DW_AT_decl_line
+	.long	219                             @ DW_AT_type
+	.byte	0                               @ End Of Children Mark
+	.byte	26                              @ Abbrev [26] 0x625:0x4f DW_TAG_subprogram
+	.long	.Lfunc_begin10                  @ DW_AT_low_pc
+	.long	.Lfunc_end10-.Lfunc_begin10     @ DW_AT_high_pc
+	.byte	1                               @ DW_AT_frame_base
+	.byte	93
+	.long	.Linfo_string71                 @ DW_AT_name
+	.byte	3                               @ DW_AT_decl_file
+	.short	577                             @ DW_AT_decl_line
+                                        @ DW_AT_prototyped
+	.byte	27                              @ Abbrev [27] 0x637:0xf DW_TAG_formal_parameter
+	.byte	2                               @ DW_AT_location
+	.byte	145
+	.byte	12
+	.long	.Linfo_string95                 @ DW_AT_name
+	.byte	3                               @ DW_AT_decl_file
+	.short	577                             @ DW_AT_decl_line
+	.long	67                              @ DW_AT_type
+	.byte	28                              @ Abbrev [28] 0x646:0xf DW_TAG_variable
+	.byte	2                               @ DW_AT_location
+	.byte	145
+	.byte	8
+	.long	.Linfo_string96                 @ DW_AT_name
+	.byte	3                               @ DW_AT_decl_file
+	.short	579                             @ DW_AT_decl_line
+	.long	219                             @ DW_AT_type
+	.byte	28                              @ Abbrev [28] 0x655:0xf DW_TAG_variable
+	.byte	2                               @ DW_AT_location
+	.byte	145
+	.byte	4
+	.long	.Linfo_string97                 @ DW_AT_name
+	.byte	3                               @ DW_AT_decl_file
+	.short	580                             @ DW_AT_decl_line
+	.long	219                             @ DW_AT_type
+	.byte	28                              @ Abbrev [28] 0x664:0xf DW_TAG_variable
+	.byte	2                               @ DW_AT_location
+	.byte	145
+	.byte	0
+	.long	.Linfo_string85                 @ DW_AT_name
+	.byte	3                               @ DW_AT_decl_file
+	.short	581                             @ DW_AT_decl_line
+	.long	219                             @ DW_AT_type
+	.byte	0                               @ End Of Children Mark
+	.byte	29                              @ Abbrev [29] 0x674:0x22 DW_TAG_subprogram
+	.long	.Lfunc_begin11                  @ DW_AT_low_pc
+	.long	.Lfunc_end11-.Lfunc_begin11     @ DW_AT_high_pc
+	.byte	1                               @ DW_AT_frame_base
+	.byte	93
+	.long	.Linfo_string72                 @ DW_AT_name
+	.byte	2                               @ DW_AT_decl_file
+	.short	520                             @ DW_AT_decl_line
+                                        @ DW_AT_prototyped
+                                        @ DW_AT_external
+	.byte	28                              @ Abbrev [28] 0x686:0xf DW_TAG_variable
+	.byte	2                               @ DW_AT_location
+	.byte	145
+	.byte	12
+	.long	.Linfo_string86                 @ DW_AT_name
+	.byte	2                               @ DW_AT_decl_file
+	.short	522                             @ DW_AT_decl_line
+	.long	219                             @ DW_AT_type
+	.byte	0                               @ End Of Children Mark
+	.byte	29                              @ Abbrev [29] 0x696:0x31 DW_TAG_subprogram
+	.long	.Lfunc_begin12                  @ DW_AT_low_pc
+	.long	.Lfunc_end12-.Lfunc_begin12     @ DW_AT_high_pc
+	.byte	1                               @ DW_AT_frame_base
+	.byte	93
+	.long	.Linfo_string73                 @ DW_AT_name
+	.byte	2                               @ DW_AT_decl_file
+	.short	596                             @ DW_AT_decl_line
+                                        @ DW_AT_prototyped
+                                        @ DW_AT_external
+	.byte	28                              @ Abbrev [28] 0x6a8:0xf DW_TAG_variable
+	.byte	2                               @ DW_AT_location
+	.byte	145
+	.byte	12
+	.long	.Linfo_string94                 @ DW_AT_name
+	.byte	2                               @ DW_AT_decl_file
+	.short	598                             @ DW_AT_decl_line
+	.long	219                             @ DW_AT_type
+	.byte	28                              @ Abbrev [28] 0x6b7:0xf DW_TAG_variable
+	.byte	2                               @ DW_AT_location
+	.byte	145
+	.byte	8
+	.long	.Linfo_string86                 @ DW_AT_name
+	.byte	2                               @ DW_AT_decl_file
+	.short	599                             @ DW_AT_decl_line
+	.long	219                             @ DW_AT_type
+	.byte	0                               @ End Of Children Mark
+	.byte	29                              @ Abbrev [29] 0x6c7:0x22 DW_TAG_subprogram
+	.long	.Lfunc_begin13                  @ DW_AT_low_pc
+	.long	.Lfunc_end13-.Lfunc_begin13     @ DW_AT_high_pc
+	.byte	1                               @ DW_AT_frame_base
+	.byte	93
+	.long	.Linfo_string74                 @ DW_AT_name
+	.byte	2                               @ DW_AT_decl_file
+	.short	627                             @ DW_AT_decl_line
+                                        @ DW_AT_prototyped
+                                        @ DW_AT_external
+	.byte	28                              @ Abbrev [28] 0x6d9:0xf DW_TAG_variable
+	.byte	2                               @ DW_AT_location
+	.byte	145
+	.byte	8
+	.long	.Linfo_string85                 @ DW_AT_name
+	.byte	2                               @ DW_AT_decl_file
+	.short	629                             @ DW_AT_decl_line
+	.long	219                             @ DW_AT_type
+	.byte	0                               @ End Of Children Mark
+	.byte	29                              @ Abbrev [29] 0x6e9:0x22 DW_TAG_subprogram
+	.long	.Lfunc_begin14                  @ DW_AT_low_pc
+	.long	.Lfunc_end14-.Lfunc_begin14     @ DW_AT_high_pc
+	.byte	1                               @ DW_AT_frame_base
+	.byte	93
+	.long	.Linfo_string75                 @ DW_AT_name
+	.byte	2                               @ DW_AT_decl_file
+	.short	659                             @ DW_AT_decl_line
+                                        @ DW_AT_prototyped
+                                        @ DW_AT_external
+	.byte	27                              @ Abbrev [27] 0x6fb:0xf DW_TAG_formal_parameter
+	.byte	2                               @ DW_AT_location
+	.byte	145
+	.byte	0
+	.long	.Linfo_string98                 @ DW_AT_name
+	.byte	2                               @ DW_AT_decl_file
+	.short	659                             @ DW_AT_decl_line
+	.long	131                             @ DW_AT_type
+	.byte	0                               @ End Of Children Mark
+	.byte	29                              @ Abbrev [29] 0x70b:0x22 DW_TAG_subprogram
+	.long	.Lfunc_begin15                  @ DW_AT_low_pc
+	.long	.Lfunc_end15-.Lfunc_begin15     @ DW_AT_high_pc
+	.byte	1                               @ DW_AT_frame_base
+	.byte	93
+	.long	.Linfo_string76                 @ DW_AT_name
+	.byte	2                               @ DW_AT_decl_file
+	.short	673                             @ DW_AT_decl_line
+                                        @ DW_AT_prototyped
+                                        @ DW_AT_external
+	.byte	27                              @ Abbrev [27] 0x71d:0xf DW_TAG_formal_parameter
+	.byte	2                               @ DW_AT_location
+	.byte	145
+	.byte	0
+	.long	.Linfo_string99                 @ DW_AT_name
+	.byte	2                               @ DW_AT_decl_file
+	.short	673                             @ DW_AT_decl_line
+	.long	254                             @ DW_AT_type
+	.byte	0                               @ End Of Children Mark
+	.byte	29                              @ Abbrev [29] 0x72d:0x22 DW_TAG_subprogram
+	.long	.Lfunc_begin16                  @ DW_AT_low_pc
+	.long	.Lfunc_end16-.Lfunc_begin16     @ DW_AT_high_pc
+	.byte	1                               @ DW_AT_frame_base
+	.byte	93
+	.long	.Linfo_string77                 @ DW_AT_name
+	.byte	2                               @ DW_AT_decl_file
+	.short	689                             @ DW_AT_decl_line
+                                        @ DW_AT_prototyped
+                                        @ DW_AT_external
+	.byte	27                              @ Abbrev [27] 0x73f:0xf DW_TAG_formal_parameter
+	.byte	2                               @ DW_AT_location
+	.byte	145
+	.byte	0
+	.long	.Linfo_string100                @ DW_AT_name
+	.byte	2                               @ DW_AT_decl_file
+	.short	689                             @ DW_AT_decl_line
+	.long	219                             @ DW_AT_type
+	.byte	0                               @ End Of Children Mark
+	.byte	0                               @ End Of Children Mark
+.Ldebug_info_end0:
+	.section	.debug_ranges,"",%progbits
+.Ldebug_ranges0:
+	.long	.Lfunc_begin0
+	.long	.Lfunc_end0
+	.long	.Lfunc_begin1
+	.long	.Lfunc_end1
+	.long	.Lfunc_begin2
+	.long	.Lfunc_end2
+	.long	.Lfunc_begin3
+	.long	.Lfunc_end3
+	.long	.Lfunc_begin4
+	.long	.Lfunc_end4
+	.long	.Lfunc_begin5
+	.long	.Lfunc_end5
+	.long	.Lfunc_begin6
+	.long	.Lfunc_end6
+	.long	.Lfunc_begin7
+	.long	.Lfunc_end7
+	.long	.Lfunc_begin8
+	.long	.Lfunc_end8
+	.long	.Lfunc_begin9
+	.long	.Lfunc_end9
+	.long	.Lfunc_begin10
+	.long	.Lfunc_end10
+	.long	.Lfunc_begin11
+	.long	.Lfunc_end11
+	.long	.Lfunc_begin12
+	.long	.Lfunc_end12
+	.long	.Lfunc_begin13
+	.long	.Lfunc_end13
+	.long	.Lfunc_begin14
+	.long	.Lfunc_end14
+	.long	.Lfunc_begin15
+	.long	.Lfunc_end15
+	.long	.Lfunc_begin16
+	.long	.Lfunc_end16
+	.long	0
+	.long	0
+	.section	.debug_str,"MS",%progbits,1
+.Linfo_string0:
+	.asciz	"Component: Arm Compiler for Embedded 6.22 Tool: armclang [5ee92100]" @ string offset=0
+.Linfo_string1:
+	.asciz	"../../../Library/StdDriver/src\\usbd.c" @ string offset=68
+.Linfo_string2:
+	.asciz	"D:\\SourceCode\\_Avery_M031\\M031BSP_RGBLED_SPI_PDMA_USB\\SampleCode\\Template\\Keil" @ string offset=106
+.Linfo_string3:
+	.asciz	"g_usbd_SetupPacket"            @ string offset=185
+.Linfo_string4:
+	.asciz	"unsigned char"                 @ string offset=204
+.Linfo_string5:
+	.asciz	"uint8_t"                       @ string offset=218
+.Linfo_string6:
+	.asciz	"__ARRAY_SIZE_TYPE__"           @ string offset=226
+.Linfo_string7:
+	.asciz	"g_usbd_RemoteWakeupEn"         @ string offset=246
+.Linfo_string8:
+	.asciz	"g_usbd_pfnVendorRequest"       @ string offset=268
+.Linfo_string9:
+	.asciz	"VENDOR_REQ"                    @ string offset=292
+.Linfo_string10:
+	.asciz	"g_usbd_pfnClassRequest"        @ string offset=303
+.Linfo_string11:
+	.asciz	"CLASS_REQ"                     @ string offset=326
+.Linfo_string12:
+	.asciz	"g_usbd_pfnSetInterface"        @ string offset=336
+.Linfo_string13:
+	.asciz	"unsigned int"                  @ string offset=359
+.Linfo_string14:
+	.asciz	"uint32_t"                      @ string offset=372
+.Linfo_string15:
+	.asciz	"SET_INTERFACE_REQ"             @ string offset=381
+.Linfo_string16:
+	.asciz	"g_usbd_pfnSetConfigCallback"   @ string offset=399
+.Linfo_string17:
+	.asciz	"SET_CONFIG_CB"                 @ string offset=427
+.Linfo_string18:
+	.asciz	"g_u32EpStallLock"              @ string offset=441
+.Linfo_string19:
+	.asciz	"g_usbd_sInfo"                  @ string offset=458
+.Linfo_string20:
+	.asciz	"gu8DevDesc"                    @ string offset=471
+.Linfo_string21:
+	.asciz	"gu8ConfigDesc"                 @ string offset=482
+.Linfo_string22:
+	.asciz	"gu8StringDesc"                 @ string offset=496
+.Linfo_string23:
+	.asciz	"gu8HidReportDesc"              @ string offset=510
+.Linfo_string24:
+	.asciz	"gu8BosDesc"                    @ string offset=527
+.Linfo_string25:
+	.asciz	"gu32HidReportSize"             @ string offset=538
+.Linfo_string26:
+	.asciz	"gu32ConfigHidDescIdx"          @ string offset=556
+.Linfo_string27:
+	.asciz	"s_usbd_info"                   @ string offset=577
+.Linfo_string28:
+	.asciz	"S_USBD_INFO_T"                 @ string offset=589
+.Linfo_string29:
+	.asciz	"g_usbd_CtrlMaxPktSize"         @ string offset=603
+.Linfo_string30:
+	.asciz	"g_usbd_CtrlInPointer"          @ string offset=625
+.Linfo_string31:
+	.asciz	"g_usbd_CtrlInSize"             @ string offset=646
+.Linfo_string32:
+	.asciz	"g_usbd_UsbConfig"              @ string offset=664
+.Linfo_string33:
+	.asciz	"g_usbd_UsbAltInterface"        @ string offset=681
+.Linfo_string34:
+	.asciz	"g_usbd_UsbAddr"                @ string offset=704
+.Linfo_string35:
+	.asciz	"g_usbd_CtrlInZeroFlag"         @ string offset=719
+.Linfo_string36:
+	.asciz	"g_usbd_CtrlOutPointer"         @ string offset=741
+.Linfo_string37:
+	.asciz	"g_usbd_CtrlOutSize"            @ string offset=763
+.Linfo_string38:
+	.asciz	"g_usbd_CtrlOutSizeLimit"       @ string offset=782
+.Linfo_string39:
+	.asciz	"INTEN"                         @ string offset=806
+.Linfo_string40:
+	.asciz	"INTSTS"                        @ string offset=812
+.Linfo_string41:
+	.asciz	"FADDR"                         @ string offset=819
+.Linfo_string42:
+	.asciz	"EPSTS"                         @ string offset=825
+.Linfo_string43:
+	.asciz	"ATTR"                          @ string offset=831
+.Linfo_string44:
+	.asciz	"VBUSDET"                       @ string offset=836
+.Linfo_string45:
+	.asciz	"STBUFSEG"                      @ string offset=844
+.Linfo_string46:
+	.asciz	"RESERVE0"                      @ string offset=853
+.Linfo_string47:
+	.asciz	"EPSTS0"                        @ string offset=862
+.Linfo_string48:
+	.asciz	"RESERVE1"                      @ string offset=869
+.Linfo_string49:
+	.asciz	"LPMATTR"                       @ string offset=878
+.Linfo_string50:
+	.asciz	"FN"                            @ string offset=886
+.Linfo_string51:
+	.asciz	"SE0"                           @ string offset=889
+.Linfo_string52:
+	.asciz	"RESERVE2"                      @ string offset=893
+.Linfo_string53:
+	.asciz	"EP"                            @ string offset=902
+.Linfo_string54:
+	.asciz	"BUFSEG"                        @ string offset=905
+.Linfo_string55:
+	.asciz	"MXPLD"                         @ string offset=912
+.Linfo_string56:
+	.asciz	"CFG"                           @ string offset=918
+.Linfo_string57:
+	.asciz	"CFGP"                          @ string offset=922
+.Linfo_string58:
+	.asciz	"USBD_EP_T"                     @ string offset=927
+.Linfo_string59:
+	.asciz	"USBD_T"                        @ string offset=937
+.Linfo_string60:
+	.asciz	"vu8"                           @ string offset=944
+.Linfo_string61:
+	.asciz	"USBD_Open"                     @ string offset=948
+.Linfo_string62:
+	.asciz	"USBD_Start"                    @ string offset=958
+.Linfo_string63:
+	.asciz	"USBD_GetSetupPacket"           @ string offset=969
+.Linfo_string64:
+	.asciz	"USBD_MemCopy"                  @ string offset=989
+.Linfo_string65:
+	.asciz	"USBD_ProcessSetupPacket"       @ string offset=1002
+.Linfo_string66:
+	.asciz	"USBD_StandardRequest"          @ string offset=1026
+.Linfo_string67:
+	.asciz	"USBD_GetDescriptor"            @ string offset=1047
+.Linfo_string68:
+	.asciz	"USBD_PrepareCtrlIn"            @ string offset=1066
+.Linfo_string69:
+	.asciz	"USBD_PrepareCtrlOut"           @ string offset=1085
+.Linfo_string70:
+	.asciz	"USBD_GetStall"                 @ string offset=1105
+.Linfo_string71:
+	.asciz	"USBD_SetStall"                 @ string offset=1119
+.Linfo_string72:
+	.asciz	"USBD_CtrlIn"                   @ string offset=1133
+.Linfo_string73:
+	.asciz	"USBD_CtrlOut"                  @ string offset=1145
+.Linfo_string74:
+	.asciz	"USBD_SwReset"                  @ string offset=1158
+.Linfo_string75:
+	.asciz	"USBD_SetVendorRequest"         @ string offset=1171
+.Linfo_string76:
+	.asciz	"USBD_SetConfigCallback"        @ string offset=1193
+.Linfo_string77:
+	.asciz	"USBD_LockEpStall"              @ string offset=1216
+.Linfo_string78:
+	.asciz	"param"                         @ string offset=1233
+.Linfo_string79:
+	.asciz	"pfnClassReq"                   @ string offset=1239
+.Linfo_string80:
+	.asciz	"pfnSetInterface"               @ string offset=1251
+.Linfo_string81:
+	.asciz	"buf"                           @ string offset=1267
+.Linfo_string82:
+	.asciz	"dest"                          @ string offset=1271
+.Linfo_string83:
+	.asciz	"src"                           @ string offset=1276
+.Linfo_string84:
+	.asciz	"size"                          @ string offset=1280
+.Linfo_string85:
+	.asciz	"i"                             @ string offset=1285
+.Linfo_string86:
+	.asciz	"addr"                          @ string offset=1287
+.Linfo_string87:
+	.asciz	"u8Tmp"                         @ string offset=1292
+.Linfo_string88:
+	.asciz	"ep"                            @ string offset=1298
+.Linfo_string89:
+	.asciz	"epNum"                         @ string offset=1301
+.Linfo_string90:
+	.asciz	"u32Len"                        @ string offset=1307
+.Linfo_string91:
+	.asciz	"u32TotalLen"                   @ string offset=1314
+.Linfo_string92:
+	.asciz	"u32ConfigDescOffset"           @ string offset=1326
+.Linfo_string93:
+	.asciz	"pu8Buf"                        @ string offset=1346
+.Linfo_string94:
+	.asciz	"u32Size"                       @ string offset=1353
+.Linfo_string95:
+	.asciz	"epnum"                         @ string offset=1361
+.Linfo_string96:
+	.asciz	"u32CfgAddr"                    @ string offset=1367
+.Linfo_string97:
+	.asciz	"u32Cfg"                        @ string offset=1378
+.Linfo_string98:
+	.asciz	"pfnVendorReq"                  @ string offset=1385
+.Linfo_string99:
+	.asciz	"pfnSetConfigCallback"          @ string offset=1398
+.Linfo_string100:
+	.asciz	"u32EpBitmap"                   @ string offset=1419
+	.ident	"Component: Arm Compiler for Embedded 6.22 Tool: armclang [5ee92100]"
+	.section	".note.GNU-stack","",%progbits
+	.eabi_attribute	30, 6	@ Tag_ABI_optimization_goals
+	.ARM_attribute	16, 1	@ Tag_AV_eba
+	.section	.debug_line,"",%progbits
+.Lline_table_start0:
